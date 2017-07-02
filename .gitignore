@@ -1,0 +1,63 @@
+*.log
+wp-config.php
+wp-content/advanced-cache.php
+wp-content/backup-db/
+wp-content/backups/
+wp-content/blogs.dir/
+wp-content/cache/
+wp-content/upgrade/
+wp-content/uploads/
+wp-content/wp-cache-config.php
+wp-content/plugins/hello.php
+
+# WordPress default themes
+/wp-content/themes/twenty*
+
+# WordPress single files
+/.htaccess
+/license.txt
+/readme.html
+/sitemap.xml
+/sitemap.xml.gz
+
+# JetBrains / PhpStorm Project Files
+.idea/
+
+# Hidden files
+*.DS_Store
+*Thumbs.db
+*.sass-cache*
+*~imageoptim*
+
+# Other Stuff here
+*.sql
+
+# Unit tests config
+phpunit.xml
+.travis.yml
+/bin
+tests/mocks/env/
+
+# Development files
+/node_modules/
+/assets/vendor/
+
+/bower_components/adaptive-placeholders/
+/bower_components/breakpoint-sass/
+/bower_components/desandro-matches-selector/
+/bower_components/ev-emitter/
+/bower_components/fizzy-ui-utils/
+/bower_components/get-size/
+/bower_components/jquery/
+/bower_components/jquery-validation/
+/bower_components/mappy-breakpoints/
+/bower_components/masonry/
+/bower_components/modular-scale/
+/bower_components/normalize-scss/
+/bower_components/outlayer/
+/bower_components/parallax.js/
+/bower_components/sass-hidpi/
+/bower_components/sassy-maps/
+/bower_components/susy/
+/bower_components/typi/
+/bower_components/vertical-rhythms-without-compass/
