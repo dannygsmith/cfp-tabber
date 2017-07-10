@@ -8,8 +8,8 @@
 -->
 
 <dl class="tabber--container">
-   <dt class="tabber--tab"><?php esc_html_e( $tab ); ?></dt>
-   <dd class="tabber--content"><?php echo $content;  ?></dd>
+   <dt class="tabber--tab"><?php echo esc_html( $tab ); ?></dt> <!-- tab label   -->
+   <dd class="tabber--content" style="display: none;"><?php echo $content;  ?></dd> <!-- tab content -->
 </dl>
 
 
