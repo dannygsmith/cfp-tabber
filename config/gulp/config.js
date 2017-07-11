@@ -129,8 +129,9 @@ module.exports=function (moduleRoot) {
          dest: distDirs.css,
       },
       cssfinalize: {
-         run:  false,
-         src:  [distDirs.css + "style.css", distDirs.css + "style.min.css"],
+         // Fix for Issue #1 - v1.0.3 11.July.2017
+         run: moduleSettings.isTheme ? true : false,
+         src: [ distDirs.css + "style.css", distDirs.css + "style.min.css" ],
          dest: distDirs.finalCSS,
       }
    };
@@ -195,11 +196,11 @@ module.exports=function (moduleRoot) {
 
    var watchSettings={
       browserSync: {
-         open:          false,             // Open project in a new tab?
+         open:          false,    // Open project in a new tab?
          injectChanges: true,     // Auto inject changes instead of full reload
          proxy:         moduleSettings.domain,  // Use http://domainname.tld:3000 to use BrowserSync
          watchOptions:  {
-            debounceDelay: 1000  // Wait 1 second before injecting
+            debounceDelay: 1000   // Wait 1 second before injecting
          }
       }
    }

@@ -11,10 +11,22 @@
 	License URI: http://www.gnu.org/licenses/gpl-2.0.html
 */
 
+dl {
+   display: inline;
+   margin: 0;
+   padding: 0;
+   position: relative;
+}
+
 dt {
-   background-color: #ddd;
-   border-radius: 5px;
-   float: left;
-   display: block;
-   padding: 15px;
+   background: #ccc;
+   display: inline;
+   padding: 20px;
+   margin: 0;
+}
+
+dd {
+   background: #999;
+   padding: 20px;
+   position: absolute;
 }

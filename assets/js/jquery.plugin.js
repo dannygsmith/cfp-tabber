@@ -12,7 +12,7 @@
       $tabberContents=$tabberTabs.next();
       $tabberTabs.on('click',
          {contentType: 'tabber'},   // pass type
-         clickHandler);              // named function
+         clickHandler);             // named function
    };
 
    var clickHandler=function (event) {
