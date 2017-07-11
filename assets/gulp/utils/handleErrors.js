@@ -13,20 +13,20 @@
  * @license     GNU-2.0+
  */
 
-var notify = require( 'gulp-notify' ),
-	gutil   = require( 'gulp-util' );
+var notify=require('gulp-notify'),
+   gutil=require('gulp-util');
 
-module.exports = function (error) {
-	var args = Array.prototype.slice.call( arguments );
+module.exports=function (error) {
+   var args=Array.prototype.slice.call(arguments);
 
-	notify.onError( {
-		title: 'Task Failed [<%= error.message %>',
-		message: 'See console.',
-		sound: 'Sosumi' // See: https://github.com/mikaelbr/node-notifier#all-notification-options-with-their-defaults
-	} ).apply( this, args );
+   notify.onError({
+      title:   'Task Failed [<%= error.message %>',
+      message: 'See console.',
+      sound:   'Sosumi' // See: https://github.com/mikaelbr/node-notifier#all-notification-options-with-their-defaults
+   }).apply(this, args);
 
-	gutil.beep(); // Beep 'sosumi' again
+   gutil.beep(); // Beep 'sosumi' again
 
-	// Prevent the 'watch' task from stopping
-	this.emit( 'end' );
+   // Prevent the 'watch' task from stopping
+   this.emit('end');
 };

@@ -21,16 +21,16 @@ add_shortcode( 'tabber', __NAMESPACE__ . '\process_the_shortcode' );
  * @since 1.0.0
  *
  * @param array|string $user_defined_attributes User defined attributes for this shortcode instance
- * @param string|null  $content Content between the opening and closing shortcode elements
- * @param string       $shortcode_name Name of the shortcode
+ * @param string|null  $content                 Content between the opening and closing shortcode elements
+ * @param string       $shortcode_name          Name of the shortcode
  *
  * @return string
  */
 function process_the_shortcode( $user_defined_attributes, $content, $shortcode_name ) {
-   $config     = get_shortcode_configuration( $shortcode_name );
+   $config = get_shortcode_configuration( $shortcode_name );
 
    $attributes = shortcode_atts(
-      $config['defaults'],
+      $config[ 'defaults' ],
       $user_defined_attributes,
       $shortcode_name
    );
@@ -58,12 +58,12 @@ function process_the_shortcode( $user_defined_attributes, $content, $shortcode_n
  * @return array
  */
 function get_shortcode_configuration( $shortcode_name ) {
-   $config = array(
+   $config = array (
       'view' => __DIR__ . '/views/' . $shortcode_name . '.php',
    );
 
    if ( $shortcode_name == 'tabber' ) {
-      $config['defaults']['tab'] = '';
+      $config[ 'defaults' ][ 'tab' ] = '';
    }
 
    return $config;

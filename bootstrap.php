@@ -34,10 +34,11 @@
 	along with this program; if not, write to the Free Software
 	Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 */
+
 namespace CampFirePixels\Tabber;
 
-if ( ! defined( 'ABSPATH' ) ) {
-	die( "Oh, silly, there's nothing to see here." );
+if ( !defined( 'ABSPATH' ) ) {
+   die( "Oh, silly, there's nothing to see here." );
 }
 
 define( 'TABBER_PLUGIN', __FILE__ );
@@ -45,7 +46,7 @@ define( 'TABBER_DIR', plugin_dir_path( __FILE__ ) );
 $plugin_url = plugin_dir_url( __FILE__ );
 
 if ( is_ssl() ) {
-	$plugin_url = str_replace( 'http://', 'https://', $plugin_url );
+   $plugin_url = str_replace( 'http://', 'https://', $plugin_url );
 }
 define( 'TABBER_URL', $plugin_url );
 define( 'TABBER_TEXT_DOMAIN', 'TABBER' );
