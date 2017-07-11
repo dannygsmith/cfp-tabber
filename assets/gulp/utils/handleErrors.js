@@ -14,7 +14,7 @@
  */
 
 var notify = require( 'gulp-notify' ),
-	gutil = require( 'gulp-util' );
+	gutil   = require( 'gulp-util' );
 
 module.exports = function (error) {
 	var args = Array.prototype.slice.call( arguments );

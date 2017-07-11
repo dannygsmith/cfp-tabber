@@ -25,8 +25,8 @@ module.exports = function ( moduleRoot ) {
 			textdomain: 'cfp_tabber',
 			languageFilename: 'cfp-tabber.pot',
 			bugReport: 'https://campfirepixels.com',
-			lastTranslator: 'Team <dgs@campfirepixels.com>',
-			team: 'Team <dgs@campfirepixels.com>'
+			lastTranslator: 'dgs@campfirepixels.com',
+			team: 'dgs@campfirepixels.com'
 		}
 	};
 
@@ -102,7 +102,7 @@ module.exports = function ( moduleRoot ) {
 	};
 
 	var distFilenames = {
-		concatScripts: 'jquery.project.js'
+		concatScripts: 'jquery.plugin.js'
 	};
 
 	/************************************
