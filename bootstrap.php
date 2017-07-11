@@ -40,14 +40,14 @@ if ( ! defined( 'ABSPATH' ) ) {
 	die( "Oh, silly, there's nothing to see here." );
 }
 
-define( 'CAMPFIREPIXELS_TABBER_PLUGIN', __FILE__ );
-define( 'CAMPFIREPIXELS_TABBER_DIR', plugin_dir_path( __FILE__ ) );
+define( 'TABBER_PLUGIN', __FILE__ );
+define( 'TABBER_DIR', plugin_dir_path( __FILE__ ) );
 $plugin_url = plugin_dir_url( __FILE__ );
 
 if ( is_ssl() ) {
 	$plugin_url = str_replace( 'http://', 'https://', $plugin_url );
 }
-define( 'CAMPFIREPIXELS_TABBER_URL', $plugin_url );
-define( 'CAMPFIREPIXELS_TABBER_TEXT_DOMAIN', 'campfirepixels_tabber' );
+define( 'TABBER_URL', $plugin_url );
+define( 'TABBER_TEXT_DOMAIN', 'TABBER' );
 
 include( __DIR__ . '/src/plugin.php' );
