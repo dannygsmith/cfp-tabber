@@ -22,47 +22,48 @@
       var index = 0;
       $( $tabberContents[ index ] ).css( "display", "block");
 
-      console.log( $tabberContents );
-
-
       // wrap shortcodes with div wrapper
       $( $tabberContainer ).wrapAll( '<div class="tabber-wrapper">' );
-      //$( '</div>' ).insertAfter( $tabberContainer );
    };
-
 
    var clickHandler = function ( event ) {
 
       var index                 = $tabberTabs.index ( this ),  // current index
-         k                      = 0,                           // var used as index into tabs
-         length                 = $tabberTabs.length,          // number of tabs
-         $hiddenContent         = $( $tabberContents[ index ].innerHTML );
-         //isHiddenContentShowing = $tabberContents.is( ':visible' );
-
-      console.log( $tabberTabs );
+          k                     = 0,                           // var used as index into tabs
+          length                = $tabberTabs.length;          // number of tabs
 
       // start by hiding all content
       for ( k = 0; k < length; k++ ) {
          // hide
-         $( $tabberContents[ k ] ).css( "display", "none");
+
+         if ( isMobile() === true) {
+            $( $tabberContents[ k ] ).slideUp();
+
+         } else {
+            $( $tabberContents[ k ] ).css( "display", "none");
+         }
       }
 
-      // display current content of selected tab
-      $( $tabberContents[ index ] ).css( "display", "block");
+      if ( isMobile() === true ) {
+         // display current content of selected tab
+         $($tabberContents[index]).slideDown();
+
+      } else {
+         $( $tabberContents[ index ] ).css( "display", "block");
+      }
    };
 
-   /**
-    * Get the index into the array
-    */
-   function getIndex( element ) {
+   //Function to the css rule
+   function isMobile() {
 
-   }
+      if ( window.matchMedia( '(max-width: 767px)' ).matches ) {
+         //console.log ( true );
+         return true;
 
-   /**
-    * Get the singular content
-    */
-   function getContent( index ) {
-
+      } else {
+         //console.log ( false );
+         return false;
+      }
    }
 
    $(document).ready(function () {

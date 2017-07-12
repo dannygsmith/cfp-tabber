@@ -11,6 +11,10 @@
 	License URI: http://www.gnu.org/licenses/gpl-2.0.html
 */
 
+.sampleClass {
+   float: none;
+}
+
 .tabber-wrapper {
    position: relative;
    margin-bottom: 70px;
@@ -47,7 +51,13 @@
    border-bottom: 1px solid #ccc;
 }
 
-@media only screen and (min-width: 768px) {
+
+
+@media only screen and ( min-width: 768px ) {
+
+   .sampleClass {
+      float: left;
+   }
 
    .tabber-wrapper {
       position: relative;
@@ -93,5 +103,4 @@
       width: 100%;
       z-index: 99;
    }
-
 }
