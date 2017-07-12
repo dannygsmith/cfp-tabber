@@ -22,7 +22,7 @@ add_action( 'wp_enqueue_scripts', __NAMESPACE__ . '\enqueue_assets' );
 function enqueue_assets() {
    wp_enqueue_script(
       'tabber-plugin-script',
-      TABBER_URL . 'assets/dist/js/jquery.plugin.min.js',
+      TABBER_URL . 'assets/dist/js/jquery.plugin.js',
       array ( 'jquery' ),
       '0.1.0',
       true

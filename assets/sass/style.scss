@@ -13,36 +13,44 @@
 
 .tabber-wrapper {
    position: relative;
+   margin-bottom: 70px;
 }
 
-dl {
-   display: inline-flex;
-   justify-content: flex-start;
-   flex-wrap: nowrap;
-   margin: 0;
-   padding: 0;
-   -webkit-margin-before: 0;
+dl,
+.tabber--container {
    -webkit-margin-after:  0;
+   -webkit-margin-before: 0;
+   display: inline-flex;
+   flex-wrap: nowrap;
+   justify-content: flex-start;
+   margin:  0;
+   padding: 0;
 }
 
-dt {
-   display: inline;
-   padding: 10px;
-   vertical-align: top;
+dt,
+.tabber--tab {
    background-color: #eee;
+   border: 1px solid #ccc;
+   border-top-left-radius:  5px;
+   border-top-right-radius: 5px;
    cursor: pointer;
-   border-left: 10px solid #ccc;
+   display: inline;
+   margin-right: 2px;
+   padding:  6px 15px;
+   vertical-align: top;
 }
 
-dd {
+dd,
+.tabber--content {
    -webkit-margin-start: 0;
-   background-color: #eee;
-   border: 1px solid #ddd;
+   background-color: #ddd;
+   border: 1px solid #ccc;
    color: #333;
    left: 0;
+   overflow: hidden;
    padding: 20px;
    position: absolute;
-   width: 100%;
    top: 100%;
+   width: 100%;
    z-index: 99;
 }
