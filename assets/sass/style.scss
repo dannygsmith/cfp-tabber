@@ -5,7 +5,7 @@
 	Author: Danny G Smith
 	Author URI: https://campfirepixels.com/
 
-	Version: 0.1.0
+	Version: 0.1.1
 
 	License: GPL-2.0+
 	License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -18,41 +18,33 @@
 
 // dl,
 .tabber--container {
-   -webkit-margin-after:  0;
-   -webkit-margin-before: 0;
-   display: inline-flex;
-   flex-wrap: nowrap;
-   justify-content: flex-start;
-   margin:  0;
+   margin: 0;
    padding: 0;
+   width: 100%;
 }
 
 // dt
 .tabber--tab {
-   background-color: #eee;
-   border: 1px solid #ccc;
-   border-top-left-radius:  5px;
-   border-top-right-radius: 5px;
-   cursor: pointer;
-   display: inline;
-   margin-right: 2px;
+   background-color: #ccc;
+   color: #333;
    padding:  6px 15px;
-   vertical-align: top;
+   font-weight: bold;
+   text-transform: uppercase;
+   //border: 1px solid #aaa #aaa #ccc;
+   border-left:      1px solid #aaa;
+   border-right:     1px solid #aaa;
+   border-top:       1px solid #aaa;
+   border-bottom:    1px solid #ccc;
 }
 
 // dd,
 .tabber--content {
-   -webkit-margin-start: 0;
-   background-color: #ddd;
-   border: 1px solid #ccc;
-   color: #333;
-   left: 0;
-   overflow: hidden;
+   margin: 0;
+   background: #eee;
    padding: 20px;
-   position: absolute;
-   top: 100%;
-   width: 100%;
-   z-index: 99;
+   border-left:   1px solid #ccc;
+   border-right:  1px solid #ccc;
+   border-bottom: 1px solid #ccc;
 }
 
 @media only screen and (min-width: 768px) {
@@ -71,6 +63,7 @@
       justify-content: flex-start;
       margin:  0;
       padding: 0;
+      width: auto;
    }
 
    // dt
