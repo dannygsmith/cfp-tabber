@@ -26,8 +26,8 @@
 
 
       // wrap shortcodes with div wrapper
-      $( '<div class="tabber-wrapper">' ).insertBefore( $( $tabberContainer ) );
-      $( '</div>' ).insertAfter( $( $tabberContainer ) );
+      $( $tabberContainer ).wrapAll( '<div class="tabber-wrapper">' );
+      //$( '</div>' ).insertAfter( $tabberContainer );
    };
 
 

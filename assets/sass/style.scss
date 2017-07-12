@@ -16,7 +16,7 @@
    margin-bottom: 70px;
 }
 
-dl,
+// dl,
 .tabber--container {
    -webkit-margin-after:  0;
    -webkit-margin-before: 0;
@@ -27,7 +27,7 @@ dl,
    padding: 0;
 }
 
-dt,
+// dt
 .tabber--tab {
    background-color: #eee;
    border: 1px solid #ccc;
@@ -40,7 +40,7 @@ dt,
    vertical-align: top;
 }
 
-dd,
+// dd,
 .tabber--content {
    -webkit-margin-start: 0;
    background-color: #ddd;
@@ -53,4 +53,52 @@ dd,
    top: 100%;
    width: 100%;
    z-index: 99;
+}
+
+@media only screen and (min-width: 768px) {
+
+   .tabber-wrapper {
+      position: relative;
+      margin-bottom: 70px;
+   }
+
+   // dl,
+   .tabber--container {
+      -webkit-margin-after:  0;
+      -webkit-margin-before: 0;
+      display: inline-flex;
+      flex-wrap: nowrap;
+      justify-content: flex-start;
+      margin:  0;
+      padding: 0;
+   }
+
+   // dt
+   .tabber--tab {
+      background-color: #eee;
+      border: 1px solid #ccc;
+      border-top-left-radius:  5px;
+      border-top-right-radius: 5px;
+      cursor: pointer;
+      display: inline;
+      margin-right: 2px;
+      padding:  6px 15px;
+      vertical-align: top;
+   }
+
+   // dd,
+   .tabber--content {
+      -webkit-margin-start: 0;
+      background-color: #ddd;
+      border: 1px solid #ccc;
+      color: #333;
+      left: 0;
+      overflow: hidden;
+      padding: 20px;
+      position: absolute;
+      top: 100%;
+      width: 100%;
+      z-index: 99;
+   }
+
 }
