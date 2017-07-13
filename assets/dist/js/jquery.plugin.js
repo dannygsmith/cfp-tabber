@@ -5,6 +5,11 @@
    var $tabberTabs;      // array of cached tab labels
    var $tabberContents;  // array of cached contents
 
+   var $isMobile;
+
+   $isMobile = isMobile();
+   Cookies.set( 'tabber_cookie', $isMobile );
+
    /**
     * Initializes all scripts via document ready function
     */
@@ -44,6 +49,9 @@
          }
       }
 
+
+      $isMobile = isMobile();
+
       if ( isMobile() === true ) {
          // display current content of selected tab
          $($tabberContents[index]).slideDown();
@@ -52,6 +60,12 @@
          $( $tabberContents[ index ] ).css( "display", "block");
       }
    };
+
+   $( window ).resize(function() {
+      location.reload(true);
+      location.reload(true);
+      $isMobile = isMobile();
+   });
 
    //Function to the css rule
    function isMobile() {
@@ -68,6 +82,7 @@
 
    $(document).ready(function () {
       init();
+
    });
 
 })(jQuery, window, document);

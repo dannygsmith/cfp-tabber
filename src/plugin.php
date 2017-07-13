@@ -30,6 +30,23 @@ function enqueue_assets() {
       '0.1.0',
       true
    );
+
+   wp_enqueue_script(
+      'isMobile-plugin-script',
+      TABBER_URL . 'assets/js/isMobile.js',
+      array ( 'jquery' ),
+      '0.1.0',
+      true
+   );
+
+   wp_enqueue_script(
+      'jsCookie-plugin-script',
+      TABBER_URL . 'node_modules/js-cookie/src/js.cookie.js',
+      array ( 'jquery' ),
+      '0.1.0',
+      false
+   );
+
    wp_enqueue_style( 'tabber-plugin-style',
                      TABBER_URL . 'assets/dist/css/style.min.css'
       );

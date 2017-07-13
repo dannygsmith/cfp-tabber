@@ -59,6 +59,19 @@ function process_the_shortcode( $user_defined_attributes, $content, $shortcode_n
  * @return array
  */
 function get_shortcode_configuration( $shortcode_name ) {
+
+   $isMobile = strip_tags( trim( $_COOKIE[ "tabber_cookie" ] ) );
+
+   if ( $isMobile === 'true' ) {
+      $shortcode_name = 'accordion';
+
+   } else {
+
+      $shortcode_name = 'tabber';
+   }
+
+   //d( $_COOKIE );
+
    $config = array (
       'view' => __DIR__ . '/views/' . $shortcode_name . '.php',
       'defaults' => array(
