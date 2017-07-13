@@ -11,7 +11,6 @@
  *  [tabber tab="First Tab"]The performance of this processor ...[/tabber]
  *
  */
-
 namespace CampFirePixels\Tabber;
 
 add_shortcode( 'tabber', __NAMESPACE__ . '\process_the_shortcode' );
@@ -36,6 +35,8 @@ function process_the_shortcode( $user_defined_attributes, $content, $shortcode_n
    );
 
    // do the processing
+   $attributes['show_icon'] = esc_attr( $attributes['show_icon'] );
+
    if ( $content ) {
       $content = do_shortcode( $content ); // check for embedded shortcode
    }
@@ -60,6 +61,10 @@ function process_the_shortcode( $user_defined_attributes, $content, $shortcode_n
 function get_shortcode_configuration( $shortcode_name ) {
    $config = array (
       'view' => __DIR__ . '/views/' . $shortcode_name . '.php',
+      'defaults' => array(
+         'show_icon' => 'dashicons dashicons-arrow-down-alt2',
+         'hide_icon' => 'dashicons dashicons-arrow-up-alt2',
+      ),
    );
 
    if ( $shortcode_name == 'tabber' ) {

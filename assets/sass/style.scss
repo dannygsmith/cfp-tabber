@@ -11,56 +11,64 @@
 	License URI: http://www.gnu.org/licenses/gpl-2.0.html
 */
 
-.sampleClass {
-   float: none;
+.dashicons, .dashicons-before:before {
+   -moz-osx-font-smoothing: grayscale;
+   -webkit-font-smoothing:  antialiased;
+   -webkit-transition:      color .1s ease-in 0;
+   display:                 inline-block;
+   font-family:             dashicons;
+   font-size:               16px;
+   font-style:              normal;
+   font-weight:             400;
+   height:                  unset;
+   line-height:             1;
+   text-align:              left;
+   text-decoration:         inherit;
+   transition:              color .1s ease-in 0;
+   vertical-align:          top;
+   width:                   100%;
 }
 
 .tabber-wrapper {
-   position: relative;
+   font-family:   'Lato', sans-serif;
+   font-weight:   400;
+   position:      relative;
    margin-bottom: 70px;
 }
 
 // dl,
 .tabber--container {
-   margin: 0;
+   margin:  0;
    padding: 0;
-   width: 100%;
+   width:   100%;
 }
 
 // dt
 .tabber--tab {
    background-color: #ccc;
-   color: #333;
-   padding:  6px 15px;
-   font-weight: bold;
-   text-transform: uppercase;
-   //border: 1px solid #aaa #aaa #ccc;
-   border-left:      1px solid #aaa;
-   border-right:     1px solid #aaa;
-   border-top:       1px solid #aaa;
+   color:            #333;
+   padding:          6px 15px;
+   font-weight:      bold;
+   text-transform:   uppercase;
+   border:           1px solid #aaa;
    border-bottom:    1px solid #ccc;
+   width:            100%;
 }
 
 // dd,
 .tabber--content {
-   margin: 0;
-   background: #eee;
-   padding: 20px;
+   margin:        0;
+   background:    #eee;
+   padding:       20px;
    border-left:   1px solid #ccc;
    border-right:  1px solid #ccc;
    border-bottom: 1px solid #ccc;
 }
 
-
-
-@media only screen and ( min-width: 768px ) {
-
-   .sampleClass {
-      float: left;
-   }
+@media only screen and (min-width: 768px) {
 
    .tabber-wrapper {
-      position: relative;
+      position:      relative;
       margin-bottom: 70px;
    }
 
@@ -68,39 +76,39 @@
    .tabber--container {
       -webkit-margin-after:  0;
       -webkit-margin-before: 0;
-      display: inline-flex;
-      flex-wrap: nowrap;
-      justify-content: flex-start;
-      margin:  0;
-      padding: 0;
-      width: auto;
+      display:               inline-flex;
+      flex-wrap:             nowrap;
+      justify-content:       flex-start;
+      margin:                0;
+      padding:               0;
+      width:                 auto;
    }
 
    // dt
    .tabber--tab {
-      background-color: #eee;
-      border: 1px solid #ccc;
+      background-color:        #eee;
+      border:                  1px solid #ccc;
       border-top-left-radius:  5px;
       border-top-right-radius: 5px;
-      cursor: pointer;
-      display: inline;
-      margin-right: 2px;
-      padding:  6px 15px;
-      vertical-align: top;
+      cursor:                  pointer;
+      display:                 inline;
+      margin-right:            2px;
+      padding:                 6px 15px;
+      vertical-align:          top;
    }
 
    // dd,
    .tabber--content {
       -webkit-margin-start: 0;
-      background-color: #ddd;
-      border: 1px solid #ccc;
-      color: #333;
-      left: 0;
-      overflow: hidden;
-      padding: 20px;
-      position: absolute;
-      top: 100%;
-      width: 100%;
-      z-index: 99;
+      background-color:     #ddd;
+      border:               1px solid #ccc;
+      color:                #333;
+      left:                 0;
+      overflow:             hidden;
+      padding:              20px;
+      position:             absolute;
+      top:                  100%;
+      width:                100%;
+      z-index:              99;
    }
 }
