@@ -23,6 +23,6 @@ To install this plugin, you can download it by clicking on the GitHub download b
 ## Continue Development
 If you want to continue development, you will need to have Composer, Gulp, Node.js, and npm installed on your machine.  
 
-1. Navigate to the `wp-content/plugins/collapsible-content` folder.  
+1. Navigate to the `wp-content/plugins/cfp-tabber` folder.  
 2. Type `npm install` to install all of the `node_modules` for Gulp.
 3. Type `composer install` to install the Composer PHP packages.

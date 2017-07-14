@@ -7,6 +7,8 @@
  * @author      Danny G Smith
  * @link        https://campfirepixels.com
  * @license     GNU-2.0+
+ *
+ * [tabber tab="First Tab"]The performance of this processor ...[/tabber]
  */
 
 namespace CampFirePixels\Tabber;
@@ -26,14 +28,6 @@ function enqueue_assets() {
    wp_enqueue_script(
       'tabber-plugin-script',
       TABBER_URL . 'assets/dist/js/jquery.plugin.js',
-      array ( 'jquery' ),
-      '0.1.0',
-      true
-   );
-
-   wp_enqueue_script(
-      'isMobile-plugin-script',
-      TABBER_URL . 'assets/js/isMobile.js',
       array ( 'jquery' ),
       '0.1.0',
       true

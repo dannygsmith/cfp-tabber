@@ -39,8 +39,8 @@
 
       // start by hiding all content
       for ( k = 0; k < length; k++ ) {
-         // hide
 
+         // when isMobile it is an accordion
          if ( isMobile() === true) {
             $( $tabberContents[ k ] ).slideUp();
 
@@ -49,11 +49,11 @@
          }
       }
 
-
       $isMobile = isMobile();
 
       if ( isMobile() === true ) {
-         // display current content of selected tab
+
+         // when isMobile it is an accordion
          $($tabberContents[index]).slideDown();
 
       } else {
@@ -67,7 +67,7 @@
       $isMobile = isMobile();
    });
 
-   //Function to the css rule
+   // check for media query 767px
    function isMobile() {
 
       if ( window.matchMedia( '(max-width: 767px)' ).matches ) {
@@ -82,7 +82,6 @@
 
    $(document).ready(function () {
       init();
-
    });
 
 })(jQuery, window, document);

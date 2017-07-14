@@ -17,13 +17,16 @@ add_shortcode( 'tabber', __NAMESPACE__ . '\process_the_shortcode' );
 /**
  * Process the Tabber Shortcode to build a list of Tabs.
  *
- * @since 1.0.0
+ * @since 0.1.0
  *
  * @param array|string $user_defined_attributes User defined attributes for this shortcode instance
  * @param string|null  $content                 Content between the opening and closing shortcode elements
  * @param string       $shortcode_name          Name of the shortcode
  *
  * @return string
+ *
+ * [tabber tab="First Tab"]The performance of this processor ...[/tabber]
+ *
  */
 function process_the_shortcode( $user_defined_attributes, $content, $shortcode_name ) {
    $config = get_shortcode_configuration( $shortcode_name );
@@ -34,12 +37,17 @@ function process_the_shortcode( $user_defined_attributes, $content, $shortcode_n
       $shortcode_name
    );
 
+   //d( $attributes );
+
+
    // do the processing
-   $attributes['show_icon'] = esc_attr( $attributes['show_icon'] );
+   $attributes['showIcon'] = esc_attr( $attributes['showIcon'] );
+   $attributes['hideIcon'] = esc_attr( $attributes['hideIcon'] );
 
    if ( $content ) {
       $content = do_shortcode( $content ); // check for embedded shortcode
    }
+
 
    // Call the view file, capture it into the output buffer, and then return it.
    ob_start();
@@ -75,14 +83,14 @@ function get_shortcode_configuration( $shortcode_name ) {
    $config = array (
       'view' => __DIR__ . '/views/' . $shortcode_name . '.php',
       'defaults' => array(
-         'show_icon' => 'dashicons dashicons-arrow-down-alt2',
-         'hide_icon' => 'dashicons dashicons-arrow-up-alt2',
+         'showIcon' => 'dashicons dashicons-arrow-down-alt2',
+         'hideIcon' => 'dashicons dashicons-arrow-up-alt2',
       ),
    );
 
-   if ( $shortcode_name == 'tabber' ) {
+   //if ( $shortcode_name == 'tabber' ) {
       $config[ 'defaults' ][ 'tab' ] = '';
-   }
+   //}
 
    return $config;
 }
