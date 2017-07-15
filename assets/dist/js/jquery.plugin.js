@@ -23,9 +23,9 @@
       // open first tab content on document ready
       var index = 0;
       $( $tabberContents[ index ] ).css( "display", "block");
-      //$( $theIcons[ index ] )
-      //   .removeClass( $( $theIcons[ index ] ).data( 'showIcon' ) )
-      //   .addClass(    $( $theIcons[ index ] ).data( 'hideIcon' ) );
+      $( $theIcons[ index ] )
+         .removeClass( $( $theIcons[ index ] ).data( 'showIcon' ) )
+         .addClass(    $( $theIcons[ index ] ).data( 'hideIcon' ) );
 
       // wrap shortcodes with div wrapper
       $( $tabberContainer ).wrapAll( '<div class="tabber-wrapper">' );
@@ -76,16 +76,33 @@
       var $iconElement = $( $theIcons[ index ] ),
          show_icon     = $iconElement.data( 'showIcon' ),
          hide_icon     = $iconElement.data( 'hideIcon' ),
+         length                  = $tabberTabs.length,          // number of tabs
          removeClass,
-         addClass;
+         addClass,
+         k;
+      //console.log( 'hello Danny!' );
+      //console.log( $( $theIcons[ index ] ).data( 'showIcon' ) );
+      for ( k = 0; k < length; k++ ) {
+         //console.log(  $( $theIcons[ k ] ).data( 'showIcon' ) );
 
-      //console.log( $iconElement );
+         if ( $( $theIcons[ k ] ).data( 'showIcon' ) === 'fa fa-caret-left' ) {
+            $( $theIcons[ k ] )
+            .removeClass( $( $theIcons[ k ] ).data( 'hideIcon' ) )
+            .addClass(    $( $theIcons[ k ] ).data( 'showIcon' ) );
+            //console.log(  $( $theIcons[ k ] ).data( 'showIcon' ) );
+
+         }
+      }
 
       if ( isTabberContentsShowing ) {
-         addClass    = show_icon;
+         //console.log( 'isTabberContentsShowing' );
+
          removeClass = hide_icon;
+         addClass    = show_icon;
 
       } else {
+         //console.log( 'not isTabberContentsShowing' );
+
          addClass    = hide_icon;
          removeClass = show_icon;
       }
