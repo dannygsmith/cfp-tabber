@@ -25,20 +25,20 @@ function enqueue_assets() {
 
    wp_enqueue_style('dashicons');
 
+   wp_enqueue_style(
+      'font-awesome',
+      'https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css',
+      array (),
+      CHILD_THEME_VERSION,
+      'all' );
+
+
    wp_enqueue_script(
       'tabber-plugin-script',
       TABBER_URL . 'assets/dist/js/jquery.plugin.js',
       array ( 'jquery' ),
       '0.1.0',
       true
-   );
-
-   wp_enqueue_script(
-      'jsCookie-plugin-script',
-      TABBER_URL . 'node_modules/js-cookie/src/js.cookie.js',
-      array ( 'jquery' ),
-      '0.1.0',
-      false
    );
 
    wp_enqueue_style( 'tabber-plugin-style',

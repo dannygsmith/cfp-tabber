@@ -39,15 +39,13 @@ function process_the_shortcode( $user_defined_attributes, $content, $shortcode_n
 
    //d( $attributes );
 
-
    // do the processing
-   $attributes['showIcon'] = esc_attr( $attributes['showIcon'] );
-   $attributes['hideIcon'] = esc_attr( $attributes['hideIcon'] );
+   $attributes['show_icon'] = esc_attr( $attributes['show_icon'] );
+   $attributes['hide_icon'] = esc_attr( $attributes['hide_icon'] );
 
    if ( $content ) {
       $content = do_shortcode( $content ); // check for embedded shortcode
    }
-
 
    // Call the view file, capture it into the output buffer, and then return it.
    ob_start();
@@ -68,29 +66,15 @@ function process_the_shortcode( $user_defined_attributes, $content, $shortcode_n
  */
 function get_shortcode_configuration( $shortcode_name ) {
 
-   $isMobile = strip_tags( trim( $_COOKIE[ "tabber_cookie" ] ) );
-
-   if ( $isMobile === 'true' ) {
-      $shortcode_name = 'accordion';
-
-   } else {
-
-      $shortcode_name = 'tabber';
-   }
-
-   //d( $_COOKIE );
-
    $config = array (
       'view' => __DIR__ . '/views/' . $shortcode_name . '.php',
       'defaults' => array(
-         'showIcon' => 'dashicons dashicons-arrow-down-alt2',
-         'hideIcon' => 'dashicons dashicons-arrow-up-alt2',
+         'show_icon' => 'fa fa-caret-left',
+         'hide_icon' => 'fa fa-caret-down',
       ),
    );
 
-   //if ( $shortcode_name == 'tabber' ) {
-      $config[ 'defaults' ][ 'tab' ] = '';
-   //}
+   $config[ 'defaults' ][ 'tab' ] = '';
 
    return $config;
 }

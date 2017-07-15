@@ -5,10 +5,10 @@
    var $tabberTabs;      // array of cached tab labels
    var $tabberContents;  // array of cached contents
 
-   var $isMobile;
-
-   $isMobile = isMobile();
-   Cookies.set( 'tabber_cookie', $isMobile );
+   //var $isMobile;
+//
+   //$isMobile = isMobile();
+   //Cookies.set( 'tabber_cookie', $isMobile );
 
    /**
     * Initializes all scripts via document ready function
@@ -27,6 +27,16 @@
       var index = 0;
       $( $tabberContents[ index ] ).css( "display", "block");
 
+
+
+      $(':not(.tabber--container) + .tabber--container, * > .tabber--container:first-of-type').
+      each(function() {
+         $(this).
+         nextUntil(':not(.tabber--container)').
+         addBack().
+         wrapAll('<div class="selected" />');
+      });
+
       // wrap shortcodes with div wrapper
       $( $tabberContainer ).wrapAll( '<div class="tabber-wrapper">' );
    };
@@ -35,13 +45,14 @@
 
       var index                 = $tabberTabs.index ( this ),  // current index
           k                     = 0,                           // var used as index into tabs
-          length                = $tabberTabs.length;          // number of tabs
+          length                = $tabberTabs.length,          // number of tabs
+          query                 = Modernizr.mq( '( max-width: 767px )' );
 
       // start by hiding all content
       for ( k = 0; k < length; k++ ) {
 
          // when isMobile it is an accordion
-         if ( isMobile() === true) {
+         if ( query ) {
             $( $tabberContents[ k ] ).slideUp();
 
          } else {
@@ -49,11 +60,10 @@
          }
       }
 
-      $isMobile = isMobile();
+      //$isMobile = isMobile();
 
-      if ( isMobile() === true ) {
+      if ( query ) { //  it is an accordion
 
-         // when isMobile it is an accordion
          $($tabberContents[index]).slideDown();
 
       } else {
@@ -61,27 +71,30 @@
       }
    };
 
-   $( window ).resize(function() {
-      location.reload(true);
-      location.reload(true);
-      $isMobile = isMobile();
-   });
+   //$( window ).resize(function() {
+   //   location.reload(true);
+   //   location.reload(true);
+   //   $isMobile = isMobile();
+   //});
 
    // check for media query 767px
-   function isMobile() {
-
-      if ( window.matchMedia( '(max-width: 767px)' ).matches ) {
-         //console.log ( true );
-         return true;
-
-      } else {
-         //console.log ( false );
-         return false;
-      }
-   }
+   //function isMobile() {
+//
+   //   if ( window.matchMedia( '(max-width: 767px)' ).matches ) {
+   //      //console.log ( true );
+   //      return true;
+//
+   //   } else {
+   //      //console.log ( false );
+   //      return false;
+   //   }
+   //}
 
    $(document).ready(function () {
       init();
+
+
+
    });
 
 })(jQuery, window, document);

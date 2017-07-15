@@ -11,6 +11,18 @@
 	License URI: http://www.gnu.org/licenses/gpl-2.0.html
 */
 
+/* Define the "system" font family */
+@font-face {
+   font-family: system;
+   font-style:  normal;
+   font-weight: 300;
+   src: local(".SFNSText-Light"), local(".HelveticaNeueDeskInterface-Light"), local(".LucidaGrandeUI"), local("Ubuntu Light"), local("Segoe UI Light"), local("Roboto-Light"), local("DroidSans"), local("Tahoma");
+}
+
+body {
+   font-family: "system";
+}
+
 .dashicons, .dashicons-before:before {
    -moz-osx-font-smoothing: grayscale;
    -webkit-font-smoothing:  antialiased;
@@ -30,8 +42,8 @@
 }
 
 .tabber-wrapper {
-   font-family:   'Lato', sans-serif;
-   font-weight:   400;
+   font-family:   system;
+   //font-weight:   400;
    position:      relative;
    margin-bottom: 70px;
 }
@@ -45,14 +57,21 @@
 
 // dt
 .tabber--tab {
+   align-items:      center;
    background-color: #ccc;
-   color:            #333;
-   padding:          6px 15px;
-   font-weight:      bold;
-   text-transform:   uppercase;
    border:           1px solid #aaa;
    border-bottom:    1px solid #ccc;
+   color:            #333;
+   display:          flex;
+   font-weight:      bold;
+   justify-content:  space-between;
+   padding:          6px 15px;
+   text-transform:   uppercase;
    width:            100%;
+}
+
+.tabber-content--icon {
+   font-size: 28px;
 }
 
 // dd,
@@ -93,8 +112,14 @@
       cursor:                  pointer;
       display:                 inline;
       margin-right:            2px;
-      padding:                 6px 15px;
+      padding:                 6px 15px 10px;
+      text-transform:          capitalize;
       vertical-align:          top;
+   }
+
+   .tabber-content--icon,
+   .dashicons-arrow-down-alt2:before  {
+      display: none;
    }
 
    // dd,
