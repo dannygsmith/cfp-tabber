@@ -27,8 +27,16 @@
          .removeClass( $( $theIcons[ index ] ).data( 'showIcon' ) )
          .addClass(    $( $theIcons[ index ] ).data( 'hideIcon' ) );
 
-      // wrap shortcodes with div wrapper
-      $( $tabberContainer ).wrapAll( '<div class="tabber-wrapper">' );
+      // strip <br /> out thank you wpautop!!!!!!!!
+      $( 'br' ).remove();
+
+      $(':not(.tabber--container) + .tabber--container, * > .tabber--container:first-of-type').
+      each(function() {
+         $(this).
+         nextUntil(':not(.tabber--container)').
+         addBack().
+         wrapAll('<div class="tabber-wrapper">');
+      });
    };
 
    var clickHandler = function ( event ) {
@@ -38,14 +46,13 @@
           isTabberContentsShowing = $tabberContent.is(':visible'),
           k                       = 0,                           // var used as index into tabs
           length                  = $tabberTabs.length,          // number of tabs
-          query                   = Modernizr.mq( '( max-width: 767px )' );
+          isMobile                = Modernizr.mq( '( max-width: 767px )' );
 
       // start by hiding all content
       for ( k = 0; k < length; k++ ) {
 
          // check for an accordion
-         if ( query ) {
-            //changeIcon( index, isTabberContentsShowing );
+         if ( isMobile ) {
             $( $tabberContents[ k ] ).slideUp();
 
          } else {
@@ -53,15 +60,13 @@
          }
       }
 
-      if ( query ) { //  it is an accordion
+      if ( isMobile ) { //  it is an accordion
 
          if ( isTabberContentsShowing ) {
             $( $tabberContents[ index ] ).slideUp();
-            //changeIcon( index, isTabberContentsShowing );
 
          } else {
             $( $tabberContents[ index ] ).slideDown();
-            //changeIcon( index, isTabberContentsShowing );
          }
 
          changeIcon( index, isTabberContentsShowing );
@@ -69,7 +74,6 @@
       } else {
          $( $tabberContents[ index ] ).css( "display", "block");
       }
-
    };
 
    function changeIcon( index, isTabberContentsShowing ) {
@@ -80,29 +84,20 @@
          removeClass,
          addClass,
          k;
-      //console.log( 'hello Danny!' );
-      //console.log( $( $theIcons[ index ] ).data( 'showIcon' ) );
-      for ( k = 0; k < length; k++ ) {
-         //console.log(  $( $theIcons[ k ] ).data( 'showIcon' ) );
 
+      for ( k = 0; k < length; k++ ) {
          if ( $( $theIcons[ k ] ).data( 'showIcon' ) === 'fa fa-caret-left' ) {
             $( $theIcons[ k ] )
             .removeClass( $( $theIcons[ k ] ).data( 'hideIcon' ) )
             .addClass(    $( $theIcons[ k ] ).data( 'showIcon' ) );
-            //console.log(  $( $theIcons[ k ] ).data( 'showIcon' ) );
-
          }
       }
 
       if ( isTabberContentsShowing ) {
-         //console.log( 'isTabberContentsShowing' );
-
          removeClass = hide_icon;
          addClass    = show_icon;
 
       } else {
-         //console.log( 'not isTabberContentsShowing' );
-
          addClass    = hide_icon;
          removeClass = show_icon;
       }
