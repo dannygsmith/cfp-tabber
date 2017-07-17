@@ -1,4 +1,4 @@
-<dl class="tabber--container tabber">
+<dl class="tabber--container">
 	<dt class="tabber--tab">
       <span class="tabber-content--content"><?php esc_html_e( $attributes['tab'] ); ?></span>
       <span class="tabber-content--icon <?php echo $attributes['show_icon']; ?>"

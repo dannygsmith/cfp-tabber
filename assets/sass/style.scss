@@ -41,7 +41,7 @@ body {
    width:                   100%;
 }
 
-.tabber-wrapper {
+.tabber--wrapper {
    font-family:   system;
    //font-weight:   400;
    position:      relative;
@@ -86,7 +86,7 @@ body {
 
 @media only screen and (min-width: 768px) {
 
-   .tabber-wrapper {
+   .tabber--wrapper {
       position:      relative;
       margin-bottom: 70px;
    }
