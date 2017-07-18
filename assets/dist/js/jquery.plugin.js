@@ -24,6 +24,8 @@
          clickHandler                  // named function
       );
 
+      console.log( '$tabberContainer: ' + $tabberContainer );
+
       // strip <br /> out thank you wpautop!!!!!!!!
       $( 'br' ).remove();
 
