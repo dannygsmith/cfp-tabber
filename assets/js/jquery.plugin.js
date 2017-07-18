@@ -46,9 +46,9 @@
          var $tabberContents2  = $tabberTabs2.next();
          var $theIcons         = $tabberTabs2.find('.tabber-content--icon');
 
-         //console.log( "tabLength: " + $tabLength );
-         //console.log( 'wrapperId: ' + $wrapperId );
-         //console.log( $theIcons );
+         console.log( "tabLength: " + $tabLength );
+         console.log( 'wrapperId: ' + $wrapperId );
+         console.log( $theIcons );
 
          // open first tab content on document ready
          $( $tabberContents2[ 0 ] ).css( "display", "block" );
