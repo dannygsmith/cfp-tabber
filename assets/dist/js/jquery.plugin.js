@@ -43,15 +43,17 @@
          var $tabberContents2  = $tabberTabs2.next();
          var $theIcons         = $tabberTabs2.find('.tabber-content--icon');
 
-         console.log( 'k: ' + k );
-
          // open first tab content on load
-         $( $tabberContents2[ 0 ] ).css( "display", "block" );
+         //$( $tabberContents[ index ] ).css( "display", "block");
+
          $( $theIcons[ index ] )
             .removeClass( $( $theIcons[ index ] ).data( 'showIcon' ) )
             .addClass(    $( $theIcons[ index ] ).data( 'hideIcon' ) );
 
          $( $tabberContainer2[ 0 ] ).addClass( 'activated' );
+         $( $tabberContents2[ 0 ] ).css( "display", "block" );
+
+         console.log( 'k: ' + k );
       }
    };
 
@@ -67,60 +69,45 @@
       var isTabberContentsShowing;
       var isMobile;
       var $wrapperId;
-      var $tabberTabs2;
-      var $iconElement;
-      var $theContainer;
-      var $theContent;
 
       index                   = $tabberTabs.index ( this );  // current index
       $tabberContent          = $( $tabberContents[ index ] );
       isTabberContentsShowing = $tabberContent.is(':visible');
       isMobile                = Modernizr.mq( '( max-width: 767px )' );
-      $wrapperId        = $( $tabberContents[ index ] ).closest("div").prop("id");
-      $tabberTabs2      = jQuery( '#' + $wrapperId + ' .tabber--tab' );
-      //var $tabberContents2  = $tabberTabs2.next();
-      $iconElement      = jQuery( '.tabber--wrapper.selected .tabber--container.activated .tabber-content--icon' );
-      $theContainer     = jQuery( '.tabber--wrapper.selected .tabber--container.activated' );
-      $theContent       = jQuery( '.tabber--wrapper.selected .tabber--container.activated .tabber--content' );
+      $wrapperId              = $( $tabberContents[ index ] ).closest("div").prop("id");
 
       // Temporarily add class to the outer wrapper
       $( '#' + $wrapperId ).addClass( 'selected' );
 
       if ( isMobile ) { //  it is an accordion
 
-         console.log ( 'isMobile' );
-
          // remove old content
          jQuery( '.tabber--wrapper.selected .tabber--container.activated .tabber--content' ).slideUp();
-         console.log( '$theContent.slideUp();' );
 
       } else {
          // remove old content
          jQuery( '.tabber--wrapper.selected .tabber--container.activated .tabber--content' ).css( "display", "none");
       }
 
-      jQuery( '.tabber--wrapper.selected .tabber--container.activated .tabber-content--icon' ).removeClass( 'showIcon' ).addClass( 'hideIcon' );
+      changeIcon( index, isTabberContentsShowing );
 
       jQuery( '.tabber--wrapper.selected .tabber--container.activated' ).removeClass( 'activated' );
 
-
-
       // activate new tab
-      //$theContainer.addClass( 'activated' );
       $( $tabberContainer[ $tabberTabs.index( this ) ] ).addClass( 'activated' );
 
       if ( isMobile ) { //  it is an accordion
 
          $( $tabberContents[ index ] ).slideDown();
-         //$theContent.slideDown();
       } else {
 
-         //$theContent.css( "display", "block");
          $( $tabberContents[ index ] ).css( "display", "block");
       }
 
-      $iconElement.removeClass( 'hideIcon' ).addClass( 'showIcon' );
+      changeIcon( index, isTabberContentsShowing );
 
+      // remove Temporarily class to the outer wrapper
+      $( '#' + $wrapperId ).removeClass( 'selected' );
    };
 
 
