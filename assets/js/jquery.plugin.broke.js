@@ -42,7 +42,7 @@
       var $tabbers = jQuery('.tabber--container .tabber--tab');
 
       for ( j = 0; j < $('.tabber--container').length; j++, k++ ) {
-         $( $tabbers[ k ] ) .attr( 'id', 'tabber--tab-' + j );
+         $( $tabbers[ k ] ) .attr( 'id', 'tabber--tab-' + k );
       }
 
       //  loops through each group of tabbers
@@ -74,23 +74,21 @@
       index                   = $tabberTabs.index ( this );  // current index
       $tabberContent          = $( $tabberContents[ index ] );
       $tabberTab              = $( '.tabber--tab.current--tab' );
-      $tabber                 = $( $tabberContainer[ index ] ).closest("dt").prop("id");
+      //$tabber                 = $( $tabberContainer[ index ] ).closest("dt").prop("id");
+      $tabber                 = $( $tabberTabs ).closest("dt").prop("id");
       isTabberContentsShowing = $tabberContent.is(':visible');
       isMobile                = Modernizr.mq( '( max-width: 767px )' );
       $wrapperId              = $( $tabberContents[ index ] ).closest("div").prop("id");
-      //$tabber               = $( $tabber[ index ] ).closest("dl").prop("id");
+      //$tabber                 = $( $tabber[ index ] ).closest("dl").prop("id");
       $iconElement            = $( $theIcons[ index ] );
       showIcon                = $iconElement.data( 'showIcon' );
       hideIcon                = $iconElement.data( 'hideIcon' );
-
-      console.log( '$tabber: ' + $tabber );
 
       //var str = JSON.stringify( $tabber, null, 3 ); // (Optional) beautiful indented output.
       //console.log( 'str: ' + str )
 
       // Temporarily add class to the outer wrapper
       $( '#' + $wrapperId ).addClass( 'selected' );
-
 
       if ( isMobile ) { //  it is an accordion
          changeIcon( index, isTabberContentsShowing );
@@ -100,12 +98,8 @@
          jQuery( '.tabber--wrapper.selected .tabber--container.activated .tabber--content' ).slideUp();
 
       } else {
-
-         console.log( $tabberTab[ index ] );
-
-         //var $tabberCurrent   = $( '#' + $wrapperId + ' #' +  $tabberTab[ index ] ).closest("dt").prop("id");
-
-         //console.log( '$tabberCurrent: ' + '#' + $tabberCurrent );
+         console.log( '#' + $tabber );
+         console.log( '#============' );
 
          // remove old content
          jQuery( '#' + $tabber ).removeClass( 'current--tab' );
@@ -117,7 +111,7 @@
       // activate new tab
       $( $tabberContainer[ $tabberTabs.index( this ) ] ).addClass( 'activated' );
       var $tabberId = $( '.tabber--wrapper.selected .tabber--container.activated .tabber--tab' ).closest("dt").prop("id");
-      console.log( '$tabberId:  #' + $tabberId );
+      console.log( '#' + $tabberId );
 
 
       jQuery( '.tabber--wrapper.selected .tabber--container.activated .tabber--tab' ).addClass( 'current--tab' );
@@ -149,7 +143,7 @@
          removeClass, addClass,
          isMobile = Modernizr.mq( '( max-width: 767px )' );
 
-      //console.log ( 'isHiddenContentShowing: ' + isHiddenContentShowing );
+      console.log ( 'isHiddenContentShowing: ' + isHiddenContentShowing );
 
       if ( isHiddenContentShowing ) {
          addClass    = showIcon;

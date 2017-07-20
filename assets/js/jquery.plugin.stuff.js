@@ -74,7 +74,7 @@
       index                   = $tabberTabs.index ( this );  // current index
       $tabberContent          = $( $tabberContents[ index ] );
       $tabberTab              = $( '.tabber--tab.current--tab' );
-      $tabber                 = $( $tabberContainer[ index ] ).closest("dt").prop("id");
+      //$tabber                 = $( $tabberContainer[ index ] ).closest("dt").prop("id");
       isTabberContentsShowing = $tabberContent.is(':visible');
       isMobile                = Modernizr.mq( '( max-width: 767px )' );
       $wrapperId              = $( $tabberContents[ index ] ).closest("div").prop("id");
@@ -82,8 +82,6 @@
       $iconElement            = $( $theIcons[ index ] );
       showIcon                = $iconElement.data( 'showIcon' );
       hideIcon                = $iconElement.data( 'hideIcon' );
-
-      console.log( '$tabber: ' + $tabber );
 
       //var str = JSON.stringify( $tabber, null, 3 ); // (Optional) beautiful indented output.
       //console.log( 'str: ' + str )
@@ -100,12 +98,9 @@
          jQuery( '.tabber--wrapper.selected .tabber--container.activated .tabber--content' ).slideUp();
 
       } else {
+         $tabber = $( '#' + $wrapperId + ' .tabber--tab.current--tab' ).closest("dt").prop("id");
 
-         console.log( $tabberTab[ index ] );
-
-         //var $tabberCurrent   = $( '#' + $wrapperId + ' #' +  $tabberTab[ index ] ).closest("dt").prop("id");
-
-         //console.log( '$tabberCurrent: ' + '#' + $tabberCurrent );
+         console.log( 'current: ' + '#' + $wrapperId + ' #' +  $tabber  );
 
          // remove old content
          jQuery( '#' + $tabber ).removeClass( 'current--tab' );

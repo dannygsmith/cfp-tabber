@@ -5,7 +5,7 @@
    var $tabberTabs;      // array of cached tab labels
    var $tabberContents;  // array of cached contents
    var $theIcons;
-   var j, k;
+   var k;
 
    /**
     * Initializes all scripts via document ready function
@@ -36,14 +36,18 @@
          wrapAll('<div class="tabber--wrapper" id="tabber--wrapper-' + $counter++ + '">');
       });
 
-      j = 0;
-      k = 0;
+      var j = 0;
 
-      var $tabbers = jQuery('.tabber--container .tabber--tab');
-
-      for ( j = 0; j < $('.tabber--container').length; j++, k++ ) {
-         $( $tabbers[ k ] ) .attr( 'id', 'tabber--tab-' + j );
+      console.log( 'jQuery(".tabber--container").length: ' + jQuery(".tabber--container").length );
+      for ( j = 0; j < $('.tabber--container').length; j++ ) {
+         $('.tabber--container')[ k ].attr( 'id', 'tabber--container-' + j );
+         console.log( 'j: ' + j );
       }
+      //for ( var j = 0; j < jQuery('.tabber--container').length;  ) {
+      //   $( '.tabber--container' ).attr( 'id', 'tabber--container-' + j++ );
+      //}
+
+      console.log( jQuery('.tabber--container').length );
 
       //  loops through each group of tabbers
       for ( k = 0; k < jQuery('div.tabber--wrapper').length; k++ ) {
@@ -60,8 +64,6 @@
    var clickHandler = function ( event ) {
 
       var index;
-      var $tabber;
-      var $tabberTab;
       var $tabberContent;
       var isTabberContentsShowing;
       var isMobile;
@@ -69,28 +71,18 @@
       var $iconElement;
       var showIcon;
       var hideIcon;
-      $tabberContainer        = jQuery( '.tabber--container' );
 
       index                   = $tabberTabs.index ( this );  // current index
       $tabberContent          = $( $tabberContents[ index ] );
-      $tabberTab              = $( '.tabber--tab.current--tab' );
-      $tabber                 = $( $tabberContainer[ index ] ).closest("dt").prop("id");
       isTabberContentsShowing = $tabberContent.is(':visible');
       isMobile                = Modernizr.mq( '( max-width: 767px )' );
       $wrapperId              = $( $tabberContents[ index ] ).closest("div").prop("id");
-      //$tabber               = $( $tabber[ index ] ).closest("dl").prop("id");
       $iconElement            = $( $theIcons[ index ] );
       showIcon                = $iconElement.data( 'showIcon' );
       hideIcon                = $iconElement.data( 'hideIcon' );
 
-      console.log( '$tabber: ' + $tabber );
-
-      //var str = JSON.stringify( $tabber, null, 3 ); // (Optional) beautiful indented output.
-      //console.log( 'str: ' + str )
-
       // Temporarily add class to the outer wrapper
       $( '#' + $wrapperId ).addClass( 'selected' );
-
 
       if ( isMobile ) { //  it is an accordion
          changeIcon( index, isTabberContentsShowing );
@@ -101,14 +93,8 @@
 
       } else {
 
-         console.log( $tabberTab[ index ] );
-
-         //var $tabberCurrent   = $( '#' + $wrapperId + ' #' +  $tabberTab[ index ] ).closest("dt").prop("id");
-
-         //console.log( '$tabberCurrent: ' + '#' + $tabberCurrent );
-
          // remove old content
-         jQuery( '#' + $tabber ).removeClass( 'current--tab' );
+         jQuery( '.tabber--wrapper .tabber--container.activated .tabber--tab.current--tab' ).removeClass( 'current--tab' );
          jQuery( '.tabber--wrapper.selected .tabber--container.activated .tabber--content' ).css( "display", "none");
       }
 
@@ -116,10 +102,6 @@
 
       // activate new tab
       $( $tabberContainer[ $tabberTabs.index( this ) ] ).addClass( 'activated' );
-      var $tabberId = $( '.tabber--wrapper.selected .tabber--container.activated .tabber--tab' ).closest("dt").prop("id");
-      console.log( '$tabberId:  #' + $tabberId );
-
-
       jQuery( '.tabber--wrapper.selected .tabber--container.activated .tabber--tab' ).addClass( 'current--tab' );
 
       if ( isMobile ) { //  it is an accordion
@@ -149,7 +131,7 @@
          removeClass, addClass,
          isMobile = Modernizr.mq( '( max-width: 767px )' );
 
-      //console.log ( 'isHiddenContentShowing: ' + isHiddenContentShowing );
+      console.log ( 'isHiddenContentShowing: ' + isHiddenContentShowing );
 
       if ( isHiddenContentShowing ) {
          addClass    = showIcon;

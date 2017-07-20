@@ -117,6 +117,14 @@ body {
       vertical-align:          top;
    }
 
+   .current--tab {
+      background-color:     #bbdefb;
+      border:               1px solid #64b5f6;
+      color:                #333;
+      border-top-left-radius:  5px;
+      border-top-right-radius: 5px;
+   }
+
    .tabber-content--icon,
    .dashicons-arrow-down-alt2:before  {
       display: none;
