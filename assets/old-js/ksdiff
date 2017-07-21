@@ -1,0 +1,1814 @@
+diff --git a/assets/dist/css/style.css b/assets/dist/css/style.css
+index 4ff4d2e..93a4cdc 100644
+--- a/assets/dist/css/style.css
++++ b/assets/dist/css/style.css
+@@ -117,6 +117,13 @@ body {
+     text-transform: capitalize;
+     vertical-align: top;
+   }
++  .current--tab {
++    background-color: #bbdefb;
++    border: 1px solid #64b5f6;
++    color: #333;
++    border-top-left-radius: 5px;
++    border-top-right-radius: 5px;
++  }
+   .tabber-content--icon,
+   .dashicons-arrow-down-alt2:before {
+     display: none;
+@@ -136,4 +143,4 @@ body {
+   }
+ }
+ 
+-/*# sourceMappingURL=data:application/json;charset=utf8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInN0eWxlLnNjc3MiLCJzdHlsZS5jc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7Ozs7Ozs7Ozs7O0VBV0U7QUFFRixxQ0FBcUM7QUFDckM7RUFDRyxvQkFBb0I7RUFDcEIsbUJBQW9CO0VBQ3BCLGlCQUFpQjtFQUNqQixnTkFBcU07Q0NBdk07O0FER0Q7RUFDRyxzQkFBc0I7Q0FDeEI7O0FBRUQ7RUFDRyxtQ0FBbUM7RUFDbkMsb0NBQXFDO0VBQ3JDLHdDQUE2QztFQUM3QyxzQkFBc0M7RUFDdEMsdUJBQW1DO0VBQ25DLGdCQUE4QjtFQUM5QixtQkFBZ0M7RUFDaEMsaUJBQTZCO0VBQzdCLGNBQStCO0VBQy9CLGVBQTJCO0VBQzNCLGlCQUE4QjtFQUM5Qix5QkFBaUM7RUFDakMsZ0NBQTZDO0VBQzdDLG9CQUE2QjtFQUM3QixZQUE4QjtDQUNoQzs7QUFFRDtFQUNHLG9CQUFzQjtFQUV0QixtQkFBd0I7RUFDeEIsb0JBQW9CO0NBQ3RCOztBQUdEO0VBQ0csVUFBVztFQUNYLFdBQVc7RUFDWCxZQUFjO0NBQ2hCOztBQUdEO0VBQ0csMEJBQXlCO01BQXpCLHVCQUF5QjtVQUF6QixvQkFBeUI7RUFDekIsdUJBQXVCO0VBQ3ZCLHVCQUFpQztFQUNqQyw4QkFBaUM7RUFDakMsWUFBdUI7RUFDdkIscUJBQXVCO0VBQXZCLHFCQUF1QjtFQUF2QixjQUF1QjtFQUN2QixrQkFBdUI7RUFDdkIsMEJBQWdDO01BQWhDLHVCQUFnQztVQUFoQywrQkFBZ0M7RUFDaEMsa0JBQTJCO0VBQzNCLDBCQUE0QjtFQUM1QixZQUF1QjtDQUN6Qjs7QUFFRDtFQUNHLGdCQUFnQjtDQUNsQjs7QUFHRDtFQUNHLFVBQWlCO0VBQ2pCLGlCQUFvQjtFQUNwQixjQUFvQjtFQUNwQiw0QkFBOEI7RUFDOUIsNkJBQThCO0VBQzlCLDhCQUE4QjtDQUNoQzs7QUFFRDtFQUVHO0lBQ0csbUJBQXdCO0lBQ3hCLG9CQUFvQjtHQUN0QjtFQUdEO0lBQ0csd0JBQXlCO0lBQ3pCLHlCQUF5QjtJQUN6Qiw0QkFBbUM7SUFBbkMsNEJBQW1DO0lBQW5DLHFCQUFtQztJQUNuQyxzQkFBOEI7SUFBOUIsa0JBQThCO0lBQzlCLHdCQUFrQztJQUFsQyxxQkFBa0M7SUFBbEMsNEJBQWtDO0lBQ2xDLFVBQXlCO0lBQ3pCLFdBQXlCO0lBQ3pCLFlBQTRCO0dBQzlCO0VBR0Q7SUFDRyx1QkFBOEI7SUFDOUIsdUJBQXdDO0lBQ3hDLDRCQUE2QjtJQUM3Qiw2QkFBNkI7SUFDN0IsZ0JBQWlDO0lBQ2pDLGdCQUFnQztJQUNoQyxrQkFBNkI7SUFDN0IsdUJBQXVDO0lBQ3ZDLDJCQUFvQztJQUNwQyxvQkFBNkI7R0FDL0I7RUFFRDs7SUFFRyxjQUFjO0dBQ2hCO0VBR0Q7SUFDRyx3QkFBd0I7SUFDeEIsdUJBQTJCO0lBQzNCLHVCQUFxQztJQUNyQyxZQUEyQjtJQUMzQixRQUF3QjtJQUN4QixpQkFBNkI7SUFDN0IsY0FBMkI7SUFDM0IsbUJBQStCO0lBQy9CLFVBQTJCO0lBQzNCLFlBQTJCO0lBQzNCLFlBQXlCO0dBQzNCO0NDWkgiLCJmaWxlIjoic3R5bGUuY3NzIiwic291cmNlc0NvbnRlbnQiOlsiLypcblx0TmFtZTogQ2FtcEZpcmVQaXhlbHMgVGFiYmVyXG5cdFVSSTogaHR0cHM6Ly9jYW1wZmlyZXBpeGVscy5jb20vXG5cdERlc2NyaXB0aW9uOiBUaGlzIGlzIGEgcmVzcG9uc2l2ZSBUYWJiZXIgdGhhdCBjb252ZXJ0cyB0byBBY2NvcmRpb25cblx0QXV0aG9yOiBEYW5ueSBHIFNtaXRoXG5cdEF1dGhvciBVUkk6IGh0dHBzOi8vY2FtcGZpcmVwaXhlbHMuY29tL1xuXG5cdFZlcnNpb246IDAuMS4xXG5cblx0TGljZW5zZTogR1BMLTIuMCtcblx0TGljZW5zZSBVUkk6IGh0dHA6Ly93d3cuZ251Lm9yZy9saWNlbnNlcy9ncGwtMi4wLmh0bWxcbiovXG5cbi8qIERlZmluZSB0aGUgXCJzeXN0ZW1cIiBmb250IGZhbWlseSAqL1xuQGZvbnQtZmFjZSB7XG4gICBmb250LWZhbWlseTogc3lzdGVtO1xuICAgZm9udC1zdHlsZTogIG5vcm1hbDtcbiAgIGZvbnQtd2VpZ2h0OiAzMDA7XG4gICBzcmM6IGxvY2FsKFwiLlNGTlNUZXh0LUxpZ2h0XCIpLCBsb2NhbChcIi5IZWx2ZXRpY2FOZXVlRGVza0ludGVyZmFjZS1MaWdodFwiKSwgbG9jYWwoXCIuTHVjaWRhR3JhbmRlVUlcIiksIGxvY2FsKFwiVWJ1bnR1IExpZ2h0XCIpLCBsb2NhbChcIlNlZ29lIFVJIExpZ2h0XCIpLCBsb2NhbChcIlJvYm90by1MaWdodFwiKSwgbG9jYWwoXCJEcm9pZFNhbnNcIiksIGxvY2FsKFwiVGFob21hXCIpO1xufVxuXG5ib2R5IHtcbiAgIGZvbnQtZmFtaWx5OiBcInN5c3RlbVwiO1xufVxuXG4uZGFzaGljb25zLCAuZGFzaGljb25zLWJlZm9yZTpiZWZvcmUge1xuICAgLW1vei1vc3gtZm9udC1zbW9vdGhpbmc6IGdyYXlzY2FsZTtcbiAgIC13ZWJraXQtZm9udC1zbW9vdGhpbmc6ICBhbnRpYWxpYXNlZDtcbiAgIC13ZWJraXQtdHJhbnNpdGlvbjogICAgICBjb2xvciAuMXMgZWFzZS1pbiAwO1xuICAgZGlzcGxheTogICAgICAgICAgICAgICAgIGlubGluZS1ibG9jaztcbiAgIGZvbnQtZmFtaWx5OiAgICAgICAgICAgICBkYXNoaWNvbnM7XG4gICBmb250LXNpemU6ICAgICAgICAgICAgICAgMTZweDtcbiAgIGZvbnQtc3R5bGU6ICAgICAgICAgICAgICBub3JtYWw7XG4gICBmb250LXdlaWdodDogICAgICAgICAgICAgNDAwO1xuICAgaGVpZ2h0OiAgICAgICAgICAgICAgICAgIHVuc2V0O1xuICAgbGluZS1oZWlnaHQ6ICAgICAgICAgICAgIDE7XG4gICB0ZXh0LWFsaWduOiAgICAgICAgICAgICAgbGVmdDtcbiAgIHRleHQtZGVjb3JhdGlvbjogICAgICAgICBpbmhlcml0O1xuICAgdHJhbnNpdGlvbjogICAgICAgICAgICAgIGNvbG9yIC4xcyBlYXNlLWluIDA7XG4gICB2ZXJ0aWNhbC1hbGlnbjogICAgICAgICAgdG9wO1xuICAgd2lkdGg6ICAgICAgICAgICAgICAgICAgIDEwMCU7XG59XG5cbi50YWJiZXItLXdyYXBwZXIge1xuICAgZm9udC1mYW1pbHk6ICAgc3lzdGVtO1xuICAgLy9mb250LXdlaWdodDogICA0MDA7XG4gICBwb3NpdGlvbjogICAgICByZWxhdGl2ZTtcbiAgIG1hcmdpbi1ib3R0b206IDcwcHg7XG59XG5cbi8vIGRsLFxuLnRhYmJlci0tY29udGFpbmVyIHtcbiAgIG1hcmdpbjogIDA7XG4gICBwYWRkaW5nOiAwO1xuICAgd2lkdGg6ICAgMTAwJTtcbn1cblxuLy8gZHRcbi50YWJiZXItLXRhYiB7XG4gICBhbGlnbi1pdGVtczogICAgICBjZW50ZXI7XG4gICBiYWNrZ3JvdW5kLWNvbG9yOiAjY2NjO1xuICAgYm9yZGVyOiAgICAgICAgICAgMXB4IHNvbGlkICNhYWE7XG4gICBib3JkZXItYm90dG9tOiAgICAxcHggc29saWQgI2NjYztcbiAgIGNvbG9yOiAgICAgICAgICAgICMzMzM7XG4gICBkaXNwbGF5OiAgICAgICAgICBmbGV4O1xuICAgZm9udC13ZWlnaHQ6ICAgICAgYm9sZDtcbiAgIGp1c3RpZnktY29udGVudDogIHNwYWNlLWJldHdlZW47XG4gICBwYWRkaW5nOiAgICAgICAgICA2cHggMTVweDtcbiAgIHRleHQtdHJhbnNmb3JtOiAgIHVwcGVyY2FzZTtcbiAgIHdpZHRoOiAgICAgICAgICAgIDEwMCU7XG59XG5cbi50YWJiZXItY29udGVudC0taWNvbiB7XG4gICBmb250LXNpemU6IDI4cHg7XG59XG5cbi8vIGRkLFxuLnRhYmJlci0tY29udGVudCB7XG4gICBtYXJnaW46ICAgICAgICAwO1xuICAgYmFja2dyb3VuZDogICAgI2VlZTtcbiAgIHBhZGRpbmc6ICAgICAgIDIwcHg7XG4gICBib3JkZXItbGVmdDogICAxcHggc29saWQgI2NjYztcbiAgIGJvcmRlci1yaWdodDogIDFweCBzb2xpZCAjY2NjO1xuICAgYm9yZGVyLWJvdHRvbTogMXB4IHNvbGlkICNjY2M7XG59XG5cbkBtZWRpYSBvbmx5IHNjcmVlbiBhbmQgKG1pbi13aWR0aDogNzY4cHgpIHtcblxuICAgLnRhYmJlci0td3JhcHBlciB7XG4gICAgICBwb3NpdGlvbjogICAgICByZWxhdGl2ZTtcbiAgICAgIG1hcmdpbi1ib3R0b206IDcwcHg7XG4gICB9XG5cbiAgIC8vIGRsLFxuICAgLnRhYmJlci0tY29udGFpbmVyIHtcbiAgICAgIC13ZWJraXQtbWFyZ2luLWFmdGVyOiAgMDtcbiAgICAgIC13ZWJraXQtbWFyZ2luLWJlZm9yZTogMDtcbiAgICAgIGRpc3BsYXk6ICAgICAgICAgICAgICAgaW5saW5lLWZsZXg7XG4gICAgICBmbGV4LXdyYXA6ICAgICAgICAgICAgIG5vd3JhcDtcbiAgICAgIGp1c3RpZnktY29udGVudDogICAgICAgZmxleC1zdGFydDtcbiAgICAgIG1hcmdpbjogICAgICAgICAgICAgICAgMDtcbiAgICAgIHBhZGRpbmc6ICAgICAgICAgICAgICAgMDtcbiAgICAgIHdpZHRoOiAgICAgICAgICAgICAgICAgYXV0bztcbiAgIH1cblxuICAgLy8gZHRcbiAgIC50YWJiZXItLXRhYiB7XG4gICAgICBiYWNrZ3JvdW5kLWNvbG9yOiAgICAgICAgI2VlZTtcbiAgICAgIGJvcmRlcjogICAgICAgICAgICAgICAgICAxcHggc29saWQgI2NjYztcbiAgICAgIGJvcmRlci10b3AtbGVmdC1yYWRpdXM6ICA1cHg7XG4gICAgICBib3JkZXItdG9wLXJpZ2h0LXJhZGl1czogNXB4O1xuICAgICAgY3Vyc29yOiAgICAgICAgICAgICAgICAgIHBvaW50ZXI7XG4gICAgICBkaXNwbGF5OiAgICAgICAgICAgICAgICAgaW5saW5lO1xuICAgICAgbWFyZ2luLXJpZ2h0OiAgICAgICAgICAgIDJweDtcbiAgICAgIHBhZGRpbmc6ICAgICAgICAgICAgICAgICA2cHggMTVweCAxMHB4O1xuICAgICAgdGV4dC10cmFuc2Zvcm06ICAgICAgICAgIGNhcGl0YWxpemU7XG4gICAgICB2ZXJ0aWNhbC1hbGlnbjogICAgICAgICAgdG9wO1xuICAgfVxuXG4gICAudGFiYmVyLWNvbnRlbnQtLWljb24sXG4gICAuZGFzaGljb25zLWFycm93LWRvd24tYWx0MjpiZWZvcmUgIHtcbiAgICAgIGRpc3BsYXk6IG5vbmU7XG4gICB9XG5cbiAgIC8vIGRkLFxuICAgLnRhYmJlci0tY29udGVudCB7XG4gICAgICAtd2Via2l0LW1hcmdpbi1zdGFydDogMDtcbiAgICAgIGJhY2tncm91bmQtY29sb3I6ICAgICAjZGRkO1xuICAgICAgYm9yZGVyOiAgICAgICAgICAgICAgIDFweCBzb2xpZCAjY2NjO1xuICAgICAgY29sb3I6ICAgICAgICAgICAgICAgICMzMzM7XG4gICAgICBsZWZ0OiAgICAgICAgICAgICAgICAgMDtcbiAgICAgIG92ZXJmbG93OiAgICAgICAgICAgICBoaWRkZW47XG4gICAgICBwYWRkaW5nOiAgICAgICAgICAgICAgMjBweDtcbiAgICAgIHBvc2l0aW9uOiAgICAgICAgICAgICBhYnNvbHV0ZTtcbiAgICAgIHRvcDogICAgICAgICAgICAgICAgICAxMDAlO1xuICAgICAgd2lkdGg6ICAgICAgICAgICAgICAgIDEwMCU7XG4gICAgICB6LWluZGV4OiAgICAgICAgICAgICAgOTk7XG4gICB9XG59IiwiLypcblx0TmFtZTogQ2FtcEZpcmVQaXhlbHMgVGFiYmVyXG5cdFVSSTogaHR0cHM6Ly9jYW1wZmlyZXBpeGVscy5jb20vXG5cdERlc2NyaXB0aW9uOiBUaGlzIGlzIGEgcmVzcG9uc2l2ZSBUYWJiZXIgdGhhdCBjb252ZXJ0cyB0byBBY2NvcmRpb25cblx0QXV0aG9yOiBEYW5ueSBHIFNtaXRoXG5cdEF1dGhvciBVUkk6IGh0dHBzOi8vY2FtcGZpcmVwaXhlbHMuY29tL1xuXG5cdFZlcnNpb246IDAuMS4xXG5cblx0TGljZW5zZTogR1BMLTIuMCtcblx0TGljZW5zZSBVUkk6IGh0dHA6Ly93d3cuZ251Lm9yZy9saWNlbnNlcy9ncGwtMi4wLmh0bWxcbiovXG4vKiBEZWZpbmUgdGhlIFwic3lzdGVtXCIgZm9udCBmYW1pbHkgKi9cbkBmb250LWZhY2Uge1xuICBmb250LWZhbWlseTogc3lzdGVtO1xuICBmb250LXN0eWxlOiBub3JtYWw7XG4gIGZvbnQtd2VpZ2h0OiAzMDA7XG4gIHNyYzogbG9jYWwoXCIuU0ZOU1RleHQtTGlnaHRcIiksIGxvY2FsKFwiLkhlbHZldGljYU5ldWVEZXNrSW50ZXJmYWNlLUxpZ2h0XCIpLCBsb2NhbChcIi5MdWNpZGFHcmFuZGVVSVwiKSwgbG9jYWwoXCJVYnVudHUgTGlnaHRcIiksIGxvY2FsKFwiU2Vnb2UgVUkgTGlnaHRcIiksIGxvY2FsKFwiUm9ib3RvLUxpZ2h0XCIpLCBsb2NhbChcIkRyb2lkU2Fuc1wiKSwgbG9jYWwoXCJUYWhvbWFcIik7XG59XG5cbmJvZHkge1xuICBmb250LWZhbWlseTogXCJzeXN0ZW1cIjtcbn1cblxuLmRhc2hpY29ucywgLmRhc2hpY29ucy1iZWZvcmU6YmVmb3JlIHtcbiAgLW1vei1vc3gtZm9udC1zbW9vdGhpbmc6IGdyYXlzY2FsZTtcbiAgLXdlYmtpdC1mb250LXNtb290aGluZzogYW50aWFsaWFzZWQ7XG4gIC13ZWJraXQtdHJhbnNpdGlvbjogY29sb3IgLjFzIGVhc2UtaW4gMDtcbiAgZGlzcGxheTogaW5saW5lLWJsb2NrO1xuICBmb250LWZhbWlseTogZGFzaGljb25zO1xuICBmb250LXNpemU6IDE2cHg7XG4gIGZvbnQtc3R5bGU6IG5vcm1hbDtcbiAgZm9udC13ZWlnaHQ6IDQwMDtcbiAgaGVpZ2h0OiB1bnNldDtcbiAgbGluZS1oZWlnaHQ6IDE7XG4gIHRleHQtYWxpZ246IGxlZnQ7XG4gIHRleHQtZGVjb3JhdGlvbjogaW5oZXJpdDtcbiAgdHJhbnNpdGlvbjogY29sb3IgLjFzIGVhc2UtaW4gMDtcbiAgdmVydGljYWwtYWxpZ246IHRvcDtcbiAgd2lkdGg6IDEwMCU7XG59XG5cbi50YWJiZXItLXdyYXBwZXIge1xuICBmb250LWZhbWlseTogc3lzdGVtO1xuICBwb3NpdGlvbjogcmVsYXRpdmU7XG4gIG1hcmdpbi1ib3R0b206IDcwcHg7XG59XG5cbi50YWJiZXItLWNvbnRhaW5lciB7XG4gIG1hcmdpbjogMDtcbiAgcGFkZGluZzogMDtcbiAgd2lkdGg6IDEwMCU7XG59XG5cbi50YWJiZXItLXRhYiB7XG4gIGFsaWduLWl0ZW1zOiBjZW50ZXI7XG4gIGJhY2tncm91bmQtY29sb3I6ICNjY2M7XG4gIGJvcmRlcjogMXB4IHNvbGlkICNhYWE7XG4gIGJvcmRlci1ib3R0b206IDFweCBzb2xpZCAjY2NjO1xuICBjb2xvcjogIzMzMztcbiAgZGlzcGxheTogZmxleDtcbiAgZm9udC13ZWlnaHQ6IGJvbGQ7XG4gIGp1c3RpZnktY29udGVudDogc3BhY2UtYmV0d2VlbjtcbiAgcGFkZGluZzogNnB4IDE1cHg7XG4gIHRleHQtdHJhbnNmb3JtOiB1cHBlcmNhc2U7XG4gIHdpZHRoOiAxMDAlO1xufVxuXG4udGFiYmVyLWNvbnRlbnQtLWljb24ge1xuICBmb250LXNpemU6IDI4cHg7XG59XG5cbi50YWJiZXItLWNvbnRlbnQge1xuICBtYXJnaW46IDA7XG4gIGJhY2tncm91bmQ6ICNlZWU7XG4gIHBhZGRpbmc6IDIwcHg7XG4gIGJvcmRlci1sZWZ0OiAxcHggc29saWQgI2NjYztcbiAgYm9yZGVyLXJpZ2h0OiAxcHggc29saWQgI2NjYztcbiAgYm9yZGVyLWJvdHRvbTogMXB4IHNvbGlkICNjY2M7XG59XG5cbkBtZWRpYSBvbmx5IHNjcmVlbiBhbmQgKG1pbi13aWR0aDogNzY4cHgpIHtcbiAgLnRhYmJlci0td3JhcHBlciB7XG4gICAgcG9zaXRpb246IHJlbGF0aXZlO1xuICAgIG1hcmdpbi1ib3R0b206IDcwcHg7XG4gIH1cbiAgLnRhYmJlci0tY29udGFpbmVyIHtcbiAgICAtd2Via2l0LW1hcmdpbi1hZnRlcjogMDtcbiAgICAtd2Via2l0LW1hcmdpbi1iZWZvcmU6IDA7XG4gICAgZGlzcGxheTogaW5saW5lLWZsZXg7XG4gICAgZmxleC13cmFwOiBub3dyYXA7XG4gICAganVzdGlmeS1jb250ZW50OiBmbGV4LXN0YXJ0O1xuICAgIG1hcmdpbjogMDtcbiAgICBwYWRkaW5nOiAwO1xuICAgIHdpZHRoOiBhdXRvO1xuICB9XG4gIC50YWJiZXItLXRhYiB7XG4gICAgYmFja2dyb3VuZC1jb2xvcjogI2VlZTtcbiAgICBib3JkZXI6IDFweCBzb2xpZCAjY2NjO1xuICAgIGJvcmRlci10b3AtbGVmdC1yYWRpdXM6IDVweDtcbiAgICBib3JkZXItdG9wLXJpZ2h0LXJhZGl1czogNXB4O1xuICAgIGN1cnNvcjogcG9pbnRlcjtcbiAgICBkaXNwbGF5OiBpbmxpbmU7XG4gICAgbWFyZ2luLXJpZ2h0OiAycHg7XG4gICAgcGFkZGluZzogNnB4IDE1cHggMTBweDtcbiAgICB0ZXh0LXRyYW5zZm9ybTogY2FwaXRhbGl6ZTtcbiAgICB2ZXJ0aWNhbC1hbGlnbjogdG9wO1xuICB9XG4gIC50YWJiZXItY29udGVudC0taWNvbixcbiAgLmRhc2hpY29ucy1hcnJvdy1kb3duLWFsdDI6YmVmb3JlIHtcbiAgICBkaXNwbGF5OiBub25lO1xuICB9XG4gIC50YWJiZXItLWNvbnRlbnQge1xuICAgIC13ZWJraXQtbWFyZ2luLXN0YXJ0OiAwO1xuICAgIGJhY2tncm91bmQtY29sb3I6ICNkZGQ7XG4gICAgYm9yZGVyOiAxcHggc29saWQgI2NjYztcbiAgICBjb2xvcjogIzMzMztcbiAgICBsZWZ0OiAwO1xuICAgIG92ZXJmbG93OiBoaWRkZW47XG4gICAgcGFkZGluZzogMjBweDtcbiAgICBwb3NpdGlvbjogYWJzb2x1dGU7XG4gICAgdG9wOiAxMDAlO1xuICAgIHdpZHRoOiAxMDAlO1xuICAgIHotaW5kZXg6IDk5O1xuICB9XG59XG4iXX0= */
++/*# sourceMappingURL=data:application/json;charset=utf8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInN0eWxlLnNjc3MiLCJzdHlsZS5jc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7Ozs7Ozs7Ozs7O0VBV0U7QUFFRixxQ0FBcUM7QUFDckM7RUFDRyxvQkFBb0I7RUFDcEIsbUJBQW9CO0VBQ3BCLGlCQUFpQjtFQUNqQixnTkFBcU07Q0NBdk07O0FER0Q7RUFDRyxzQkFBc0I7Q0FDeEI7O0FBRUQ7RUFDRyxtQ0FBbUM7RUFDbkMsb0NBQXFDO0VBQ3JDLHdDQUE2QztFQUM3QyxzQkFBc0M7RUFDdEMsdUJBQW1DO0VBQ25DLGdCQUE4QjtFQUM5QixtQkFBZ0M7RUFDaEMsaUJBQTZCO0VBQzdCLGNBQStCO0VBQy9CLGVBQTJCO0VBQzNCLGlCQUE4QjtFQUM5Qix5QkFBaUM7RUFDakMsZ0NBQTZDO0VBQzdDLG9CQUE2QjtFQUM3QixZQUE4QjtDQUNoQzs7QUFFRDtFQUNHLG9CQUFzQjtFQUV0QixtQkFBd0I7RUFDeEIsb0JBQW9CO0NBQ3RCOztBQUdEO0VBQ0csVUFBVztFQUNYLFdBQVc7RUFDWCxZQUFjO0NBQ2hCOztBQUdEO0VBQ0csMEJBQXlCO01BQXpCLHVCQUF5QjtVQUF6QixvQkFBeUI7RUFDekIsdUJBQXVCO0VBQ3ZCLHVCQUFpQztFQUNqQyw4QkFBaUM7RUFDakMsWUFBdUI7RUFDdkIscUJBQXVCO0VBQXZCLHFCQUF1QjtFQUF2QixjQUF1QjtFQUN2QixrQkFBdUI7RUFDdkIsMEJBQWdDO01BQWhDLHVCQUFnQztVQUFoQywrQkFBZ0M7RUFDaEMsa0JBQTJCO0VBQzNCLDBCQUE0QjtFQUM1QixZQUF1QjtDQUN6Qjs7QUFFRDtFQUNHLGdCQUFnQjtDQUNsQjs7QUFHRDtFQUNHLFVBQWlCO0VBQ2pCLGlCQUFvQjtFQUNwQixjQUFvQjtFQUNwQiw0QkFBOEI7RUFDOUIsNkJBQThCO0VBQzlCLDhCQUE4QjtDQUNoQzs7QUFFRDtFQUVHO0lBQ0csbUJBQXdCO0lBQ3hCLG9CQUFvQjtHQUN0QjtFQUdEO0lBQ0csd0JBQXlCO0lBQ3pCLHlCQUF5QjtJQUN6Qiw0QkFBbUM7SUFBbkMsNEJBQW1DO0lBQW5DLHFCQUFtQztJQUNuQyxzQkFBOEI7SUFBOUIsa0JBQThCO0lBQzlCLHdCQUFrQztJQUFsQyxxQkFBa0M7SUFBbEMsNEJBQWtDO0lBQ2xDLFVBQXlCO0lBQ3pCLFdBQXlCO0lBQ3pCLFlBQTRCO0dBQzlCO0VBR0Q7SUFDRyx1QkFBOEI7SUFDOUIsdUJBQXdDO0lBQ3hDLDRCQUE2QjtJQUM3Qiw2QkFBNkI7SUFDN0IsZ0JBQWlDO0lBQ2pDLGdCQUFnQztJQUNoQyxrQkFBNkI7SUFDN0IsdUJBQXVDO0lBQ3ZDLDJCQUFvQztJQUNwQyxvQkFBNkI7R0FDL0I7RUFFRDtJQUNHLDBCQUE4QjtJQUM5QiwwQkFBd0M7SUFDeEMsWUFBMkI7SUFDM0IsNEJBQTZCO0lBQzdCLDZCQUE2QjtHQUMvQjtFQUVEOztJQUVHLGNBQWM7R0FDaEI7RUFHRDtJQUNHLHdCQUF3QjtJQUN4Qix1QkFBMkI7SUFDM0IsdUJBQXFDO0lBQ3JDLFlBQTJCO0lBQzNCLFFBQXdCO0lBQ3hCLGlCQUE2QjtJQUM3QixjQUEyQjtJQUMzQixtQkFBK0I7SUFDL0IsVUFBMkI7SUFDM0IsWUFBMkI7SUFDM0IsWUFBeUI7R0FDM0I7Q0NiSCIsImZpbGUiOiJzdHlsZS5jc3MiLCJzb3VyY2VzQ29udGVudCI6WyIvKlxuXHROYW1lOiBDYW1wRmlyZVBpeGVscyBUYWJiZXJcblx0VVJJOiBodHRwczovL2NhbXBmaXJlcGl4ZWxzLmNvbS9cblx0RGVzY3JpcHRpb246IFRoaXMgaXMgYSByZXNwb25zaXZlIFRhYmJlciB0aGF0IGNvbnZlcnRzIHRvIEFjY29yZGlvblxuXHRBdXRob3I6IERhbm55IEcgU21pdGhcblx0QXV0aG9yIFVSSTogaHR0cHM6Ly9jYW1wZmlyZXBpeGVscy5jb20vXG5cblx0VmVyc2lvbjogMC4xLjFcblxuXHRMaWNlbnNlOiBHUEwtMi4wK1xuXHRMaWNlbnNlIFVSSTogaHR0cDovL3d3dy5nbnUub3JnL2xpY2Vuc2VzL2dwbC0yLjAuaHRtbFxuKi9cblxuLyogRGVmaW5lIHRoZSBcInN5c3RlbVwiIGZvbnQgZmFtaWx5ICovXG5AZm9udC1mYWNlIHtcbiAgIGZvbnQtZmFtaWx5OiBzeXN0ZW07XG4gICBmb250LXN0eWxlOiAgbm9ybWFsO1xuICAgZm9udC13ZWlnaHQ6IDMwMDtcbiAgIHNyYzogbG9jYWwoXCIuU0ZOU1RleHQtTGlnaHRcIiksIGxvY2FsKFwiLkhlbHZldGljYU5ldWVEZXNrSW50ZXJmYWNlLUxpZ2h0XCIpLCBsb2NhbChcIi5MdWNpZGFHcmFuZGVVSVwiKSwgbG9jYWwoXCJVYnVudHUgTGlnaHRcIiksIGxvY2FsKFwiU2Vnb2UgVUkgTGlnaHRcIiksIGxvY2FsKFwiUm9ib3RvLUxpZ2h0XCIpLCBsb2NhbChcIkRyb2lkU2Fuc1wiKSwgbG9jYWwoXCJUYWhvbWFcIik7XG59XG5cbmJvZHkge1xuICAgZm9udC1mYW1pbHk6IFwic3lzdGVtXCI7XG59XG5cbi5kYXNoaWNvbnMsIC5kYXNoaWNvbnMtYmVmb3JlOmJlZm9yZSB7XG4gICAtbW96LW9zeC1mb250LXNtb290aGluZzogZ3JheXNjYWxlO1xuICAgLXdlYmtpdC1mb250LXNtb290aGluZzogIGFudGlhbGlhc2VkO1xuICAgLXdlYmtpdC10cmFuc2l0aW9uOiAgICAgIGNvbG9yIC4xcyBlYXNlLWluIDA7XG4gICBkaXNwbGF5OiAgICAgICAgICAgICAgICAgaW5saW5lLWJsb2NrO1xuICAgZm9udC1mYW1pbHk6ICAgICAgICAgICAgIGRhc2hpY29ucztcbiAgIGZvbnQtc2l6ZTogICAgICAgICAgICAgICAxNnB4O1xuICAgZm9udC1zdHlsZTogICAgICAgICAgICAgIG5vcm1hbDtcbiAgIGZvbnQtd2VpZ2h0OiAgICAgICAgICAgICA0MDA7XG4gICBoZWlnaHQ6ICAgICAgICAgICAgICAgICAgdW5zZXQ7XG4gICBsaW5lLWhlaWdodDogICAgICAgICAgICAgMTtcbiAgIHRleHQtYWxpZ246ICAgICAgICAgICAgICBsZWZ0O1xuICAgdGV4dC1kZWNvcmF0aW9uOiAgICAgICAgIGluaGVyaXQ7XG4gICB0cmFuc2l0aW9uOiAgICAgICAgICAgICAgY29sb3IgLjFzIGVhc2UtaW4gMDtcbiAgIHZlcnRpY2FsLWFsaWduOiAgICAgICAgICB0b3A7XG4gICB3aWR0aDogICAgICAgICAgICAgICAgICAgMTAwJTtcbn1cblxuLnRhYmJlci0td3JhcHBlciB7XG4gICBmb250LWZhbWlseTogICBzeXN0ZW07XG4gICAvL2ZvbnQtd2VpZ2h0OiAgIDQwMDtcbiAgIHBvc2l0aW9uOiAgICAgIHJlbGF0aXZlO1xuICAgbWFyZ2luLWJvdHRvbTogNzBweDtcbn1cblxuLy8gZGwsXG4udGFiYmVyLS1jb250YWluZXIge1xuICAgbWFyZ2luOiAgMDtcbiAgIHBhZGRpbmc6IDA7XG4gICB3aWR0aDogICAxMDAlO1xufVxuXG4vLyBkdFxuLnRhYmJlci0tdGFiIHtcbiAgIGFsaWduLWl0ZW1zOiAgICAgIGNlbnRlcjtcbiAgIGJhY2tncm91bmQtY29sb3I6ICNjY2M7XG4gICBib3JkZXI6ICAgICAgICAgICAxcHggc29saWQgI2FhYTtcbiAgIGJvcmRlci1ib3R0b206ICAgIDFweCBzb2xpZCAjY2NjO1xuICAgY29sb3I6ICAgICAgICAgICAgIzMzMztcbiAgIGRpc3BsYXk6ICAgICAgICAgIGZsZXg7XG4gICBmb250LXdlaWdodDogICAgICBib2xkO1xuICAganVzdGlmeS1jb250ZW50OiAgc3BhY2UtYmV0d2VlbjtcbiAgIHBhZGRpbmc6ICAgICAgICAgIDZweCAxNXB4O1xuICAgdGV4dC10cmFuc2Zvcm06ICAgdXBwZXJjYXNlO1xuICAgd2lkdGg6ICAgICAgICAgICAgMTAwJTtcbn1cblxuLnRhYmJlci1jb250ZW50LS1pY29uIHtcbiAgIGZvbnQtc2l6ZTogMjhweDtcbn1cblxuLy8gZGQsXG4udGFiYmVyLS1jb250ZW50IHtcbiAgIG1hcmdpbjogICAgICAgIDA7XG4gICBiYWNrZ3JvdW5kOiAgICAjZWVlO1xuICAgcGFkZGluZzogICAgICAgMjBweDtcbiAgIGJvcmRlci1sZWZ0OiAgIDFweCBzb2xpZCAjY2NjO1xuICAgYm9yZGVyLXJpZ2h0OiAgMXB4IHNvbGlkICNjY2M7XG4gICBib3JkZXItYm90dG9tOiAxcHggc29saWQgI2NjYztcbn1cblxuQG1lZGlhIG9ubHkgc2NyZWVuIGFuZCAobWluLXdpZHRoOiA3NjhweCkge1xuXG4gICAudGFiYmVyLS13cmFwcGVyIHtcbiAgICAgIHBvc2l0aW9uOiAgICAgIHJlbGF0aXZlO1xuICAgICAgbWFyZ2luLWJvdHRvbTogNzBweDtcbiAgIH1cblxuICAgLy8gZGwsXG4gICAudGFiYmVyLS1jb250YWluZXIge1xuICAgICAgLXdlYmtpdC1tYXJnaW4tYWZ0ZXI6ICAwO1xuICAgICAgLXdlYmtpdC1tYXJnaW4tYmVmb3JlOiAwO1xuICAgICAgZGlzcGxheTogICAgICAgICAgICAgICBpbmxpbmUtZmxleDtcbiAgICAgIGZsZXgtd3JhcDogICAgICAgICAgICAgbm93cmFwO1xuICAgICAganVzdGlmeS1jb250ZW50OiAgICAgICBmbGV4LXN0YXJ0O1xuICAgICAgbWFyZ2luOiAgICAgICAgICAgICAgICAwO1xuICAgICAgcGFkZGluZzogICAgICAgICAgICAgICAwO1xuICAgICAgd2lkdGg6ICAgICAgICAgICAgICAgICBhdXRvO1xuICAgfVxuXG4gICAvLyBkdFxuICAgLnRhYmJlci0tdGFiIHtcbiAgICAgIGJhY2tncm91bmQtY29sb3I6ICAgICAgICAjZWVlO1xuICAgICAgYm9yZGVyOiAgICAgICAgICAgICAgICAgIDFweCBzb2xpZCAjY2NjO1xuICAgICAgYm9yZGVyLXRvcC1sZWZ0LXJhZGl1czogIDVweDtcbiAgICAgIGJvcmRlci10b3AtcmlnaHQtcmFkaXVzOiA1cHg7XG4gICAgICBjdXJzb3I6ICAgICAgICAgICAgICAgICAgcG9pbnRlcjtcbiAgICAgIGRpc3BsYXk6ICAgICAgICAgICAgICAgICBpbmxpbmU7XG4gICAgICBtYXJnaW4tcmlnaHQ6ICAgICAgICAgICAgMnB4O1xuICAgICAgcGFkZGluZzogICAgICAgICAgICAgICAgIDZweCAxNXB4IDEwcHg7XG4gICAgICB0ZXh0LXRyYW5zZm9ybTogICAgICAgICAgY2FwaXRhbGl6ZTtcbiAgICAgIHZlcnRpY2FsLWFsaWduOiAgICAgICAgICB0b3A7XG4gICB9XG5cbiAgIC5jdXJyZW50LS10YWIge1xuICAgICAgYmFja2dyb3VuZC1jb2xvcjogICAgICNiYmRlZmI7XG4gICAgICBib3JkZXI6ICAgICAgICAgICAgICAgMXB4IHNvbGlkICM2NGI1ZjY7XG4gICAgICBjb2xvcjogICAgICAgICAgICAgICAgIzMzMztcbiAgICAgIGJvcmRlci10b3AtbGVmdC1yYWRpdXM6ICA1cHg7XG4gICAgICBib3JkZXItdG9wLXJpZ2h0LXJhZGl1czogNXB4O1xuICAgfVxuXG4gICAudGFiYmVyLWNvbnRlbnQtLWljb24sXG4gICAuZGFzaGljb25zLWFycm93LWRvd24tYWx0MjpiZWZvcmUgIHtcbiAgICAgIGRpc3BsYXk6IG5vbmU7XG4gICB9XG5cbiAgIC8vIGRkLFxuICAgLnRhYmJlci0tY29udGVudCB7XG4gICAgICAtd2Via2l0LW1hcmdpbi1zdGFydDogMDtcbiAgICAgIGJhY2tncm91bmQtY29sb3I6ICAgICAjZGRkO1xuICAgICAgYm9yZGVyOiAgICAgICAgICAgICAgIDFweCBzb2xpZCAjY2NjO1xuICAgICAgY29sb3I6ICAgICAgICAgICAgICAgICMzMzM7XG4gICAgICBsZWZ0OiAgICAgICAgICAgICAgICAgMDtcbiAgICAgIG92ZXJmbG93OiAgICAgICAgICAgICBoaWRkZW47XG4gICAgICBwYWRkaW5nOiAgICAgICAgICAgICAgMjBweDtcbiAgICAgIHBvc2l0aW9uOiAgICAgICAgICAgICBhYnNvbHV0ZTtcbiAgICAgIHRvcDogICAgICAgICAgICAgICAgICAxMDAlO1xuICAgICAgd2lkdGg6ICAgICAgICAgICAgICAgIDEwMCU7XG4gICAgICB6LWluZGV4OiAgICAgICAgICAgICAgOTk7XG4gICB9XG59IiwiLypcblx0TmFtZTogQ2FtcEZpcmVQaXhlbHMgVGFiYmVyXG5cdFVSSTogaHR0cHM6Ly9jYW1wZmlyZXBpeGVscy5jb20vXG5cdERlc2NyaXB0aW9uOiBUaGlzIGlzIGEgcmVzcG9uc2l2ZSBUYWJiZXIgdGhhdCBjb252ZXJ0cyB0byBBY2NvcmRpb25cblx0QXV0aG9yOiBEYW5ueSBHIFNtaXRoXG5cdEF1dGhvciBVUkk6IGh0dHBzOi8vY2FtcGZpcmVwaXhlbHMuY29tL1xuXG5cdFZlcnNpb246IDAuMS4xXG5cblx0TGljZW5zZTogR1BMLTIuMCtcblx0TGljZW5zZSBVUkk6IGh0dHA6Ly93d3cuZ251Lm9yZy9saWNlbnNlcy9ncGwtMi4wLmh0bWxcbiovXG4vKiBEZWZpbmUgdGhlIFwic3lzdGVtXCIgZm9udCBmYW1pbHkgKi9cbkBmb250LWZhY2Uge1xuICBmb250LWZhbWlseTogc3lzdGVtO1xuICBmb250LXN0eWxlOiBub3JtYWw7XG4gIGZvbnQtd2VpZ2h0OiAzMDA7XG4gIHNyYzogbG9jYWwoXCIuU0ZOU1RleHQtTGlnaHRcIiksIGxvY2FsKFwiLkhlbHZldGljYU5ldWVEZXNrSW50ZXJmYWNlLUxpZ2h0XCIpLCBsb2NhbChcIi5MdWNpZGFHcmFuZGVVSVwiKSwgbG9jYWwoXCJVYnVudHUgTGlnaHRcIiksIGxvY2FsKFwiU2Vnb2UgVUkgTGlnaHRcIiksIGxvY2FsKFwiUm9ib3RvLUxpZ2h0XCIpLCBsb2NhbChcIkRyb2lkU2Fuc1wiKSwgbG9jYWwoXCJUYWhvbWFcIik7XG59XG5cbmJvZHkge1xuICBmb250LWZhbWlseTogXCJzeXN0ZW1cIjtcbn1cblxuLmRhc2hpY29ucywgLmRhc2hpY29ucy1iZWZvcmU6YmVmb3JlIHtcbiAgLW1vei1vc3gtZm9udC1zbW9vdGhpbmc6IGdyYXlzY2FsZTtcbiAgLXdlYmtpdC1mb250LXNtb290aGluZzogYW50aWFsaWFzZWQ7XG4gIC13ZWJraXQtdHJhbnNpdGlvbjogY29sb3IgLjFzIGVhc2UtaW4gMDtcbiAgZGlzcGxheTogaW5saW5lLWJsb2NrO1xuICBmb250LWZhbWlseTogZGFzaGljb25zO1xuICBmb250LXNpemU6IDE2cHg7XG4gIGZvbnQtc3R5bGU6IG5vcm1hbDtcbiAgZm9udC13ZWlnaHQ6IDQwMDtcbiAgaGVpZ2h0OiB1bnNldDtcbiAgbGluZS1oZWlnaHQ6IDE7XG4gIHRleHQtYWxpZ246IGxlZnQ7XG4gIHRleHQtZGVjb3JhdGlvbjogaW5oZXJpdDtcbiAgdHJhbnNpdGlvbjogY29sb3IgLjFzIGVhc2UtaW4gMDtcbiAgdmVydGljYWwtYWxpZ246IHRvcDtcbiAgd2lkdGg6IDEwMCU7XG59XG5cbi50YWJiZXItLXdyYXBwZXIge1xuICBmb250LWZhbWlseTogc3lzdGVtO1xuICBwb3NpdGlvbjogcmVsYXRpdmU7XG4gIG1hcmdpbi1ib3R0b206IDcwcHg7XG59XG5cbi50YWJiZXItLWNvbnRhaW5lciB7XG4gIG1hcmdpbjogMDtcbiAgcGFkZGluZzogMDtcbiAgd2lkdGg6IDEwMCU7XG59XG5cbi50YWJiZXItLXRhYiB7XG4gIGFsaWduLWl0ZW1zOiBjZW50ZXI7XG4gIGJhY2tncm91bmQtY29sb3I6ICNjY2M7XG4gIGJvcmRlcjogMXB4IHNvbGlkICNhYWE7XG4gIGJvcmRlci1ib3R0b206IDFweCBzb2xpZCAjY2NjO1xuICBjb2xvcjogIzMzMztcbiAgZGlzcGxheTogZmxleDtcbiAgZm9udC13ZWlnaHQ6IGJvbGQ7XG4gIGp1c3RpZnktY29udGVudDogc3BhY2UtYmV0d2VlbjtcbiAgcGFkZGluZzogNnB4IDE1cHg7XG4gIHRleHQtdHJhbnNmb3JtOiB1cHBlcmNhc2U7XG4gIHdpZHRoOiAxMDAlO1xufVxuXG4udGFiYmVyLWNvbnRlbnQtLWljb24ge1xuICBmb250LXNpemU6IDI4cHg7XG59XG5cbi50YWJiZXItLWNvbnRlbnQge1xuICBtYXJnaW46IDA7XG4gIGJhY2tncm91bmQ6ICNlZWU7XG4gIHBhZGRpbmc6IDIwcHg7XG4gIGJvcmRlci1sZWZ0OiAxcHggc29saWQgI2NjYztcbiAgYm9yZGVyLXJpZ2h0OiAxcHggc29saWQgI2NjYztcbiAgYm9yZGVyLWJvdHRvbTogMXB4IHNvbGlkICNjY2M7XG59XG5cbkBtZWRpYSBvbmx5IHNjcmVlbiBhbmQgKG1pbi13aWR0aDogNzY4cHgpIHtcbiAgLnRhYmJlci0td3JhcHBlciB7XG4gICAgcG9zaXRpb246IHJlbGF0aXZlO1xuICAgIG1hcmdpbi1ib3R0b206IDcwcHg7XG4gIH1cbiAgLnRhYmJlci0tY29udGFpbmVyIHtcbiAgICAtd2Via2l0LW1hcmdpbi1hZnRlcjogMDtcbiAgICAtd2Via2l0LW1hcmdpbi1iZWZvcmU6IDA7XG4gICAgZGlzcGxheTogaW5saW5lLWZsZXg7XG4gICAgZmxleC13cmFwOiBub3dyYXA7XG4gICAganVzdGlmeS1jb250ZW50OiBmbGV4LXN0YXJ0O1xuICAgIG1hcmdpbjogMDtcbiAgICBwYWRkaW5nOiAwO1xuICAgIHdpZHRoOiBhdXRvO1xuICB9XG4gIC50YWJiZXItLXRhYiB7XG4gICAgYmFja2dyb3VuZC1jb2xvcjogI2VlZTtcbiAgICBib3JkZXI6IDFweCBzb2xpZCAjY2NjO1xuICAgIGJvcmRlci10b3AtbGVmdC1yYWRpdXM6IDVweDtcbiAgICBib3JkZXItdG9wLXJpZ2h0LXJhZGl1czogNXB4O1xuICAgIGN1cnNvcjogcG9pbnRlcjtcbiAgICBkaXNwbGF5OiBpbmxpbmU7XG4gICAgbWFyZ2luLXJpZ2h0OiAycHg7XG4gICAgcGFkZGluZzogNnB4IDE1cHggMTBweDtcbiAgICB0ZXh0LXRyYW5zZm9ybTogY2FwaXRhbGl6ZTtcbiAgICB2ZXJ0aWNhbC1hbGlnbjogdG9wO1xuICB9XG4gIC5jdXJyZW50LS10YWIge1xuICAgIGJhY2tncm91bmQtY29sb3I6ICNiYmRlZmI7XG4gICAgYm9yZGVyOiAxcHggc29saWQgIzY0YjVmNjtcbiAgICBjb2xvcjogIzMzMztcbiAgICBib3JkZXItdG9wLWxlZnQtcmFkaXVzOiA1cHg7XG4gICAgYm9yZGVyLXRvcC1yaWdodC1yYWRpdXM6IDVweDtcbiAgfVxuICAudGFiYmVyLWNvbnRlbnQtLWljb24sXG4gIC5kYXNoaWNvbnMtYXJyb3ctZG93bi1hbHQyOmJlZm9yZSB7XG4gICAgZGlzcGxheTogbm9uZTtcbiAgfVxuICAudGFiYmVyLS1jb250ZW50IHtcbiAgICAtd2Via2l0LW1hcmdpbi1zdGFydDogMDtcbiAgICBiYWNrZ3JvdW5kLWNvbG9yOiAjZGRkO1xuICAgIGJvcmRlcjogMXB4IHNvbGlkICNjY2M7XG4gICAgY29sb3I6ICMzMzM7XG4gICAgbGVmdDogMDtcbiAgICBvdmVyZmxvdzogaGlkZGVuO1xuICAgIHBhZGRpbmc6IDIwcHg7XG4gICAgcG9zaXRpb246IGFic29sdXRlO1xuICAgIHRvcDogMTAwJTtcbiAgICB3aWR0aDogMTAwJTtcbiAgICB6LWluZGV4OiA5OTtcbiAgfVxufVxuIl19 */
+diff --git a/assets/dist/css/style.min.css b/assets/dist/css/style.min.css
+index a9f0a0b..d10d26f 100644
+--- a/assets/dist/css/style.min.css
++++ b/assets/dist/css/style.min.css
+@@ -1 +1 @@
+-@font-face{font-family:system;font-style:normal;font-weight:300;src:local(".SFNSText-Light"),local(".HelveticaNeueDeskInterface-Light"),local(".LucidaGrandeUI"),local("Ubuntu Light"),local("Segoe UI Light"),local("Roboto-Light"),local("DroidSans"),local("Tahoma")}body{font-family:system}.dashicons,.dashicons-before:before{-moz-osx-font-smoothing:grayscale;-webkit-font-smoothing:antialiased;-webkit-transition:color .1s ease-in 0;display:inline-block;font-family:dashicons;font-size:16px;font-style:normal;font-weight:400;height:unset;line-height:1;text-align:left;text-decoration:inherit;transition:color .1s ease-in 0;vertical-align:top;width:100%}.tabber--wrapper{font-family:system;position:relative;margin-bottom:70px}.tabber--container{margin:0;padding:0;width:100%}.tabber--tab{-webkit-box-align:center;-ms-flex-align:center;align-items:center;background-color:#ccc;border:1px solid #aaa;border-bottom:1px solid #ccc;color:#333;display:-webkit-box;display:-ms-flexbox;display:flex;font-weight:700;-webkit-box-pack:justify;-ms-flex-pack:justify;justify-content:space-between;padding:6px 15px;text-transform:uppercase;width:100%}.tabber-content--icon{font-size:28px}.tabber--content{margin:0;background:#eee;padding:20px;border-left:1px solid #ccc;border-right:1px solid #ccc;border-bottom:1px solid #ccc}@media only screen and (min-width:768px){.tabber--wrapper{position:relative;margin-bottom:70px}.tabber--container{-webkit-margin-after:0;-webkit-margin-before:0;display:-webkit-inline-box;display:-ms-inline-flexbox;display:inline-flex;-ms-flex-wrap:nowrap;flex-wrap:nowrap;-webkit-box-pack:start;-ms-flex-pack:start;justify-content:flex-start;margin:0;padding:0;width:auto}.tabber--tab{background-color:#eee;border:1px solid #ccc;border-top-left-radius:5px;border-top-right-radius:5px;cursor:pointer;display:inline;margin-right:2px;padding:6px 15px 10px;text-transform:capitalize;vertical-align:top}.dashicons-arrow-down-alt2:before,.tabber-content--icon{display:none}.tabber--content{-webkit-margin-start:0;background-color:#ddd;border:1px solid #ccc;color:#333;left:0;overflow:hidden;padding:20px;position:absolute;top:100%;width:100%;z-index:99}}
+\ No newline at end of file
++@font-face{font-family:system;font-style:normal;font-weight:300;src:local(".SFNSText-Light"),local(".HelveticaNeueDeskInterface-Light"),local(".LucidaGrandeUI"),local("Ubuntu Light"),local("Segoe UI Light"),local("Roboto-Light"),local("DroidSans"),local("Tahoma")}body{font-family:system}.dashicons,.dashicons-before:before{-moz-osx-font-smoothing:grayscale;-webkit-font-smoothing:antialiased;-webkit-transition:color .1s ease-in 0;display:inline-block;font-family:dashicons;font-size:16px;font-style:normal;font-weight:400;height:unset;line-height:1;text-align:left;text-decoration:inherit;transition:color .1s ease-in 0;vertical-align:top;width:100%}.tabber--wrapper{font-family:system;position:relative;margin-bottom:70px}.tabber--container{margin:0;padding:0;width:100%}.tabber--tab{-webkit-box-align:center;-ms-flex-align:center;align-items:center;background-color:#ccc;border:1px solid #aaa;border-bottom:1px solid #ccc;color:#333;display:-webkit-box;display:-ms-flexbox;display:flex;font-weight:700;-webkit-box-pack:justify;-ms-flex-pack:justify;justify-content:space-between;padding:6px 15px;text-transform:uppercase;width:100%}.tabber-content--icon{font-size:28px}.tabber--content{margin:0;background:#eee;padding:20px;border-left:1px solid #ccc;border-right:1px solid #ccc;border-bottom:1px solid #ccc}@media only screen and (min-width:768px){.tabber--wrapper{position:relative;margin-bottom:70px}.tabber--container{-webkit-margin-after:0;-webkit-margin-before:0;display:-webkit-inline-box;display:-ms-inline-flexbox;display:inline-flex;-ms-flex-wrap:nowrap;flex-wrap:nowrap;-webkit-box-pack:start;-ms-flex-pack:start;justify-content:flex-start;margin:0;padding:0;width:auto}.tabber--tab{background-color:#eee;border:1px solid #ccc;border-top-left-radius:5px;border-top-right-radius:5px;cursor:pointer;display:inline;margin-right:2px;padding:6px 15px 10px;text-transform:capitalize;vertical-align:top}.current--tab{background-color:#bbdefb;border:1px solid #64b5f6;color:#333;border-top-left-radius:5px;border-top-right-radius:5px}.dashicons-arrow-down-alt2:before,.tabber-content--icon{display:none}.tabber--content{-webkit-margin-start:0;background-color:#ddd;border:1px solid #ccc;color:#333;left:0;overflow:hidden;padding:20px;position:absolute;top:100%;width:100%;z-index:99}}
+\ No newline at end of file
+diff --git a/assets/dist/js/jquery.plugin.js b/assets/dist/js/jquery.plugin.js
+index d3df8e0..2b2f823 100644
+--- a/assets/dist/js/jquery.plugin.js
++++ b/assets/dist/js/jquery.plugin.js
+@@ -5,6 +5,525 @@
+    var $tabberTabs;      // array of cached tab labels
+    var $tabberContents;  // array of cached contents
+    var $theIcons;
++   var j, k;
++
++   /**
++    * Initializes all scripts via document ready function
++    */
++   var init = function () {
++      $tabberContainer = jQuery( '.tabber--container' );
++      $tabberTabs      = jQuery( '.tabber--tab' );
++      //$icons = $visibleContents.find('.collapsible-content--icon');
++      $theIcons        = $tabberTabs.find('.tabber-content--icon');
++
++      $tabberContents  = $tabberTabs.next();
++
++      $tabberTabs.on( 'click',
++         { contentType: 'tabber' },    // pass type
++         clickHandler                  // named function
++      );
++
++      // strip <br /> out thank you wpautop!!!!!!!!
++      $( 'br' ).remove();
++
++      // Wrap each contiguous tabber with a div wrapper
++      var $counter = 0;
++      $( ':not( .tabber--container ) + .tabber--container, * > .tabber--container:first-of-type' ).
++      each( function() {
++         $( this ).
++         nextUntil( ':not( .tabber--container )' ).
++         addBack().
++         wrapAll('<div class="tabber--wrapper" id="tabber--wrapper-' + $counter++ + '">');
++      });
++
++      j = 0;
++      k = 0;
++
++      var $tabbers = jQuery('.tabber--container .tabber--tab');
++
++      for ( j = 0; j < $('.tabber--container').length; j++, k++ ) {
++         $( $tabbers[ k ] ) .attr( 'id', 'tabber--tab-' + k );
++      }
++
++      //  loops through each group of tabbers
++      for ( k = 0; k < jQuery('div.tabber--wrapper').length; k++ ) {
++
++         jQuery( '#tabber--wrapper-' + k + ' .tabber--tab:first' ).trigger('click');
++      }
++   };
++
++   /**
++    * Click event handler
++    *
++    * @param event
++    */
++   var clickHandler = function ( event ) {
++
++      var index;
++      var $tabber;
++      var $tabberTab;
++      var $tabberContent;
++      var isTabberContentsShowing;
++      var isMobile;
++      var $wrapperId;
++      var $iconElement;
++      var showIcon;
++      var hideIcon;
++      $tabberContainer        = jQuery( '.tabber--container' );
++
++      index                   = $tabberTabs.index ( this );  // current index
++      $tabberContent          = $( $tabberContents[ index ] );
++      $tabberTab              = $( '.tabber--tab.current--tab' );
++      //$tabber                 = $( $tabberContainer[ index ] ).closest("dt").prop("id");
++      $tabber                 = $( $tabberTabs ).closest("dt").prop("id");
++      isTabberContentsShowing = $tabberContent.is(':visible');
++      isMobile                = Modernizr.mq( '( max-width: 767px )' );
++      $wrapperId              = $( $tabberContents[ index ] ).closest("div").prop("id");
++      //$tabber                 = $( $tabber[ index ] ).closest("dl").prop("id");
++      $iconElement            = $( $theIcons[ index ] );
++      showIcon                = $iconElement.data( 'showIcon' );
++      hideIcon                = $iconElement.data( 'hideIcon' );
++
++      //var str = JSON.stringify( $tabber, null, 3 ); // (Optional) beautiful indented output.
++      //console.log( 'str: ' + str )
++
++      // Temporarily add class to the outer wrapper
++      $( '#' + $wrapperId ).addClass( 'selected' );
++
++      if ( isMobile ) { //  it is an accordion
++         changeIcon( index, isTabberContentsShowing );
++
++         // remove old content
++         jQuery( '.tabber--wrapper.selected .tabber--container.activated .tabber-content--icon' ).removeClass( 'fa-caret-down' ).addClass( 'fa-caret-left' );
++         jQuery( '.tabber--wrapper.selected .tabber--container.activated .tabber--content' ).slideUp();
++
++      } else {
++         console.log( '#' + $tabber );
++         console.log( '#============' );
++
++         // remove old content
++         jQuery( '#' + $tabber ).removeClass( 'current--tab' );
++         jQuery( '.tabber--wrapper.selected .tabber--container.activated .tabber--content' ).css( "display", "none");
++      }
++
++      jQuery( '.tabber--wrapper.selected .tabber--container.activated' ).removeClass( 'activated' );
++
++      // activate new tab
++      $( $tabberContainer[ $tabberTabs.index( this ) ] ).addClass( 'activated' );
++      var $tabberId = $( '.tabber--wrapper.selected .tabber--container.activated .tabber--tab' ).closest("dt").prop("id");
++      console.log( '#' + $tabberId );
++
++
++      jQuery( '.tabber--wrapper.selected .tabber--container.activated .tabber--tab' ).addClass( 'current--tab' );
++
++      if ( isMobile ) { //  it is an accordion
++
++         $( $tabberContents[ index ] ).slideDown();
++      } else {
++
++         $( $tabberContents[ index ] ).css( "display", "block");
++      }
++
++      // remove Temporarily class to the outer wrapper
++      $( '#' + $wrapperId ).removeClass( 'selected' );
++   };
++
++
++   /*******************
++    * Helper Functions
++    ******************/
++
++   /**
++    * Change the Icon Handler
++    */
++   function changeIcon( index, isHiddenContentShowing ) {
++      var $iconElement = $( $theIcons[ index ] ),
++         showIcon = $iconElement.data( 'showIcon' ),
++         hideIcon = $iconElement.data( 'hideIcon' ),
++         removeClass, addClass,
++         isMobile = Modernizr.mq( '( max-width: 767px )' );
++
++      console.log ( 'isHiddenContentShowing: ' + isHiddenContentShowing );
++
++      if ( isHiddenContentShowing ) {
++         addClass    = showIcon;
++         removeClass = hideIcon;
++
++      } else {
++         addClass    = hideIcon;
++         removeClass = showIcon;
++      }
++
++      $iconElement
++         .removeClass( removeClass )
++         .addClass(    addClass    );
++   }
++
++
++   $(document).ready(function () {
++      init();
++
++   });
++
++})(jQuery, window, document);
++
++;(function ($, window, document, undefined) {
++   'use strict';
++
++   var $tabberContainer;
++   var $tabberTabs;      // array of cached tab labels
++   var $tabberContents;  // array of cached contents
++   var $theIcons;
++   var j, k;
++
++   /**
++    * Initializes all scripts via document ready function
++    */
++   var init = function () {
++      $tabberContainer = jQuery( '.tabber--container' );
++      $tabberTabs      = jQuery( '.tabber--tab' );
++      //$icons = $visibleContents.find('.collapsible-content--icon');
++      $theIcons        = $tabberTabs.find('.tabber-content--icon');
++
++      $tabberContents  = $tabberTabs.next();
++
++      $tabberTabs.on( 'click',
++         { contentType: 'tabber' },    // pass type
++         clickHandler                  // named function
++      );
++
++      // strip <br /> out thank you wpautop!!!!!!!!
++      $( 'br' ).remove();
++
++      // Wrap each contiguous tabber with a div wrapper
++      var $counter = 0;
++      $( ':not( .tabber--container ) + .tabber--container, * > .tabber--container:first-of-type' ).
++      each( function() {
++         $( this ).
++         nextUntil( ':not( .tabber--container )' ).
++         addBack().
++         wrapAll('<div class="tabber--wrapper" id="tabber--wrapper-' + $counter++ + '">');
++      });
++
++      j = 0;
++      k = 0;
++
++      var $tabbers = jQuery('.tabber--container .tabber--tab');
++
++      for ( j = 0; j < $('.tabber--container').length; j++, k++ ) {
++         $( $tabbers[ k ] ) .attr( 'id', 'tabber--tab-' + j );
++      }
++
++      //  loops through each group of tabbers
++      for ( k = 0; k < jQuery('div.tabber--wrapper').length; k++ ) {
++
++         jQuery( '#tabber--wrapper-' + k + ' .tabber--tab:first' ).trigger('click');
++      }
++   };
++
++   /**
++    * Click event handler
++    *
++    * @param event
++    */
++   var clickHandler = function ( event ) {
++
++      var index;
++      var $tabber;
++      var $tabberTab;
++      var $tabberContent;
++      var isTabberContentsShowing;
++      var isMobile;
++      var $wrapperId;
++      var $iconElement;
++      var showIcon;
++      var hideIcon;
++      $tabberContainer        = jQuery( '.tabber--container' );
++
++      index                   = $tabberTabs.index ( this );  // current index
++      $tabberContent          = $( $tabberContents[ index ] );
++      $tabberTab              = $( '.tabber--tab.current--tab' );
++      $tabber                 = $( $tabberContainer[ index ] ).closest("dt").prop("id");
++      isTabberContentsShowing = $tabberContent.is(':visible');
++      isMobile                = Modernizr.mq( '( max-width: 767px )' );
++      $wrapperId              = $( $tabberContents[ index ] ).closest("div").prop("id");
++      //$tabber               = $( $tabber[ index ] ).closest("dl").prop("id");
++      $iconElement            = $( $theIcons[ index ] );
++      showIcon                = $iconElement.data( 'showIcon' );
++      hideIcon                = $iconElement.data( 'hideIcon' );
++
++      console.log( '$tabber: ' + $tabber );
++
++      //var str = JSON.stringify( $tabber, null, 3 ); // (Optional) beautiful indented output.
++      //console.log( 'str: ' + str )
++
++      // Temporarily add class to the outer wrapper
++      $( '#' + $wrapperId ).addClass( 'selected' );
++
++
++      if ( isMobile ) { //  it is an accordion
++         changeIcon( index, isTabberContentsShowing );
++
++         // remove old content
++         jQuery( '.tabber--wrapper.selected .tabber--container.activated .tabber-content--icon' ).removeClass( 'fa-caret-down' ).addClass( 'fa-caret-left' );
++         jQuery( '.tabber--wrapper.selected .tabber--container.activated .tabber--content' ).slideUp();
++
++      } else {
++
++         console.log( $tabberTab[ index ] );
++
++         //var $tabberCurrent   = $( '#' + $wrapperId + ' #' +  $tabberTab[ index ] ).closest("dt").prop("id");
++
++         //console.log( '$tabberCurrent: ' + '#' + $tabberCurrent );
++
++         // remove old content
++         jQuery( '#' + $tabber ).removeClass( 'current--tab' );
++         jQuery( '.tabber--wrapper.selected .tabber--container.activated .tabber--content' ).css( "display", "none");
++      }
++
++      jQuery( '.tabber--wrapper.selected .tabber--container.activated' ).removeClass( 'activated' );
++
++      // activate new tab
++      $( $tabberContainer[ $tabberTabs.index( this ) ] ).addClass( 'activated' );
++      var $tabberId = $( '.tabber--wrapper.selected .tabber--container.activated .tabber--tab' ).closest("dt").prop("id");
++      console.log( '$tabberId:  #' + $tabberId );
++
++
++      jQuery( '.tabber--wrapper.selected .tabber--container.activated .tabber--tab' ).addClass( 'current--tab' );
++
++      if ( isMobile ) { //  it is an accordion
++
++         $( $tabberContents[ index ] ).slideDown();
++      } else {
++
++         $( $tabberContents[ index ] ).css( "display", "block");
++      }
++
++      // remove Temporarily class to the outer wrapper
++      $( '#' + $wrapperId ).removeClass( 'selected' );
++   };
++
++
++   /*******************
++    * Helper Functions
++    ******************/
++
++   /**
++    * Change the Icon Handler
++    */
++   function changeIcon( index, isHiddenContentShowing ) {
++      var $iconElement = $( $theIcons[ index ] ),
++         showIcon = $iconElement.data( 'showIcon' ),
++         hideIcon = $iconElement.data( 'hideIcon' ),
++         removeClass, addClass,
++         isMobile = Modernizr.mq( '( max-width: 767px )' );
++
++      //console.log ( 'isHiddenContentShowing: ' + isHiddenContentShowing );
++
++      if ( isHiddenContentShowing ) {
++         addClass    = showIcon;
++         removeClass = hideIcon;
++
++      } else {
++         addClass    = hideIcon;
++         removeClass = showIcon;
++      }
++
++      $iconElement
++         .removeClass( removeClass )
++         .addClass(    addClass    );
++   }
++
++
++   $(document).ready(function () {
++      init();
++
++   });
++
++})(jQuery, window, document);
++
++;(function ($, window, document, undefined) {
++   'use strict';
++
++   var $tabberContainer;
++   var $tabberTabs;      // array of cached tab labels
++   var $tabberContents;  // array of cached contents
++   var $theIcons;
++   var j, k;
++
++   /**
++    * Initializes all scripts via document ready function
++    */
++   var init = function () {
++      $tabberContainer = jQuery( '.tabber--container' );
++      $tabberTabs      = jQuery( '.tabber--tab' );
++      //$icons = $visibleContents.find('.collapsible-content--icon');
++      $theIcons        = $tabberTabs.find('.tabber-content--icon');
++
++      $tabberContents  = $tabberTabs.next();
++
++      $tabberTabs.on( 'click',
++         { contentType: 'tabber' },    // pass type
++         clickHandler                  // named function
++      );
++
++      // strip <br /> out thank you wpautop!!!!!!!!
++      $( 'br' ).remove();
++
++      // Wrap each contiguous tabber with a div wrapper
++      var $counter = 0;
++      $( ':not( .tabber--container ) + .tabber--container, * > .tabber--container:first-of-type' ).
++      each( function() {
++         $( this ).
++         nextUntil( ':not( .tabber--container )' ).
++         addBack().
++         wrapAll('<div class="tabber--wrapper" id="tabber--wrapper-' + $counter++ + '">');
++      });
++
++      j = 0;
++      k = 0;
++
++      var $tabbers = jQuery('.tabber--container .tabber--tab');
++
++      for ( j = 0; j < $('.tabber--container').length; j++, k++ ) {
++         $( $tabbers[ k ] ) .attr( 'id', 'tabber--tab-' + j );
++      }
++
++      //  loops through each group of tabbers
++      for ( k = 0; k < jQuery('div.tabber--wrapper').length; k++ ) {
++
++         jQuery( '#tabber--wrapper-' + k + ' .tabber--tab:first' ).trigger('click');
++      }
++   };
++
++   /**
++    * Click event handler
++    *
++    * @param event
++    */
++   var clickHandler = function ( event ) {
++
++      var index;
++      var $tabber;
++      var $tabberTab;
++      var $tabberContent;
++      var isTabberContentsShowing;
++      var isMobile;
++      var $wrapperId;
++      var $iconElement;
++      var showIcon;
++      var hideIcon;
++      $tabberContainer        = jQuery( '.tabber--container' );
++
++      index                   = $tabberTabs.index ( this );  // current index
++      $tabberContent          = $( $tabberContents[ index ] );
++      $tabberTab              = $( '.tabber--tab.current--tab' );
++      $tabber                 = $( $tabberContainer[ index ] ).closest("dt").prop("id");
++      isTabberContentsShowing = $tabberContent.is(':visible');
++      isMobile                = Modernizr.mq( '( max-width: 767px )' );
++      $wrapperId              = $( $tabberContents[ index ] ).closest("div").prop("id");
++      //$tabber               = $( $tabber[ index ] ).closest("dl").prop("id");
++      $iconElement            = $( $theIcons[ index ] );
++      showIcon                = $iconElement.data( 'showIcon' );
++      hideIcon                = $iconElement.data( 'hideIcon' );
++
++      console.log( '$tabber: ' + $tabber );
++
++      //var str = JSON.stringify( $tabber, null, 3 ); // (Optional) beautiful indented output.
++      //console.log( 'str: ' + str )
++
++      // Temporarily add class to the outer wrapper
++      $( '#' + $wrapperId ).addClass( 'selected' );
++
++
++      if ( isMobile ) { //  it is an accordion
++         changeIcon( index, isTabberContentsShowing );
++
++         // remove old content
++         jQuery( '.tabber--wrapper.selected .tabber--container.activated .tabber-content--icon' ).removeClass( 'fa-caret-down' ).addClass( 'fa-caret-left' );
++         jQuery( '.tabber--wrapper.selected .tabber--container.activated .tabber--content' ).slideUp();
++
++      } else {
++
++         console.log( $tabberTab[ index ] );
++
++         //var $tabberCurrent   = $( '#' + $wrapperId + ' #' +  $tabberTab[ index ] ).closest("dt").prop("id");
++
++         //console.log( '$tabberCurrent: ' + '#' + $tabberCurrent );
++
++         // remove old content
++         jQuery( '#' + $tabber ).removeClass( 'current--tab' );
++         jQuery( '.tabber--wrapper.selected .tabber--container.activated .tabber--content' ).css( "display", "none");
++      }
++
++      jQuery( '.tabber--wrapper.selected .tabber--container.activated' ).removeClass( 'activated' );
++
++      // activate new tab
++      $( $tabberContainer[ $tabberTabs.index( this ) ] ).addClass( 'activated' );
++      var $tabberId = $( '.tabber--wrapper.selected .tabber--container.activated .tabber--tab' ).closest("dt").prop("id");
++      console.log( '$tabberId:  #' + $tabberId );
++
++
++      jQuery( '.tabber--wrapper.selected .tabber--container.activated .tabber--tab' ).addClass( 'current--tab' );
++
++      if ( isMobile ) { //  it is an accordion
++
++         $( $tabberContents[ index ] ).slideDown();
++      } else {
++
++         $( $tabberContents[ index ] ).css( "display", "block");
++      }
++
++      // remove Temporarily class to the outer wrapper
++      $( '#' + $wrapperId ).removeClass( 'selected' );
++   };
++
++
++   /*******************
++    * Helper Functions
++    ******************/
++
++   /**
++    * Change the Icon Handler
++    */
++   function changeIcon( index, isHiddenContentShowing ) {
++      var $iconElement = $( $theIcons[ index ] ),
++         showIcon = $iconElement.data( 'showIcon' ),
++         hideIcon = $iconElement.data( 'hideIcon' ),
++         removeClass, addClass,
++         isMobile = Modernizr.mq( '( max-width: 767px )' );
++
++      //console.log ( 'isHiddenContentShowing: ' + isHiddenContentShowing );
++
++      if ( isHiddenContentShowing ) {
++         addClass    = showIcon;
++         removeClass = hideIcon;
++
++      } else {
++         addClass    = hideIcon;
++         removeClass = showIcon;
++      }
++
++      $iconElement
++         .removeClass( removeClass )
++         .addClass(    addClass    );
++   }
++
++
++   $(document).ready(function () {
++      init();
++
++   });
++
++})(jQuery, window, document);
++
++;(function ($, window, document, undefined) {
++   'use strict';
++
++   var $tabberContainer;
++   var $tabberTabs;      // array of cached tab labels
++   var $tabberContents;  // array of cached contents
++   var $theIcons;
+    var k;
+ 
+    /**
+@@ -13,6 +532,9 @@
+    var init = function () {
+       $tabberContainer = jQuery( '.tabber--container' );
+       $tabberTabs      = jQuery( '.tabber--tab' );
++      //$icons = $visibleContents.find('.collapsible-content--icon');
++      $theIcons        = $tabberTabs.find('.tabber-content--icon');
++
+       $tabberContents  = $tabberTabs.next();
+ 
+       $tabberTabs.on( 'click',
+@@ -33,27 +555,176 @@
+          wrapAll('<div class="tabber--wrapper" id="tabber--wrapper-' + $counter++ + '">');
+       });
+ 
++      var j = 0;
++
++      console.log( 'jQuery(".tabber--container").length: ' + jQuery(".tabber--container").length );
++      for ( j = 0; j < $('.tabber--container').length; j++ ) {
++         $('.tabber--container')[ k ].attr( 'id', 'tabber--container-' + j );
++         console.log( 'j: ' + j );
++      }
++      //for ( var j = 0; j < jQuery('.tabber--container').length;  ) {
++      //   $( '.tabber--container' ).attr( 'id', 'tabber--container-' + j++ );
++      //}
++
++      console.log( jQuery('.tabber--container').length );
++
+       //  loops through each group of tabbers
+       for ( k = 0; k < jQuery('div.tabber--wrapper').length; k++ ) {
+ 
+-         var $wrapperId        = $( $tabberContents[ k ] ).closest( "div" ).prop( "id" );
+-         var $tabberContainer2 = jQuery( '#tabber--wrapper-' + k + ' .tabber--container' );
+-         var $tabberTabs2      = jQuery( '#' + $wrapperId + ' .tabber--tab' );
+-         var index             = $tabberTabs2.index ( this );  // current index
+-         var $tabberContents2  = $tabberTabs2.next();
+-         var $theIcons         = $tabberTabs2.find('.tabber-content--icon');
++         jQuery( '#tabber--wrapper-' + k + ' .tabber--tab:first' ).trigger('click');
++      }
++   };
++
++   /**
++    * Click event handler
++    *
++    * @param event
++    */
++   var clickHandler = function ( event ) {
++
++      var index;
++      var $tabberContent;
++      var isTabberContentsShowing;
++      var isMobile;
++      var $wrapperId;
++      var $iconElement;
++      var showIcon;
++      var hideIcon;
++
++      index                   = $tabberTabs.index ( this );  // current index
++      $tabberContent          = $( $tabberContents[ index ] );
++      isTabberContentsShowing = $tabberContent.is(':visible');
++      isMobile                = Modernizr.mq( '( max-width: 767px )' );
++      $wrapperId              = $( $tabberContents[ index ] ).closest("div").prop("id");
++      $iconElement            = $( $theIcons[ index ] );
++      showIcon                = $iconElement.data( 'showIcon' );
++      hideIcon                = $iconElement.data( 'hideIcon' );
++
++      // Temporarily add class to the outer wrapper
++      $( '#' + $wrapperId ).addClass( 'selected' );
++
++      if ( isMobile ) { //  it is an accordion
++         changeIcon( index, isTabberContentsShowing );
++
++         // remove old content
++         jQuery( '.tabber--wrapper.selected .tabber--container.activated .tabber-content--icon' ).removeClass( 'fa-caret-down' ).addClass( 'fa-caret-left' );
++         jQuery( '.tabber--wrapper.selected .tabber--container.activated .tabber--content' ).slideUp();
++
++      } else {
++
++         // remove old content
++         jQuery( '.tabber--wrapper .tabber--container.activated .tabber--tab.current--tab' ).removeClass( 'current--tab' );
++         jQuery( '.tabber--wrapper.selected .tabber--container.activated .tabber--content' ).css( "display", "none");
++      }
++
++      jQuery( '.tabber--wrapper.selected .tabber--container.activated' ).removeClass( 'activated' );
++
++      // activate new tab
++      $( $tabberContainer[ $tabberTabs.index( this ) ] ).addClass( 'activated' );
++      jQuery( '.tabber--wrapper.selected .tabber--container.activated .tabber--tab' ).addClass( 'current--tab' );
++
++      if ( isMobile ) { //  it is an accordion
++
++         $( $tabberContents[ index ] ).slideDown();
++      } else {
++
++         $( $tabberContents[ index ] ).css( "display", "block");
++      }
++
++      // remove Temporarily class to the outer wrapper
++      $( '#' + $wrapperId ).removeClass( 'selected' );
++   };
++
++
++   /*******************
++    * Helper Functions
++    ******************/
++
++   /**
++    * Change the Icon Handler
++    */
++   function changeIcon( index, isHiddenContentShowing ) {
++      var $iconElement = $( $theIcons[ index ] ),
++         showIcon = $iconElement.data( 'showIcon' ),
++         hideIcon = $iconElement.data( 'hideIcon' ),
++         removeClass, addClass,
++         isMobile = Modernizr.mq( '( max-width: 767px )' );
++
++      console.log ( 'isHiddenContentShowing: ' + isHiddenContentShowing );
++
++      if ( isHiddenContentShowing ) {
++         addClass    = showIcon;
++         removeClass = hideIcon;
++
++      } else {
++         addClass    = hideIcon;
++         removeClass = showIcon;
++      }
++
++      $iconElement
++         .removeClass( removeClass )
++         .addClass(    addClass    );
++   }
++
++
++   $(document).ready(function () {
++      init();
++
++   });
++
++})(jQuery, window, document);
++
++;(function ($, window, document, undefined) {
++   'use strict';
++
++   var $tabberContainer;
++   var $tabberTabs;      // array of cached tab labels
++   var $tabberContents;  // array of cached contents
++   var $theIcons;
++   var j, k;
++
++   /**
++    * Initializes all scripts via document ready function
++    */
++   var init = function () {
++      $tabberContainer = jQuery( '.tabber--container' );
++      $tabberTabs      = jQuery( '.tabber--tab' );
++      //$icons = $visibleContents.find('.collapsible-content--icon');
++      $theIcons        = $tabberTabs.find('.tabber-content--icon');
++
++      $tabberContents  = $tabberTabs.next();
++
++      $tabberTabs.on( 'click',
++         { contentType: 'tabber' },    // pass type
++         clickHandler                  // named function
++      );
++
++      // strip <br /> out thank you wpautop!!!!!!!!
++      $( 'br' ).remove();
++
++      // Wrap each contiguous tabber with a div wrapper
++      var $counter = 0;
++      $( ':not( .tabber--container ) + .tabber--container, * > .tabber--container:first-of-type' ).
++      each( function() {
++         $( this ).
++         nextUntil( ':not( .tabber--container )' ).
++         addBack().
++         wrapAll('<div class="tabber--wrapper" id="tabber--wrapper-' + $counter++ + '">');
++      });
++
++      j = 0;
++      k = 0;
+ 
+-         // open first tab content on load
+-         //$( $tabberContents[ index ] ).css( "display", "block");
++      var $tabbers = jQuery('.tabber--container .tabber--tab');
+ 
+-         $( $theIcons[ index ] )
+-            .removeClass( $( $theIcons[ index ] ).data( 'showIcon' ) )
+-            .addClass(    $( $theIcons[ index ] ).data( 'hideIcon' ) );
++      for ( j = 0; j < $('.tabber--container').length; j++, k++ ) {
++         $( $tabbers[ k ] ) .attr( 'id', 'tabber--tab-' + j );
++      }
+ 
+-         $( $tabberContainer2[ 0 ] ).addClass( 'activated' );
+-         $( $tabberContents2[ 0 ] ).css( "display", "block" );
++      //  loops through each group of tabbers
++      for ( k = 0; k < jQuery('div.tabber--wrapper').length; k++ ) {
+ 
+-         console.log( 'k: ' + k );
++         jQuery( '#tabber--wrapper-' + k + ' .tabber--tab:first' ).trigger('click');
+       }
+    };
+ 
+@@ -65,36 +736,62 @@
+    var clickHandler = function ( event ) {
+ 
+       var index;
++      var $tabber;
++      var $tabberTab;
+       var $tabberContent;
+       var isTabberContentsShowing;
+       var isMobile;
+       var $wrapperId;
++      var $iconElement;
++      var showIcon;
++      var hideIcon;
++      $tabberContainer        = jQuery( '.tabber--container' );
+ 
+       index                   = $tabberTabs.index ( this );  // current index
+       $tabberContent          = $( $tabberContents[ index ] );
++      $tabberTab              = $( '.tabber--tab.current--tab' );
++      //$tabber                 = $( $tabberContainer[ index ] ).closest("dt").prop("id");
+       isTabberContentsShowing = $tabberContent.is(':visible');
+       isMobile                = Modernizr.mq( '( max-width: 767px )' );
+       $wrapperId              = $( $tabberContents[ index ] ).closest("div").prop("id");
++      //$tabber               = $( $tabber[ index ] ).closest("dl").prop("id");
++      $iconElement            = $( $theIcons[ index ] );
++      showIcon                = $iconElement.data( 'showIcon' );
++      hideIcon                = $iconElement.data( 'hideIcon' );
++
++      //var str = JSON.stringify( $tabber, null, 3 ); // (Optional) beautiful indented output.
++      //console.log( 'str: ' + str )
+ 
+       // Temporarily add class to the outer wrapper
+       $( '#' + $wrapperId ).addClass( 'selected' );
+ 
++
+       if ( isMobile ) { //  it is an accordion
++         changeIcon( index, isTabberContentsShowing );
+ 
+          // remove old content
++         jQuery( '.tabber--wrapper.selected .tabber--container.activated .tabber-content--icon' ).removeClass( 'fa-caret-down' ).addClass( 'fa-caret-left' );
+          jQuery( '.tabber--wrapper.selected .tabber--container.activated .tabber--content' ).slideUp();
+ 
+       } else {
++         $tabber = $( '#' + $wrapperId + ' .tabber--tab.current--tab' ).closest("dt").prop("id");
++
++         console.log( 'current: ' + '#' + $wrapperId + ' #' +  $tabber  );
++
+          // remove old content
++         jQuery( '#' + $tabber ).removeClass( 'current--tab' );
+          jQuery( '.tabber--wrapper.selected .tabber--container.activated .tabber--content' ).css( "display", "none");
+       }
+ 
+-      changeIcon( index, isTabberContentsShowing );
+-
+       jQuery( '.tabber--wrapper.selected .tabber--container.activated' ).removeClass( 'activated' );
+ 
+       // activate new tab
+       $( $tabberContainer[ $tabberTabs.index( this ) ] ).addClass( 'activated' );
++      var $tabberId = $( '.tabber--wrapper.selected .tabber--container.activated .tabber--tab' ).closest("dt").prop("id");
++      console.log( '$tabberId:  #' + $tabberId );
++
++
++      jQuery( '.tabber--wrapper.selected .tabber--container.activated .tabber--tab' ).addClass( 'current--tab' );
+ 
+       if ( isMobile ) { //  it is an accordion
+ 
+@@ -104,8 +801,6 @@
+          $( $tabberContents[ index ] ).css( "display", "block");
+       }
+ 
+-      changeIcon( index, isTabberContentsShowing );
+-
+       // remove Temporarily class to the outer wrapper
+       $( '#' + $wrapperId ).removeClass( 'selected' );
+    };
+@@ -118,32 +813,22 @@
+    /**
+     * Change the Icon Handler
+     */
+-   function changeIcon( index, isTabberContentsShowing ) {
+-      $theIcons        = $tabberTabs.find('.tabber-content--icon');
+-
++   function changeIcon( index, isHiddenContentShowing ) {
+       var $iconElement = $( $theIcons[ index ] ),
+-         show_icon     = $iconElement.data( 'showIcon' ),
+-         hide_icon     = $iconElement.data( 'hideIcon' ),
+-         length        = $tabberTabs.length,          // number of tabs
+-         removeClass,
+-         addClass,
+-         k;
++         showIcon = $iconElement.data( 'showIcon' ),
++         hideIcon = $iconElement.data( 'hideIcon' ),
++         removeClass, addClass,
++         isMobile = Modernizr.mq( '( max-width: 767px )' );
+ 
+-      for ( k = 0; k < length; k++ ) {
+-         if ( $( $theIcons[ k ] ).data( 'showIcon' ) === 'fa fa-caret-left' ) {
+-            $( $theIcons[ k ] )
+-            .removeClass( $( $theIcons[ k ] ).data( 'hideIcon' ) )
+-            .addClass(    $( $theIcons[ k ] ).data( 'showIcon' ) );
+-         }
+-      }
++      //console.log ( 'isHiddenContentShowing: ' + isHiddenContentShowing );
+ 
+-      if ( isTabberContentsShowing ) {
+-         removeClass = hide_icon;
+-         addClass    = show_icon;
++      if ( isHiddenContentShowing ) {
++         addClass    = showIcon;
++         removeClass = hideIcon;
+ 
+       } else {
+-         addClass    = hide_icon;
+-         removeClass = show_icon;
++         addClass    = hideIcon;
++         removeClass = showIcon;
+       }
+ 
+       $iconElement
+@@ -151,12 +836,14 @@
+          .addClass(    addClass    );
+    }
+ 
++
+    $(document).ready(function () {
+       init();
+ 
+    });
+ 
+ })(jQuery, window, document);
++
+ /*! modernizr 3.5.0 (Custom Build) | MIT *
+  * https://modernizr.com/download/?-cssvhunit-cssvwunit-flexbox-flexboxtweener-hovermq-inlinesvg-matchmedia-mediaqueries-pointermq-setclasses !*/
+ !function(e,n,t){function r(e,n){return typeof e===n}function i(){var e,n,t,i,o,s,a;for(var l in _)if(_.hasOwnProperty(l)){if(e=[],n=_[l],n.name&&(e.push(n.name.toLowerCase()),n.options&&n.options.aliases&&n.options.aliases.length))for(t=0;t<n.options.aliases.length;t++)e.push(n.options.aliases[t].toLowerCase());for(i=r(n.fn,"function")?n.fn():n.fn,o=0;o<e.length;o++)s=e[o],a=s.split("."),1===a.length?Modernizr[a[0]]=i:(!Modernizr[a[0]]||Modernizr[a[0]]instanceof Boolean||(Modernizr[a[0]]=new Boolean(Modernizr[a[0]])),Modernizr[a[0]][a[1]]=i),w.push((i?"":"no-")+a.join("-"))}}function o(e){var n=S.className,t=Modernizr._config.classPrefix||"";if(T&&(n=n.baseVal),Modernizr._config.enableJSClass){var r=new RegExp("(^|\\s)"+t+"no-js(\\s|$)");n=n.replace(r,"$1"+t+"js$2")}Modernizr._config.enableClasses&&(n+=" "+t+e.join(" "+t),T?S.className.baseVal=n:S.className=n)}function s(n,t,r){var i;if("getComputedStyle"in e){i=getComputedStyle.call(e,n,t);var o=e.console;if(null!==i)r&&(i=i.getPropertyValue(r));else if(o){var s=o.error?"error":"log";o[s].call(o,"getComputedStyle returning null, its possible modernizr test results are inaccurate")}}else i=!t&&n.currentStyle&&n.currentStyle[r];return i}function a(){return"function"!=typeof n.createElement?n.createElement(arguments[0]):T?n.createElementNS.call(n,"http://www.w3.org/2000/svg",arguments[0]):n.createElement.apply(n,arguments)}function l(e,n){if("object"==typeof e)for(var t in e)b(e,t)&&l(t,e[t]);else{e=e.toLowerCase();var r=e.split("."),i=Modernizr[r[0]];if(2==r.length&&(i=i[r[1]]),"undefined"!=typeof i)return Modernizr;n="function"==typeof n?n():n,1==r.length?Modernizr[r[0]]=n:(!Modernizr[r[0]]||Modernizr[r[0]]instanceof Boolean||(Modernizr[r[0]]=new Boolean(Modernizr[r[0]])),Modernizr[r[0]][r[1]]=n),o([(n&&0!=n?"":"no-")+r.join("-")]),Modernizr._trigger(e,n)}return Modernizr}function u(e){return e.replace(/([a-z])-([a-z])/g,function(e,n,t){return n+t.toUpperCase()}).replace(/^-/,"")}function f(){var e=n.body;return e||(e=a(T?"svg":"body"),e.fake=!0),e}function d(e,t,r,i){var o,s,l,u,d="modernizr",c=a("div"),p=f();if(parseInt(r,10))for(;r--;)l=a("div"),l.id=i?i[r]:d+(r+1),c.appendChild(l);return o=a("style"),o.type="text/css",o.id="s"+d,(p.fake?p:c).appendChild(o),p.appendChild(c),o.styleSheet?o.styleSheet.cssText=e:o.appendChild(n.createTextNode(e)),c.id=d,p.fake&&(p.style.background="",p.style.overflow="hidden",u=S.style.overflow,S.style.overflow="hidden",S.appendChild(p)),s=t(c,e),p.fake?(p.parentNode.removeChild(p),S.style.overflow=u,S.offsetHeight):c.parentNode.removeChild(c),!!s}function c(e,n){return!!~(""+e).indexOf(n)}function p(e,n){return function(){return e.apply(n,arguments)}}function h(e,n,t){var i;for(var o in e)if(e[o]in n)return t===!1?e[o]:(i=n[e[o]],r(i,"function")?p(i,t||n):i);return!1}function m(e){return e.replace(/([A-Z])/g,function(e,n){return"-"+n.toLowerCase()}).replace(/^ms-/,"-ms-")}function v(n,r){var i=n.length;if("CSS"in e&&"supports"in e.CSS){for(;i--;)if(e.CSS.supports(m(n[i]),r))return!0;return!1}if("CSSSupportsRule"in e){for(var o=[];i--;)o.push("("+m(n[i])+":"+r+")");return o=o.join(" or "),d("@supports ("+o+") { #modernizr { position: absolute; } }",function(e){return"absolute"==s(e,null,"position")})}return t}function g(e,n,i,o){function s(){f&&(delete O.style,delete O.modElem)}if(o=r(o,"undefined")?!1:o,!r(i,"undefined")){var l=v(e,i);if(!r(l,"undefined"))return l}for(var f,d,p,h,m,g=["modernizr","tspan","samp"];!O.style&&g.length;)f=!0,O.modElem=a(g.shift()),O.style=O.modElem.style;for(p=e.length,d=0;p>d;d++)if(h=e[d],m=O.style[h],c(h,"-")&&(h=u(h)),O.style[h]!==t){if(o||r(i,"undefined"))return s(),"pfx"==n?h:!0;try{O.style[h]=i}catch(y){}if(O.style[h]!=m)return s(),"pfx"==n?h:!0}return s(),!1}function y(e,n,t,i,o){var s=e.charAt(0).toUpperCase()+e.slice(1),a=(e+" "+q.join(s+" ")+s).split(" ");return r(n,"string")||r(n,"undefined")?g(a,n,i,o):(a=(e+" "+L.join(s+" ")+s).split(" "),h(a,n,t))}function C(e,n,r){return y(e,t,t,n,r)}var w=[],_=[],x={_version:"3.5.0",_config:{classPrefix:"",enableClasses:!0,enableJSClass:!0,usePrefixes:!0},_q:[],on:function(e,n){var t=this;setTimeout(function(){n(t[e])},0)},addTest:function(e,n,t){_.push({name:e,fn:n,options:t})},addAsyncTest:function(e){_.push({name:null,fn:e})}},Modernizr=function(){};Modernizr.prototype=x,Modernizr=new Modernizr;var S=n.documentElement,T="svg"===S.nodeName.toLowerCase();Modernizr.addTest("inlinesvg",function(){var e=a("div");return e.innerHTML="<svg/>","http://www.w3.org/2000/svg"==("undefined"!=typeof SVGRect&&e.firstChild&&e.firstChild.namespaceURI)});var b;!function(){var e={}.hasOwnProperty;b=r(e,"undefined")||r(e.call,"undefined")?function(e,n){return n in e&&r(e.constructor.prototype[n],"undefined")}:function(n,t){return e.call(n,t)}}(),x._l={},x.on=function(e,n){this._l[e]||(this._l[e]=[]),this._l[e].push(n),Modernizr.hasOwnProperty(e)&&setTimeout(function(){Modernizr._trigger(e,Modernizr[e])},0)},x._trigger=function(e,n){if(this._l[e]){var t=this._l[e];setTimeout(function(){var e,r;for(e=0;e<t.length;e++)(r=t[e])(n)},0),delete this._l[e]}},Modernizr._q.push(function(){x.addTest=l});var z=function(){var n=e.matchMedia||e.msMatchMedia;return n?function(e){var t=n(e);return t&&t.matches||!1}:function(n){var t=!1;return d("@media "+n+" { #modernizr { position: absolute; } }",function(n){t="absolute"==(e.getComputedStyle?e.getComputedStyle(n,null):n.currentStyle).position}),t}}();x.mq=z,Modernizr.addTest("mediaqueries",z("only all")),Modernizr.addTest("hovermq",z("(hover)")),Modernizr.addTest("pointermq",z("(pointer:coarse),(pointer:fine),(pointer:none)"));var P=x.testStyles=d;P("#modernizr { height: 50vh; }",function(n){var t=parseInt(e.innerHeight/2,10),r=parseInt(s(n,null,"height"),10);Modernizr.addTest("cssvhunit",r==t)}),P("#modernizr { width: 50vw; }",function(n){var t=parseInt(e.innerWidth/2,10),r=parseInt(s(n,null,"width"),10);Modernizr.addTest("cssvwunit",r==t)});var E="Moz O ms Webkit",q=x._config.usePrefixes?E.split(" "):[];x._cssomPrefixes=q;var j=function(n){var r,i=prefixes.length,o=e.CSSRule;if("undefined"==typeof o)return t;if(!n)return!1;if(n=n.replace(/^@/,""),r=n.replace(/-/g,"_").toUpperCase()+"_RULE",r in o)return"@"+n;for(var s=0;i>s;s++){var a=prefixes[s],l=a.toUpperCase()+"_"+r;if(l in o)return"@-"+a.toLowerCase()+"-"+n}return!1};x.atRule=j;var L=x._config.usePrefixes?E.toLowerCase().split(" "):[];x._domPrefixes=L;var N={elem:a("modernizr")};Modernizr._q.push(function(){delete N.elem});var O={style:N.elem.style};Modernizr._q.unshift(function(){delete O.style}),x.testAllProps=y,x.testAllProps=C,Modernizr.addTest("flexbox",C("flexBasis","1px",!0)),Modernizr.addTest("flexboxtweener",C("flexAlign","end",!0));var R=x.prefixed=function(e,n,t){return 0===e.indexOf("@")?j(e):(-1!=e.indexOf("-")&&(e=u(e)),n?y(e,n,t):y(e,"pfx"))};Modernizr.addTest("matchmedia",!!R("matchMedia",e)),i(),o(w),delete x.addTest,delete x.addAsyncTest;for(var A=0;A<Modernizr._q.length;A++)Modernizr._q[A]();e.Modernizr=Modernizr}(window,document);
+\ No newline at end of file
+diff --git a/assets/dist/js/jquery.plugin.min.js b/assets/dist/js/jquery.plugin.min.js
+index e00fd1f..1a38c00 100644
+--- a/assets/dist/js/jquery.plugin.min.js
++++ b/assets/dist/js/jquery.plugin.min.js
+@@ -1 +1 @@
+-!function($,window,document,undefined){"use strict";function changeIcon(index,isTabberContentsShowing){$theIcons=$tabberTabs.find(".tabber-content--icon");var removeClass,addClass,k,$iconElement=$($theIcons[index]),show_icon=$iconElement.data("showIcon"),hide_icon=$iconElement.data("hideIcon"),length=$tabberTabs.length;for(k=0;k<length;k++)"fa fa-caret-left"===$($theIcons[k]).data("showIcon")&&$($theIcons[k]).removeClass($($theIcons[k]).data("hideIcon")).addClass($($theIcons[k]).data("showIcon"));isTabberContentsShowing?(removeClass=hide_icon,addClass=show_icon):(addClass=hide_icon,removeClass=show_icon),$iconElement.removeClass(removeClass).addClass(addClass)}var $tabberContainer,$tabberTabs,$tabberContents,$theIcons,k,init=function(){$tabberContainer=jQuery(".tabber--container"),$tabberTabs=jQuery(".tabber--tab"),$tabberContents=$tabberTabs.next(),$tabberTabs.on("click",{contentType:"tabber"},clickHandler),$("br").remove();var $counter=0;for($(":not( .tabber--container ) + .tabber--container, * > .tabber--container:first-of-type").each(function(){$(this).nextUntil(":not( .tabber--container )").addBack().wrapAll('<div class="tabber--wrapper" id="tabber--wrapper-'+$counter++ +'">')}),k=0;k<jQuery("div.tabber--wrapper").length;k++){var $wrapperId=$($tabberContents[k]).closest("div").prop("id"),$tabberContainer2=jQuery("#tabber--wrapper-"+k+" .tabber--container"),$tabberTabs2=jQuery("#"+$wrapperId+" .tabber--tab"),index=$tabberTabs2.index(this),$tabberContents2=$tabberTabs2.next(),$theIcons=$tabberTabs2.find(".tabber-content--icon");$($theIcons[index]).removeClass($($theIcons[index]).data("showIcon")).addClass($($theIcons[index]).data("hideIcon")),$($tabberContainer2[0]).addClass("activated"),$($tabberContents2[0]).css("display","block"),console.log("k: "+k)}},clickHandler=function(event){var index,$tabberContent,isTabberContentsShowing,isMobile,$wrapperId;index=$tabberTabs.index(this),$tabberContent=$($tabberContents[index]),isTabberContentsShowing=$tabberContent.is(":visible"),isMobile=Modernizr.mq("( max-width: 767px )"),$wrapperId=$($tabberContents[index]).closest("div").prop("id"),$("#"+$wrapperId).addClass("selected"),isMobile?jQuery(".tabber--wrapper.selected .tabber--container.activated .tabber--content").slideUp():jQuery(".tabber--wrapper.selected .tabber--container.activated .tabber--content").css("display","none"),changeIcon(index,isTabberContentsShowing),jQuery(".tabber--wrapper.selected .tabber--container.activated").removeClass("activated"),$($tabberContainer[$tabberTabs.index(this)]).addClass("activated"),isMobile?$($tabberContents[index]).slideDown():$($tabberContents[index]).css("display","block"),changeIcon(index,isTabberContentsShowing),$("#"+$wrapperId).removeClass("selected")};$(document).ready(function(){init()})}(jQuery,window,document),!function(e,n,t){function r(e,n){return typeof e===n}function i(){var e,n,t,i,o,s,a;for(var l in _)if(_.hasOwnProperty(l)){if(e=[],n=_[l],n.name&&(e.push(n.name.toLowerCase()),n.options&&n.options.aliases&&n.options.aliases.length))for(t=0;t<n.options.aliases.length;t++)e.push(n.options.aliases[t].toLowerCase());for(i=r(n.fn,"function")?n.fn():n.fn,o=0;o<e.length;o++)s=e[o],a=s.split("."),1===a.length?Modernizr[a[0]]=i:(!Modernizr[a[0]]||Modernizr[a[0]]instanceof Boolean||(Modernizr[a[0]]=new Boolean(Modernizr[a[0]])),Modernizr[a[0]][a[1]]=i),w.push((i?"":"no-")+a.join("-"))}}function o(e){var n=S.className,t=Modernizr._config.classPrefix||"";if(T&&(n=n.baseVal),Modernizr._config.enableJSClass){var r=new RegExp("(^|\\s)"+t+"no-js(\\s|$)");n=n.replace(r,"$1"+t+"js$2")}Modernizr._config.enableClasses&&(n+=" "+t+e.join(" "+t),T?S.className.baseVal=n:S.className=n)}function s(n,t,r){var i;if("getComputedStyle"in e){i=getComputedStyle.call(e,n,t);var o=e.console;if(null!==i)r&&(i=i.getPropertyValue(r));else if(o){var s=o.error?"error":"log";o[s].call(o,"getComputedStyle returning null, its possible modernizr test results are inaccurate")}}else i=!t&&n.currentStyle&&n.currentStyle[r];return i}function a(){return"function"!=typeof n.createElement?n.createElement(arguments[0]):T?n.createElementNS.call(n,"http://www.w3.org/2000/svg",arguments[0]):n.createElement.apply(n,arguments)}function l(e,n){if("object"==typeof e)for(var t in e)b(e,t)&&l(t,e[t]);else{e=e.toLowerCase();var r=e.split("."),i=Modernizr[r[0]];if(2==r.length&&(i=i[r[1]]),"undefined"!=typeof i)return Modernizr;n="function"==typeof n?n():n,1==r.length?Modernizr[r[0]]=n:(!Modernizr[r[0]]||Modernizr[r[0]]instanceof Boolean||(Modernizr[r[0]]=new Boolean(Modernizr[r[0]])),Modernizr[r[0]][r[1]]=n),o([(n&&0!=n?"":"no-")+r.join("-")]),Modernizr._trigger(e,n)}return Modernizr}function u(e){return e.replace(/([a-z])-([a-z])/g,function(e,n,t){return n+t.toUpperCase()}).replace(/^-/,"")}function f(){var e=n.body;return e||(e=a(T?"svg":"body"),e.fake=!0),e}function d(e,t,r,i){var o,s,l,u,d="modernizr",c=a("div"),p=f();if(parseInt(r,10))for(;r--;)l=a("div"),l.id=i?i[r]:d+(r+1),c.appendChild(l);return o=a("style"),o.type="text/css",o.id="s"+d,(p.fake?p:c).appendChild(o),p.appendChild(c),o.styleSheet?o.styleSheet.cssText=e:o.appendChild(n.createTextNode(e)),c.id=d,p.fake&&(p.style.background="",p.style.overflow="hidden",u=S.style.overflow,S.style.overflow="hidden",S.appendChild(p)),s=t(c,e),p.fake?(p.parentNode.removeChild(p),S.style.overflow=u,S.offsetHeight):c.parentNode.removeChild(c),!!s}function c(e,n){return!!~(""+e).indexOf(n)}function p(e,n){return function(){return e.apply(n,arguments)}}function h(e,n,t){var i;for(var o in e)if(e[o]in n)return t===!1?e[o]:(i=n[e[o]],r(i,"function")?p(i,t||n):i);return!1}function m(e){return e.replace(/([A-Z])/g,function(e,n){return"-"+n.toLowerCase()}).replace(/^ms-/,"-ms-")}function v(n,r){var i=n.length;if("CSS"in e&&"supports"in e.CSS){for(;i--;)if(e.CSS.supports(m(n[i]),r))return!0;return!1}if("CSSSupportsRule"in e){for(var o=[];i--;)o.push("("+m(n[i])+":"+r+")");return o=o.join(" or "),d("@supports ("+o+") { #modernizr { position: absolute; } }",function(e){return"absolute"==s(e,null,"position")})}return t}function g(e,n,i,o){function s(){f&&(delete O.style,delete O.modElem)}if(o=!r(o,"undefined")&&o,!r(i,"undefined")){var l=v(e,i);if(!r(l,"undefined"))return l}for(var f,d,p,h,m,g=["modernizr","tspan","samp"];!O.style&&g.length;)f=!0,O.modElem=a(g.shift()),O.style=O.modElem.style;for(p=e.length,d=0;p>d;d++)if(h=e[d],m=O.style[h],c(h,"-")&&(h=u(h)),O.style[h]!==t){if(o||r(i,"undefined"))return s(),"pfx"!=n||h;try{O.style[h]=i}catch(y){}if(O.style[h]!=m)return s(),"pfx"!=n||h}return s(),!1}function y(e,n,t,i,o){var s=e.charAt(0).toUpperCase()+e.slice(1),a=(e+" "+q.join(s+" ")+s).split(" ");return r(n,"string")||r(n,"undefined")?g(a,n,i,o):(a=(e+" "+L.join(s+" ")+s).split(" "),h(a,n,t))}function C(e,n,r){return y(e,t,t,n,r)}var w=[],_=[],x={_version:"3.5.0",_config:{classPrefix:"",enableClasses:!0,enableJSClass:!0,usePrefixes:!0},_q:[],on:function(e,n){var t=this;setTimeout(function(){n(t[e])},0)},addTest:function(e,n,t){_.push({name:e,fn:n,options:t})},addAsyncTest:function(e){_.push({name:null,fn:e})}},Modernizr=function(){};Modernizr.prototype=x,Modernizr=new Modernizr;var S=n.documentElement,T="svg"===S.nodeName.toLowerCase();Modernizr.addTest("inlinesvg",function(){var e=a("div");return e.innerHTML="<svg/>","http://www.w3.org/2000/svg"==("undefined"!=typeof SVGRect&&e.firstChild&&e.firstChild.namespaceURI)});var b;!function(){var e={}.hasOwnProperty;b=r(e,"undefined")||r(e.call,"undefined")?function(e,n){return n in e&&r(e.constructor.prototype[n],"undefined")}:function(n,t){return e.call(n,t)}}(),x._l={},x.on=function(e,n){this._l[e]||(this._l[e]=[]),this._l[e].push(n),Modernizr.hasOwnProperty(e)&&setTimeout(function(){Modernizr._trigger(e,Modernizr[e])},0)},x._trigger=function(e,n){if(this._l[e]){var t=this._l[e];setTimeout(function(){var e,r;for(e=0;e<t.length;e++)(r=t[e])(n)},0),delete this._l[e]}},Modernizr._q.push(function(){x.addTest=l});var z=function(){var n=e.matchMedia||e.msMatchMedia;return n?function(e){var t=n(e);return t&&t.matches||!1}:function(n){var t=!1;return d("@media "+n+" { #modernizr { position: absolute; } }",function(n){t="absolute"==(e.getComputedStyle?e.getComputedStyle(n,null):n.currentStyle).position}),t}}();x.mq=z,Modernizr.addTest("mediaqueries",z("only all")),Modernizr.addTest("hovermq",z("(hover)")),Modernizr.addTest("pointermq",z("(pointer:coarse),(pointer:fine),(pointer:none)"));var P=x.testStyles=d;P("#modernizr { height: 50vh; }",function(n){var t=parseInt(e.innerHeight/2,10),r=parseInt(s(n,null,"height"),10);Modernizr.addTest("cssvhunit",r==t)}),P("#modernizr { width: 50vw; }",function(n){var t=parseInt(e.innerWidth/2,10),r=parseInt(s(n,null,"width"),10);Modernizr.addTest("cssvwunit",r==t)});var E="Moz O ms Webkit",q=x._config.usePrefixes?E.split(" "):[];x._cssomPrefixes=q;var j=function(n){var r,i=prefixes.length,o=e.CSSRule;if("undefined"==typeof o)return t;if(!n)return!1;if(n=n.replace(/^@/,""),r=n.replace(/-/g,"_").toUpperCase()+"_RULE",r in o)return"@"+n;for(var s=0;i>s;s++){var a=prefixes[s],l=a.toUpperCase()+"_"+r;if(l in o)return"@-"+a.toLowerCase()+"-"+n}return!1};x.atRule=j;var L=x._config.usePrefixes?E.toLowerCase().split(" "):[];x._domPrefixes=L;var N={elem:a("modernizr")};Modernizr._q.push(function(){delete N.elem});var O={style:N.elem.style};Modernizr._q.unshift(function(){delete O.style}),x.testAllProps=y,x.testAllProps=C,Modernizr.addTest("flexbox",C("flexBasis","1px",!0)),Modernizr.addTest("flexboxtweener",C("flexAlign","end",!0));var R=x.prefixed=function(e,n,t){return 0===e.indexOf("@")?j(e):(-1!=e.indexOf("-")&&(e=u(e)),n?y(e,n,t):y(e,"pfx"))};Modernizr.addTest("matchmedia",!!R("matchMedia",e)),i(),o(w),delete x.addTest,delete x.addAsyncTest;for(var A=0;A<Modernizr._q.length;A++)Modernizr._q[A]();e.Modernizr=Modernizr}(window,document);
+\ No newline at end of file
++!function($,window,document,undefined){"use strict";function changeIcon(index,isHiddenContentShowing){var removeClass,addClass,$iconElement=$($theIcons[index]),showIcon=$iconElement.data("showIcon"),hideIcon=$iconElement.data("hideIcon");Modernizr.mq("( max-width: 767px )");console.log("isHiddenContentShowing: "+isHiddenContentShowing),isHiddenContentShowing?(addClass=showIcon,removeClass=hideIcon):(addClass=hideIcon,removeClass=showIcon),$iconElement.removeClass(removeClass).addClass(addClass)}var $tabberContainer,$tabberTabs,$tabberContents,$theIcons,j,k,init=function(){$tabberContainer=jQuery(".tabber--container"),$tabberTabs=jQuery(".tabber--tab"),$theIcons=$tabberTabs.find(".tabber-content--icon"),$tabberContents=$tabberTabs.next(),$tabberTabs.on("click",{contentType:"tabber"},clickHandler),$("br").remove();var $counter=0;$(":not( .tabber--container ) + .tabber--container, * > .tabber--container:first-of-type").each(function(){$(this).nextUntil(":not( .tabber--container )").addBack().wrapAll('<div class="tabber--wrapper" id="tabber--wrapper-'+$counter++ +'">')}),j=0,k=0;var $tabbers=jQuery(".tabber--container .tabber--tab");for(j=0;j<$(".tabber--container").length;j++,k++)$($tabbers[k]).attr("id","tabber--tab-"+k);for(k=0;k<jQuery("div.tabber--wrapper").length;k++)jQuery("#tabber--wrapper-"+k+" .tabber--tab:first").trigger("click")},clickHandler=function(event){var index,$tabber,$tabberTab,$tabberContent,isTabberContentsShowing,isMobile,$wrapperId,$iconElement,showIcon,hideIcon;$tabberContainer=jQuery(".tabber--container"),index=$tabberTabs.index(this),$tabberContent=$($tabberContents[index]),$tabberTab=$(".tabber--tab.current--tab"),$tabber=$($tabberTabs).closest("dt").prop("id"),isTabberContentsShowing=$tabberContent.is(":visible"),isMobile=Modernizr.mq("( max-width: 767px )"),$wrapperId=$($tabberContents[index]).closest("div").prop("id"),$iconElement=$($theIcons[index]),showIcon=$iconElement.data("showIcon"),hideIcon=$iconElement.data("hideIcon"),$("#"+$wrapperId).addClass("selected"),isMobile?(changeIcon(index,isTabberContentsShowing),jQuery(".tabber--wrapper.selected .tabber--container.activated .tabber-content--icon").removeClass("fa-caret-down").addClass("fa-caret-left"),jQuery(".tabber--wrapper.selected .tabber--container.activated .tabber--content").slideUp()):(console.log("#"+$tabber),console.log("#============"),jQuery("#"+$tabber).removeClass("current--tab"),jQuery(".tabber--wrapper.selected .tabber--container.activated .tabber--content").css("display","none")),jQuery(".tabber--wrapper.selected .tabber--container.activated").removeClass("activated"),$($tabberContainer[$tabberTabs.index(this)]).addClass("activated");var $tabberId=$(".tabber--wrapper.selected .tabber--container.activated .tabber--tab").closest("dt").prop("id");console.log("#"+$tabberId),jQuery(".tabber--wrapper.selected .tabber--container.activated .tabber--tab").addClass("current--tab"),isMobile?$($tabberContents[index]).slideDown():$($tabberContents[index]).css("display","block"),$("#"+$wrapperId).removeClass("selected")};$(document).ready(function(){init()})}(jQuery,window,document),function($,window,document,undefined){"use strict";function changeIcon(index,isHiddenContentShowing){var removeClass,addClass,$iconElement=$($theIcons[index]),showIcon=$iconElement.data("showIcon"),hideIcon=$iconElement.data("hideIcon");Modernizr.mq("( max-width: 767px )");isHiddenContentShowing?(addClass=showIcon,removeClass=hideIcon):(addClass=hideIcon,removeClass=showIcon),$iconElement.removeClass(removeClass).addClass(addClass)}var $tabberContainer,$tabberTabs,$tabberContents,$theIcons,j,k,init=function(){$tabberContainer=jQuery(".tabber--container"),$tabberTabs=jQuery(".tabber--tab"),$theIcons=$tabberTabs.find(".tabber-content--icon"),$tabberContents=$tabberTabs.next(),$tabberTabs.on("click",{contentType:"tabber"},clickHandler),$("br").remove();var $counter=0;$(":not( .tabber--container ) + .tabber--container, * > .tabber--container:first-of-type").each(function(){$(this).nextUntil(":not( .tabber--container )").addBack().wrapAll('<div class="tabber--wrapper" id="tabber--wrapper-'+$counter++ +'">')}),j=0,k=0;var $tabbers=jQuery(".tabber--container .tabber--tab");for(j=0;j<$(".tabber--container").length;j++,k++)$($tabbers[k]).attr("id","tabber--tab-"+j);for(k=0;k<jQuery("div.tabber--wrapper").length;k++)jQuery("#tabber--wrapper-"+k+" .tabber--tab:first").trigger("click")},clickHandler=function(event){var index,$tabber,$tabberTab,$tabberContent,isTabberContentsShowing,isMobile,$wrapperId,$iconElement,showIcon,hideIcon;$tabberContainer=jQuery(".tabber--container"),index=$tabberTabs.index(this),$tabberContent=$($tabberContents[index]),$tabberTab=$(".tabber--tab.current--tab"),$tabber=$($tabberContainer[index]).closest("dt").prop("id"),isTabberContentsShowing=$tabberContent.is(":visible"),isMobile=Modernizr.mq("( max-width: 767px )"),$wrapperId=$($tabberContents[index]).closest("div").prop("id"),$iconElement=$($theIcons[index]),showIcon=$iconElement.data("showIcon"),hideIcon=$iconElement.data("hideIcon"),console.log("$tabber: "+$tabber),$("#"+$wrapperId).addClass("selected"),isMobile?(changeIcon(index,isTabberContentsShowing),jQuery(".tabber--wrapper.selected .tabber--container.activated .tabber-content--icon").removeClass("fa-caret-down").addClass("fa-caret-left"),jQuery(".tabber--wrapper.selected .tabber--container.activated .tabber--content").slideUp()):(console.log($tabberTab[index]),jQuery("#"+$tabber).removeClass("current--tab"),jQuery(".tabber--wrapper.selected .tabber--container.activated .tabber--content").css("display","none")),jQuery(".tabber--wrapper.selected .tabber--container.activated").removeClass("activated"),$($tabberContainer[$tabberTabs.index(this)]).addClass("activated");var $tabberId=$(".tabber--wrapper.selected .tabber--container.activated .tabber--tab").closest("dt").prop("id");console.log("$tabberId:  #"+$tabberId),jQuery(".tabber--wrapper.selected .tabber--container.activated .tabber--tab").addClass("current--tab"),isMobile?$($tabberContents[index]).slideDown():$($tabberContents[index]).css("display","block"),$("#"+$wrapperId).removeClass("selected")};$(document).ready(function(){init()})}(jQuery,window,document),function($,window,document,undefined){"use strict";function changeIcon(index,isHiddenContentShowing){var removeClass,addClass,$iconElement=$($theIcons[index]),showIcon=$iconElement.data("showIcon"),hideIcon=$iconElement.data("hideIcon");Modernizr.mq("( max-width: 767px )");isHiddenContentShowing?(addClass=showIcon,removeClass=hideIcon):(addClass=hideIcon,removeClass=showIcon),$iconElement.removeClass(removeClass).addClass(addClass)}var $tabberContainer,$tabberTabs,$tabberContents,$theIcons,j,k,init=function(){$tabberContainer=jQuery(".tabber--container"),$tabberTabs=jQuery(".tabber--tab"),$theIcons=$tabberTabs.find(".tabber-content--icon"),$tabberContents=$tabberTabs.next(),$tabberTabs.on("click",{contentType:"tabber"},clickHandler),$("br").remove();var $counter=0;$(":not( .tabber--container ) + .tabber--container, * > .tabber--container:first-of-type").each(function(){$(this).nextUntil(":not( .tabber--container )").addBack().wrapAll('<div class="tabber--wrapper" id="tabber--wrapper-'+$counter++ +'">')}),j=0,k=0;var $tabbers=jQuery(".tabber--container .tabber--tab");for(j=0;j<$(".tabber--container").length;j++,k++)$($tabbers[k]).attr("id","tabber--tab-"+j);for(k=0;k<jQuery("div.tabber--wrapper").length;k++)jQuery("#tabber--wrapper-"+k+" .tabber--tab:first").trigger("click")},clickHandler=function(event){var index,$tabber,$tabberTab,$tabberContent,isTabberContentsShowing,isMobile,$wrapperId,$iconElement,showIcon,hideIcon;$tabberContainer=jQuery(".tabber--container"),index=$tabberTabs.index(this),$tabberContent=$($tabberContents[index]),$tabberTab=$(".tabber--tab.current--tab"),$tabber=$($tabberContainer[index]).closest("dt").prop("id"),isTabberContentsShowing=$tabberContent.is(":visible"),isMobile=Modernizr.mq("( max-width: 767px )"),$wrapperId=$($tabberContents[index]).closest("div").prop("id"),$iconElement=$($theIcons[index]),showIcon=$iconElement.data("showIcon"),hideIcon=$iconElement.data("hideIcon"),console.log("$tabber: "+$tabber),$("#"+$wrapperId).addClass("selected"),isMobile?(changeIcon(index,isTabberContentsShowing),jQuery(".tabber--wrapper.selected .tabber--container.activated .tabber-content--icon").removeClass("fa-caret-down").addClass("fa-caret-left"),jQuery(".tabber--wrapper.selected .tabber--container.activated .tabber--content").slideUp()):(console.log($tabberTab[index]),jQuery("#"+$tabber).removeClass("current--tab"),jQuery(".tabber--wrapper.selected .tabber--container.activated .tabber--content").css("display","none")),jQuery(".tabber--wrapper.selected .tabber--container.activated").removeClass("activated"),$($tabberContainer[$tabberTabs.index(this)]).addClass("activated");var $tabberId=$(".tabber--wrapper.selected .tabber--container.activated .tabber--tab").closest("dt").prop("id");console.log("$tabberId:  #"+$tabberId),jQuery(".tabber--wrapper.selected .tabber--container.activated .tabber--tab").addClass("current--tab"),isMobile?$($tabberContents[index]).slideDown():$($tabberContents[index]).css("display","block"),$("#"+$wrapperId).removeClass("selected")};$(document).ready(function(){init()})}(jQuery,window,document),function($,window,document,undefined){"use strict";function changeIcon(index,isHiddenContentShowing){var removeClass,addClass,$iconElement=$($theIcons[index]),showIcon=$iconElement.data("showIcon"),hideIcon=$iconElement.data("hideIcon");Modernizr.mq("( max-width: 767px )");console.log("isHiddenContentShowing: "+isHiddenContentShowing),isHiddenContentShowing?(addClass=showIcon,removeClass=hideIcon):(addClass=hideIcon,removeClass=showIcon),$iconElement.removeClass(removeClass).addClass(addClass)}var $tabberContainer,$tabberTabs,$tabberContents,$theIcons,k,init=function(){$tabberContainer=jQuery(".tabber--container"),$tabberTabs=jQuery(".tabber--tab"),$theIcons=$tabberTabs.find(".tabber-content--icon"),$tabberContents=$tabberTabs.next(),$tabberTabs.on("click",{contentType:"tabber"},clickHandler),$("br").remove();var $counter=0;$(":not( .tabber--container ) + .tabber--container, * > .tabber--container:first-of-type").each(function(){$(this).nextUntil(":not( .tabber--container )").addBack().wrapAll('<div class="tabber--wrapper" id="tabber--wrapper-'+$counter++ +'">')});var j=0;for(console.log('jQuery(".tabber--container").length: '+jQuery(".tabber--container").length),j=0;j<$(".tabber--container").length;j++)$(".tabber--container")[k].attr("id","tabber--container-"+j),console.log("j: "+j);for(console.log(jQuery(".tabber--container").length),k=0;k<jQuery("div.tabber--wrapper").length;k++)jQuery("#tabber--wrapper-"+k+" .tabber--tab:first").trigger("click")},clickHandler=function(event){var index,$tabberContent,isTabberContentsShowing,isMobile,$wrapperId,$iconElement,showIcon,hideIcon;index=$tabberTabs.index(this),$tabberContent=$($tabberContents[index]),isTabberContentsShowing=$tabberContent.is(":visible"),isMobile=Modernizr.mq("( max-width: 767px )"),$wrapperId=$($tabberContents[index]).closest("div").prop("id"),$iconElement=$($theIcons[index]),showIcon=$iconElement.data("showIcon"),hideIcon=$iconElement.data("hideIcon"),$("#"+$wrapperId).addClass("selected"),isMobile?(changeIcon(index,isTabberContentsShowing),jQuery(".tabber--wrapper.selected .tabber--container.activated .tabber-content--icon").removeClass("fa-caret-down").addClass("fa-caret-left"),jQuery(".tabber--wrapper.selected .tabber--container.activated .tabber--content").slideUp()):(jQuery(".tabber--wrapper .tabber--container.activated .tabber--tab.current--tab").removeClass("current--tab"),jQuery(".tabber--wrapper.selected .tabber--container.activated .tabber--content").css("display","none")),jQuery(".tabber--wrapper.selected .tabber--container.activated").removeClass("activated"),$($tabberContainer[$tabberTabs.index(this)]).addClass("activated"),jQuery(".tabber--wrapper.selected .tabber--container.activated .tabber--tab").addClass("current--tab"),isMobile?$($tabberContents[index]).slideDown():$($tabberContents[index]).css("display","block"),$("#"+$wrapperId).removeClass("selected")};$(document).ready(function(){init()})}(jQuery,window,document),function($,window,document,undefined){"use strict";function changeIcon(index,isHiddenContentShowing){var removeClass,addClass,$iconElement=$($theIcons[index]),showIcon=$iconElement.data("showIcon"),hideIcon=$iconElement.data("hideIcon");Modernizr.mq("( max-width: 767px )");isHiddenContentShowing?(addClass=showIcon,removeClass=hideIcon):(addClass=hideIcon,removeClass=showIcon),$iconElement.removeClass(removeClass).addClass(addClass)}var $tabberContainer,$tabberTabs,$tabberContents,$theIcons,j,k,init=function(){$tabberContainer=jQuery(".tabber--container"),$tabberTabs=jQuery(".tabber--tab"),$theIcons=$tabberTabs.find(".tabber-content--icon"),$tabberContents=$tabberTabs.next(),$tabberTabs.on("click",{contentType:"tabber"},clickHandler),$("br").remove();var $counter=0;$(":not( .tabber--container ) + .tabber--container, * > .tabber--container:first-of-type").each(function(){$(this).nextUntil(":not( .tabber--container )").addBack().wrapAll('<div class="tabber--wrapper" id="tabber--wrapper-'+$counter++ +'">')}),j=0,k=0;var $tabbers=jQuery(".tabber--container .tabber--tab");for(j=0;j<$(".tabber--container").length;j++,k++)$($tabbers[k]).attr("id","tabber--tab-"+j);for(k=0;k<jQuery("div.tabber--wrapper").length;k++)jQuery("#tabber--wrapper-"+k+" .tabber--tab:first").trigger("click")},clickHandler=function(event){var index,$tabber,$tabberTab,$tabberContent,isTabberContentsShowing,isMobile,$wrapperId,$iconElement,showIcon,hideIcon;$tabberContainer=jQuery(".tabber--container"),index=$tabberTabs.index(this),$tabberContent=$($tabberContents[index]),$tabberTab=$(".tabber--tab.current--tab"),isTabberContentsShowing=$tabberContent.is(":visible"),isMobile=Modernizr.mq("( max-width: 767px )"),$wrapperId=$($tabberContents[index]).closest("div").prop("id"),$iconElement=$($theIcons[index]),showIcon=$iconElement.data("showIcon"),hideIcon=$iconElement.data("hideIcon"),$("#"+$wrapperId).addClass("selected"),isMobile?(changeIcon(index,isTabberContentsShowing),jQuery(".tabber--wrapper.selected .tabber--container.activated .tabber-content--icon").removeClass("fa-caret-down").addClass("fa-caret-left"),jQuery(".tabber--wrapper.selected .tabber--container.activated .tabber--content").slideUp()):($tabber=$("#"+$wrapperId+" .tabber--tab.current--tab").closest("dt").prop("id"),console.log("current: #"+$wrapperId+" #"+$tabber),jQuery("#"+$tabber).removeClass("current--tab"),jQuery(".tabber--wrapper.selected .tabber--container.activated .tabber--content").css("display","none")),jQuery(".tabber--wrapper.selected .tabber--container.activated").removeClass("activated"),$($tabberContainer[$tabberTabs.index(this)]).addClass("activated");var $tabberId=$(".tabber--wrapper.selected .tabber--container.activated .tabber--tab").closest("dt").prop("id");console.log("$tabberId:  #"+$tabberId),jQuery(".tabber--wrapper.selected .tabber--container.activated .tabber--tab").addClass("current--tab"),isMobile?$($tabberContents[index]).slideDown():$($tabberContents[index]).css("display","block"),$("#"+$wrapperId).removeClass("selected")};$(document).ready(function(){init()})}(jQuery,window,document),!function(e,n,t){function r(e,n){return typeof e===n}function i(){var e,n,t,i,o,s,a;for(var l in _)if(_.hasOwnProperty(l)){if(e=[],n=_[l],n.name&&(e.push(n.name.toLowerCase()),n.options&&n.options.aliases&&n.options.aliases.length))for(t=0;t<n.options.aliases.length;t++)e.push(n.options.aliases[t].toLowerCase());for(i=r(n.fn,"function")?n.fn():n.fn,o=0;o<e.length;o++)s=e[o],a=s.split("."),1===a.length?Modernizr[a[0]]=i:(!Modernizr[a[0]]||Modernizr[a[0]]instanceof Boolean||(Modernizr[a[0]]=new Boolean(Modernizr[a[0]])),Modernizr[a[0]][a[1]]=i),w.push((i?"":"no-")+a.join("-"))}}function o(e){var n=S.className,t=Modernizr._config.classPrefix||"";if(T&&(n=n.baseVal),Modernizr._config.enableJSClass){var r=new RegExp("(^|\\s)"+t+"no-js(\\s|$)");n=n.replace(r,"$1"+t+"js$2")}Modernizr._config.enableClasses&&(n+=" "+t+e.join(" "+t),T?S.className.baseVal=n:S.className=n)}function s(n,t,r){var i;if("getComputedStyle"in e){i=getComputedStyle.call(e,n,t);var o=e.console;if(null!==i)r&&(i=i.getPropertyValue(r));else if(o){var s=o.error?"error":"log";o[s].call(o,"getComputedStyle returning null, its possible modernizr test results are inaccurate")}}else i=!t&&n.currentStyle&&n.currentStyle[r];return i}function a(){return"function"!=typeof n.createElement?n.createElement(arguments[0]):T?n.createElementNS.call(n,"http://www.w3.org/2000/svg",arguments[0]):n.createElement.apply(n,arguments)}function l(e,n){if("object"==typeof e)for(var t in e)b(e,t)&&l(t,e[t]);else{e=e.toLowerCase();var r=e.split("."),i=Modernizr[r[0]];if(2==r.length&&(i=i[r[1]]),"undefined"!=typeof i)return Modernizr;n="function"==typeof n?n():n,1==r.length?Modernizr[r[0]]=n:(!Modernizr[r[0]]||Modernizr[r[0]]instanceof Boolean||(Modernizr[r[0]]=new Boolean(Modernizr[r[0]])),Modernizr[r[0]][r[1]]=n),o([(n&&0!=n?"":"no-")+r.join("-")]),Modernizr._trigger(e,n)}return Modernizr}function u(e){return e.replace(/([a-z])-([a-z])/g,function(e,n,t){return n+t.toUpperCase()}).replace(/^-/,"")}function f(){var e=n.body;return e||(e=a(T?"svg":"body"),e.fake=!0),e}function d(e,t,r,i){var o,s,l,u,d="modernizr",c=a("div"),p=f();if(parseInt(r,10))for(;r--;)l=a("div"),l.id=i?i[r]:d+(r+1),c.appendChild(l);return o=a("style"),o.type="text/css",o.id="s"+d,(p.fake?p:c).appendChild(o),p.appendChild(c),o.styleSheet?o.styleSheet.cssText=e:o.appendChild(n.createTextNode(e)),c.id=d,p.fake&&(p.style.background="",p.style.overflow="hidden",u=S.style.overflow,S.style.overflow="hidden",S.appendChild(p)),s=t(c,e),p.fake?(p.parentNode.removeChild(p),S.style.overflow=u,S.offsetHeight):c.parentNode.removeChild(c),!!s}function c(e,n){return!!~(""+e).indexOf(n)}function p(e,n){return function(){return e.apply(n,arguments)}}function h(e,n,t){var i;for(var o in e)if(e[o]in n)return t===!1?e[o]:(i=n[e[o]],r(i,"function")?p(i,t||n):i);return!1}function m(e){return e.replace(/([A-Z])/g,function(e,n){return"-"+n.toLowerCase()}).replace(/^ms-/,"-ms-")}function v(n,r){var i=n.length;if("CSS"in e&&"supports"in e.CSS){for(;i--;)if(e.CSS.supports(m(n[i]),r))return!0;return!1}if("CSSSupportsRule"in e){for(var o=[];i--;)o.push("("+m(n[i])+":"+r+")");return o=o.join(" or "),d("@supports ("+o+") { #modernizr { position: absolute; } }",function(e){return"absolute"==s(e,null,"position")})}return t}function g(e,n,i,o){function s(){f&&(delete O.style,delete O.modElem)}if(o=!r(o,"undefined")&&o,!r(i,"undefined")){var l=v(e,i);if(!r(l,"undefined"))return l}for(var f,d,p,h,m,g=["modernizr","tspan","samp"];!O.style&&g.length;)f=!0,O.modElem=a(g.shift()),O.style=O.modElem.style;for(p=e.length,d=0;p>d;d++)if(h=e[d],m=O.style[h],c(h,"-")&&(h=u(h)),O.style[h]!==t){if(o||r(i,"undefined"))return s(),"pfx"!=n||h;try{O.style[h]=i}catch(y){}if(O.style[h]!=m)return s(),"pfx"!=n||h}return s(),!1}function y(e,n,t,i,o){var s=e.charAt(0).toUpperCase()+e.slice(1),a=(e+" "+q.join(s+" ")+s).split(" ");return r(n,"string")||r(n,"undefined")?g(a,n,i,o):(a=(e+" "+L.join(s+" ")+s).split(" "),h(a,n,t))}function C(e,n,r){return y(e,t,t,n,r)}var w=[],_=[],x={_version:"3.5.0",_config:{classPrefix:"",enableClasses:!0,enableJSClass:!0,usePrefixes:!0},_q:[],on:function(e,n){var t=this;setTimeout(function(){n(t[e])},0)},addTest:function(e,n,t){_.push({name:e,fn:n,options:t})},addAsyncTest:function(e){_.push({name:null,fn:e})}},Modernizr=function(){};Modernizr.prototype=x,Modernizr=new Modernizr;var S=n.documentElement,T="svg"===S.nodeName.toLowerCase();Modernizr.addTest("inlinesvg",function(){var e=a("div");return e.innerHTML="<svg/>","http://www.w3.org/2000/svg"==("undefined"!=typeof SVGRect&&e.firstChild&&e.firstChild.namespaceURI)});var b;!function(){var e={}.hasOwnProperty;b=r(e,"undefined")||r(e.call,"undefined")?function(e,n){return n in e&&r(e.constructor.prototype[n],"undefined")}:function(n,t){return e.call(n,t)}}(),x._l={},x.on=function(e,n){this._l[e]||(this._l[e]=[]),this._l[e].push(n),Modernizr.hasOwnProperty(e)&&setTimeout(function(){Modernizr._trigger(e,Modernizr[e])},0)},x._trigger=function(e,n){if(this._l[e]){var t=this._l[e];setTimeout(function(){var e,r;for(e=0;e<t.length;e++)(r=t[e])(n)},0),delete this._l[e]}},Modernizr._q.push(function(){x.addTest=l});var z=function(){var n=e.matchMedia||e.msMatchMedia;return n?function(e){var t=n(e);return t&&t.matches||!1}:function(n){var t=!1;return d("@media "+n+" { #modernizr { position: absolute; } }",function(n){t="absolute"==(e.getComputedStyle?e.getComputedStyle(n,null):n.currentStyle).position}),t}}();x.mq=z,Modernizr.addTest("mediaqueries",z("only all")),Modernizr.addTest("hovermq",z("(hover)")),Modernizr.addTest("pointermq",z("(pointer:coarse),(pointer:fine),(pointer:none)"));var P=x.testStyles=d;P("#modernizr { height: 50vh; }",function(n){var t=parseInt(e.innerHeight/2,10),r=parseInt(s(n,null,"height"),10);Modernizr.addTest("cssvhunit",r==t)}),P("#modernizr { width: 50vw; }",function(n){var t=parseInt(e.innerWidth/2,10),r=parseInt(s(n,null,"width"),10);Modernizr.addTest("cssvwunit",r==t)});var E="Moz O ms Webkit",q=x._config.usePrefixes?E.split(" "):[];x._cssomPrefixes=q;var j=function(n){var r,i=prefixes.length,o=e.CSSRule;if("undefined"==typeof o)return t;if(!n)return!1;if(n=n.replace(/^@/,""),r=n.replace(/-/g,"_").toUpperCase()+"_RULE",r in o)return"@"+n;for(var s=0;i>s;s++){var a=prefixes[s],l=a.toUpperCase()+"_"+r;if(l in o)return"@-"+a.toLowerCase()+"-"+n}return!1};x.atRule=j;var L=x._config.usePrefixes?E.toLowerCase().split(" "):[];x._domPrefixes=L;var N={elem:a("modernizr")};Modernizr._q.push(function(){delete N.elem});var O={style:N.elem.style};Modernizr._q.unshift(function(){delete O.style}),x.testAllProps=y,x.testAllProps=C,Modernizr.addTest("flexbox",C("flexBasis","1px",!0)),Modernizr.addTest("flexboxtweener",C("flexAlign","end",!0));var R=x.prefixed=function(e,n,t){return 0===e.indexOf("@")?j(e):(-1!=e.indexOf("-")&&(e=u(e)),n?y(e,n,t):y(e,"pfx"))};Modernizr.addTest("matchmedia",!!R("matchMedia",e)),i(),o(w),delete x.addTest,delete x.addAsyncTest;for(var A=0;A<Modernizr._q.length;A++)Modernizr._q[A]();e.Modernizr=Modernizr}(window,document);
+\ No newline at end of file
+diff --git a/assets/js/jquery.plugin.broke.js b/assets/js/jquery.plugin.broke.js
+new file mode 100644
+index 0000000..7d49169
+--- /dev/null
++++ b/assets/js/jquery.plugin.broke.js
+@@ -0,0 +1,168 @@
++;(function ($, window, document, undefined) {
++   'use strict';
++
++   var $tabberContainer;
++   var $tabberTabs;      // array of cached tab labels
++   var $tabberContents;  // array of cached contents
++   var $theIcons;
++   var j, k;
++
++   /**
++    * Initializes all scripts via document ready function
++    */
++   var init = function () {
++      $tabberContainer = jQuery( '.tabber--container' );
++      $tabberTabs      = jQuery( '.tabber--tab' );
++      //$icons = $visibleContents.find('.collapsible-content--icon');
++      $theIcons        = $tabberTabs.find('.tabber-content--icon');
++
++      $tabberContents  = $tabberTabs.next();
++
++      $tabberTabs.on( 'click',
++         { contentType: 'tabber' },    // pass type
++         clickHandler                  // named function
++      );
++
++      // strip <br /> out thank you wpautop!!!!!!!!
++      $( 'br' ).remove();
++
++      // Wrap each contiguous tabber with a div wrapper
++      var $counter = 0;
++      $( ':not( .tabber--container ) + .tabber--container, * > .tabber--container:first-of-type' ).
++      each( function() {
++         $( this ).
++         nextUntil( ':not( .tabber--container )' ).
++         addBack().
++         wrapAll('<div class="tabber--wrapper" id="tabber--wrapper-' + $counter++ + '">');
++      });
++
++      j = 0;
++      k = 0;
++
++      var $tabbers = jQuery('.tabber--container .tabber--tab');
++
++      for ( j = 0; j < $('.tabber--container').length; j++, k++ ) {
++         $( $tabbers[ k ] ) .attr( 'id', 'tabber--tab-' + k );
++      }
++
++      //  loops through each group of tabbers
++      for ( k = 0; k < jQuery('div.tabber--wrapper').length; k++ ) {
++
++         jQuery( '#tabber--wrapper-' + k + ' .tabber--tab:first' ).trigger('click');
++      }
++   };
++
++   /**
++    * Click event handler
++    *
++    * @param event
++    */
++   var clickHandler = function ( event ) {
++
++      var index;
++      var $tabber;
++      var $tabberTab;
++      var $tabberContent;
++      var isTabberContentsShowing;
++      var isMobile;
++      var $wrapperId;
++      var $iconElement;
++      var showIcon;
++      var hideIcon;
++      $tabberContainer        = jQuery( '.tabber--container' );
++
++      index                   = $tabberTabs.index ( this );  // current index
++      $tabberContent          = $( $tabberContents[ index ] );
++      $tabberTab              = $( '.tabber--tab.current--tab' );
++      //$tabber                 = $( $tabberContainer[ index ] ).closest("dt").prop("id");
++      $tabber                 = $( $tabberTabs ).closest("dt").prop("id");
++      isTabberContentsShowing = $tabberContent.is(':visible');
++      isMobile                = Modernizr.mq( '( max-width: 767px )' );
++      $wrapperId              = $( $tabberContents[ index ] ).closest("div").prop("id");
++      //$tabber                 = $( $tabber[ index ] ).closest("dl").prop("id");
++      $iconElement            = $( $theIcons[ index ] );
++      showIcon                = $iconElement.data( 'showIcon' );
++      hideIcon                = $iconElement.data( 'hideIcon' );
++
++      //var str = JSON.stringify( $tabber, null, 3 ); // (Optional) beautiful indented output.
++      //console.log( 'str: ' + str )
++
++      // Temporarily add class to the outer wrapper
++      $( '#' + $wrapperId ).addClass( 'selected' );
++
++      if ( isMobile ) { //  it is an accordion
++         changeIcon( index, isTabberContentsShowing );
++
++         // remove old content
++         jQuery( '.tabber--wrapper.selected .tabber--container.activated .tabber-content--icon' ).removeClass( 'fa-caret-down' ).addClass( 'fa-caret-left' );
++         jQuery( '.tabber--wrapper.selected .tabber--container.activated .tabber--content' ).slideUp();
++
++      } else {
++         console.log( '#' + $tabber );
++         console.log( '#============' );
++
++         // remove old content
++         jQuery( '#' + $tabber ).removeClass( 'current--tab' );
++         jQuery( '.tabber--wrapper.selected .tabber--container.activated .tabber--content' ).css( "display", "none");
++      }
++
++      jQuery( '.tabber--wrapper.selected .tabber--container.activated' ).removeClass( 'activated' );
++
++      // activate new tab
++      $( $tabberContainer[ $tabberTabs.index( this ) ] ).addClass( 'activated' );
++      var $tabberId = $( '.tabber--wrapper.selected .tabber--container.activated .tabber--tab' ).closest("dt").prop("id");
++      console.log( '#' + $tabberId );
++
++
++      jQuery( '.tabber--wrapper.selected .tabber--container.activated .tabber--tab' ).addClass( 'current--tab' );
++
++      if ( isMobile ) { //  it is an accordion
++
++         $( $tabberContents[ index ] ).slideDown();
++      } else {
++
++         $( $tabberContents[ index ] ).css( "display", "block");
++      }
++
++      // remove Temporarily class to the outer wrapper
++      $( '#' + $wrapperId ).removeClass( 'selected' );
++   };
++
++
++   /*******************
++    * Helper Functions
++    ******************/
++
++   /**
++    * Change the Icon Handler
++    */
++   function changeIcon( index, isHiddenContentShowing ) {
++      var $iconElement = $( $theIcons[ index ] ),
++         showIcon = $iconElement.data( 'showIcon' ),
++         hideIcon = $iconElement.data( 'hideIcon' ),
++         removeClass, addClass,
++         isMobile = Modernizr.mq( '( max-width: 767px )' );
++
++      console.log ( 'isHiddenContentShowing: ' + isHiddenContentShowing );
++
++      if ( isHiddenContentShowing ) {
++         addClass    = showIcon;
++         removeClass = hideIcon;
++
++      } else {
++         addClass    = hideIcon;
++         removeClass = showIcon;
++      }
++
++      $iconElement
++         .removeClass( removeClass )
++         .addClass(    addClass    );
++   }
++
++
++   $(document).ready(function () {
++      init();
++
++   });
++
++})(jQuery, window, document);
+diff --git a/assets/js/jquery.plugin.dgs.js b/assets/js/jquery.plugin.dgs.js
+new file mode 100644
+index 0000000..aed163e
+--- /dev/null
++++ b/assets/js/jquery.plugin.dgs.js
+@@ -0,0 +1,174 @@
++;(function ($, window, document, undefined) {
++   'use strict';
++
++   var $tabberContainer;
++   var $tabberTabs;      // array of cached tab labels
++   var $tabberContents;  // array of cached contents
++   var $theIcons;
++   var j, k;
++
++   /**
++    * Initializes all scripts via document ready function
++    */
++   var init = function () {
++      $tabberContainer = jQuery( '.tabber--container' );
++      $tabberTabs      = jQuery( '.tabber--tab' );
++      //$icons = $visibleContents.find('.collapsible-content--icon');
++      $theIcons        = $tabberTabs.find('.tabber-content--icon');
++
++      $tabberContents  = $tabberTabs.next();
++
++      $tabberTabs.on( 'click',
++         { contentType: 'tabber' },    // pass type
++         clickHandler                  // named function
++      );
++
++      // strip <br /> out thank you wpautop!!!!!!!!
++      $( 'br' ).remove();
++
++      // Wrap each contiguous tabber with a div wrapper
++      var $counter = 0;
++      $( ':not( .tabber--container ) + .tabber--container, * > .tabber--container:first-of-type' ).
++      each( function() {
++         $( this ).
++         nextUntil( ':not( .tabber--container )' ).
++         addBack().
++         wrapAll('<div class="tabber--wrapper" id="tabber--wrapper-' + $counter++ + '">');
++      });
++
++      j = 0;
++      k = 0;
++
++      var $tabbers = jQuery('.tabber--container .tabber--tab');
++
++      for ( j = 0; j < $('.tabber--container').length; j++, k++ ) {
++         $( $tabbers[ k ] ) .attr( 'id', 'tabber--tab-' + j );
++      }
++
++      //  loops through each group of tabbers
++      for ( k = 0; k < jQuery('div.tabber--wrapper').length; k++ ) {
++
++         jQuery( '#tabber--wrapper-' + k + ' .tabber--tab:first' ).trigger('click');
++      }
++   };
++
++   /**
++    * Click event handler
++    *
++    * @param event
++    */
++   var clickHandler = function ( event ) {
++
++      var index;
++      var $tabber;
++      var $tabberTab;
++      var $tabberContent;
++      var isTabberContentsShowing;
++      var isMobile;
++      var $wrapperId;
++      var $iconElement;
++      var showIcon;
++      var hideIcon;
++      $tabberContainer        = jQuery( '.tabber--container' );
++
++      index                   = $tabberTabs.index ( this );  // current index
++      $tabberContent          = $( $tabberContents[ index ] );
++      $tabberTab              = $( '.tabber--tab.current--tab' );
++      $tabber                 = $( $tabberContainer[ index ] ).closest("dt").prop("id");
++      isTabberContentsShowing = $tabberContent.is(':visible');
++      isMobile                = Modernizr.mq( '( max-width: 767px )' );
++      $wrapperId              = $( $tabberContents[ index ] ).closest("div").prop("id");
++      //$tabber               = $( $tabber[ index ] ).closest("dl").prop("id");
++      $iconElement            = $( $theIcons[ index ] );
++      showIcon                = $iconElement.data( 'showIcon' );
++      hideIcon                = $iconElement.data( 'hideIcon' );
++
++      console.log( '$tabber: ' + $tabber );
++
++      //var str = JSON.stringify( $tabber, null, 3 ); // (Optional) beautiful indented output.
++      //console.log( 'str: ' + str )
++
++      // Temporarily add class to the outer wrapper
++      $( '#' + $wrapperId ).addClass( 'selected' );
++
++
++      if ( isMobile ) { //  it is an accordion
++         changeIcon( index, isTabberContentsShowing );
++
++         // remove old content
++         jQuery( '.tabber--wrapper.selected .tabber--container.activated .tabber-content--icon' ).removeClass( 'fa-caret-down' ).addClass( 'fa-caret-left' );
++         jQuery( '.tabber--wrapper.selected .tabber--container.activated .tabber--content' ).slideUp();
++
++      } else {
++
++         console.log( $tabberTab[ index ] );
++
++         //var $tabberCurrent   = $( '#' + $wrapperId + ' #' +  $tabberTab[ index ] ).closest("dt").prop("id");
++
++         //console.log( '$tabberCurrent: ' + '#' + $tabberCurrent );
++
++         // remove old content
++         jQuery( '#' + $tabber ).removeClass( 'current--tab' );
++         jQuery( '.tabber--wrapper.selected .tabber--container.activated .tabber--content' ).css( "display", "none");
++      }
++
++      jQuery( '.tabber--wrapper.selected .tabber--container.activated' ).removeClass( 'activated' );
++
++      // activate new tab
++      $( $tabberContainer[ $tabberTabs.index( this ) ] ).addClass( 'activated' );
++      var $tabberId = $( '.tabber--wrapper.selected .tabber--container.activated .tabber--tab' ).closest("dt").prop("id");
++      console.log( '$tabberId:  #' + $tabberId );
++
++
++      jQuery( '.tabber--wrapper.selected .tabber--container.activated .tabber--tab' ).addClass( 'current--tab' );
++
++      if ( isMobile ) { //  it is an accordion
++
++         $( $tabberContents[ index ] ).slideDown();
++      } else {
++
++         $( $tabberContents[ index ] ).css( "display", "block");
++      }
++
++      // remove Temporarily class to the outer wrapper
++      $( '#' + $wrapperId ).removeClass( 'selected' );
++   };
++
++
++   /*******************
++    * Helper Functions
++    ******************/
++
++   /**
++    * Change the Icon Handler
++    */
++   function changeIcon( index, isHiddenContentShowing ) {
++      var $iconElement = $( $theIcons[ index ] ),
++         showIcon = $iconElement.data( 'showIcon' ),
++         hideIcon = $iconElement.data( 'hideIcon' ),
++         removeClass, addClass,
++         isMobile = Modernizr.mq( '( max-width: 767px )' );
++
++      //console.log ( 'isHiddenContentShowing: ' + isHiddenContentShowing );
++
++      if ( isHiddenContentShowing ) {
++         addClass    = showIcon;
++         removeClass = hideIcon;
++
++      } else {
++         addClass    = hideIcon;
++         removeClass = showIcon;
++      }
++
++      $iconElement
++         .removeClass( removeClass )
++         .addClass(    addClass    );
++   }
++
++
++   $(document).ready(function () {
++      init();
++
++   });
++
++})(jQuery, window, document);
+diff --git a/assets/js/jquery.plugin.js b/assets/js/jquery.plugin.js
+index 8a8a072..aed163e 100644
+--- a/assets/js/jquery.plugin.js
++++ b/assets/js/jquery.plugin.js
+@@ -5,7 +5,7 @@
+    var $tabberTabs;      // array of cached tab labels
+    var $tabberContents;  // array of cached contents
+    var $theIcons;
+-   var k;
++   var j, k;
+ 
+    /**
+     * Initializes all scripts via document ready function
+@@ -13,6 +13,9 @@
+    var init = function () {
+       $tabberContainer = jQuery( '.tabber--container' );
+       $tabberTabs      = jQuery( '.tabber--tab' );
++      //$icons = $visibleContents.find('.collapsible-content--icon');
++      $theIcons        = $tabberTabs.find('.tabber-content--icon');
++
+       $tabberContents  = $tabberTabs.next();
+ 
+       $tabberTabs.on( 'click',
+@@ -33,27 +36,19 @@
+          wrapAll('<div class="tabber--wrapper" id="tabber--wrapper-' + $counter++ + '">');
+       });
+ 
+-      //  loops through each group of tabbers
+-      for ( k = 0; k < jQuery('div.tabber--wrapper').length; k++ ) {
+-
+-         var $wrapperId        = $( $tabberContents[ k ] ).closest( "div" ).prop( "id" );
+-         var $tabberContainer2 = jQuery( '#tabber--wrapper-' + k + ' .tabber--container' );
+-         var $tabberTabs2      = jQuery( '#' + $wrapperId + ' .tabber--tab' );
+-         var index             = $tabberTabs2.index ( this );  // current index
+-         var $tabberContents2  = $tabberTabs2.next();
+-         var $theIcons         = $tabberTabs2.find('.tabber-content--icon');
++      j = 0;
++      k = 0;
+ 
+-         // open first tab content on load
+-         //$( $tabberContents[ index ] ).css( "display", "block");
++      var $tabbers = jQuery('.tabber--container .tabber--tab');
+ 
+-         $( $theIcons[ index ] )
+-            .removeClass( $( $theIcons[ index ] ).data( 'showIcon' ) )
+-            .addClass(    $( $theIcons[ index ] ).data( 'hideIcon' ) );
++      for ( j = 0; j < $('.tabber--container').length; j++, k++ ) {
++         $( $tabbers[ k ] ) .attr( 'id', 'tabber--tab-' + j );
++      }
+ 
+-         $( $tabberContainer2[ 0 ] ).addClass( 'activated' );
+-         $( $tabberContents2[ 0 ] ).css( "display", "block" );
++      //  loops through each group of tabbers
++      for ( k = 0; k < jQuery('div.tabber--wrapper').length; k++ ) {
+ 
+-         console.log( 'k: ' + k );
++         jQuery( '#tabber--wrapper-' + k + ' .tabber--tab:first' ).trigger('click');
+       }
+    };
+ 
+@@ -65,36 +60,67 @@
+    var clickHandler = function ( event ) {
+ 
+       var index;
++      var $tabber;
++      var $tabberTab;
+       var $tabberContent;
+       var isTabberContentsShowing;
+       var isMobile;
+       var $wrapperId;
++      var $iconElement;
++      var showIcon;
++      var hideIcon;
++      $tabberContainer        = jQuery( '.tabber--container' );
+ 
+       index                   = $tabberTabs.index ( this );  // current index
+       $tabberContent          = $( $tabberContents[ index ] );
++      $tabberTab              = $( '.tabber--tab.current--tab' );
++      $tabber                 = $( $tabberContainer[ index ] ).closest("dt").prop("id");
+       isTabberContentsShowing = $tabberContent.is(':visible');
+       isMobile                = Modernizr.mq( '( max-width: 767px )' );
+       $wrapperId              = $( $tabberContents[ index ] ).closest("div").prop("id");
++      //$tabber               = $( $tabber[ index ] ).closest("dl").prop("id");
++      $iconElement            = $( $theIcons[ index ] );
++      showIcon                = $iconElement.data( 'showIcon' );
++      hideIcon                = $iconElement.data( 'hideIcon' );
++
++      console.log( '$tabber: ' + $tabber );
++
++      //var str = JSON.stringify( $tabber, null, 3 ); // (Optional) beautiful indented output.
++      //console.log( 'str: ' + str )
+ 
+       // Temporarily add class to the outer wrapper
+       $( '#' + $wrapperId ).addClass( 'selected' );
+ 
++
+       if ( isMobile ) { //  it is an accordion
++         changeIcon( index, isTabberContentsShowing );
+ 
+          // remove old content
++         jQuery( '.tabber--wrapper.selected .tabber--container.activated .tabber-content--icon' ).removeClass( 'fa-caret-down' ).addClass( 'fa-caret-left' );
+          jQuery( '.tabber--wrapper.selected .tabber--container.activated .tabber--content' ).slideUp();
+ 
+       } else {
++
++         console.log( $tabberTab[ index ] );
++
++         //var $tabberCurrent   = $( '#' + $wrapperId + ' #' +  $tabberTab[ index ] ).closest("dt").prop("id");
++
++         //console.log( '$tabberCurrent: ' + '#' + $tabberCurrent );
++
+          // remove old content
++         jQuery( '#' + $tabber ).removeClass( 'current--tab' );
+          jQuery( '.tabber--wrapper.selected .tabber--container.activated .tabber--content' ).css( "display", "none");
+       }
+ 
+-      changeIcon( index, isTabberContentsShowing );
+-
+       jQuery( '.tabber--wrapper.selected .tabber--container.activated' ).removeClass( 'activated' );
+ 
+       // activate new tab
+       $( $tabberContainer[ $tabberTabs.index( this ) ] ).addClass( 'activated' );
++      var $tabberId = $( '.tabber--wrapper.selected .tabber--container.activated .tabber--tab' ).closest("dt").prop("id");
++      console.log( '$tabberId:  #' + $tabberId );
++
++
++      jQuery( '.tabber--wrapper.selected .tabber--container.activated .tabber--tab' ).addClass( 'current--tab' );
+ 
+       if ( isMobile ) { //  it is an accordion
+ 
+@@ -104,8 +130,6 @@
+          $( $tabberContents[ index ] ).css( "display", "block");
+       }
+ 
+-      changeIcon( index, isTabberContentsShowing );
+-
+       // remove Temporarily class to the outer wrapper
+       $( '#' + $wrapperId ).removeClass( 'selected' );
+    };
+@@ -118,32 +142,22 @@
+    /**
+     * Change the Icon Handler
+     */
+-   function changeIcon( index, isTabberContentsShowing ) {
+-      $theIcons        = $tabberTabs.find('.tabber-content--icon');
+-
++   function changeIcon( index, isHiddenContentShowing ) {
+       var $iconElement = $( $theIcons[ index ] ),
+-         show_icon     = $iconElement.data( 'showIcon' ),
+-         hide_icon     = $iconElement.data( 'hideIcon' ),
+-         length        = $tabberTabs.length,          // number of tabs
+-         removeClass,
+-         addClass,
+-         k;
+-
+-      for ( k = 0; k < length; k++ ) {
+-         if ( $( $theIcons[ k ] ).data( 'showIcon' ) === 'fa fa-caret-left' ) {
+-            $( $theIcons[ k ] )
+-            .removeClass( $( $theIcons[ k ] ).data( 'hideIcon' ) )
+-            .addClass(    $( $theIcons[ k ] ).data( 'showIcon' ) );
+-         }
+-      }
++         showIcon = $iconElement.data( 'showIcon' ),
++         hideIcon = $iconElement.data( 'hideIcon' ),
++         removeClass, addClass,
++         isMobile = Modernizr.mq( '( max-width: 767px )' );
++
++      //console.log ( 'isHiddenContentShowing: ' + isHiddenContentShowing );
+ 
+-      if ( isTabberContentsShowing ) {
+-         removeClass = hide_icon;
+-         addClass    = show_icon;
++      if ( isHiddenContentShowing ) {
++         addClass    = showIcon;
++         removeClass = hideIcon;
+ 
+       } else {
+-         addClass    = hide_icon;
+-         removeClass = show_icon;
++         addClass    = hideIcon;
++         removeClass = showIcon;
+       }
+ 
+       $iconElement
+@@ -151,9 +165,10 @@
+          .addClass(    addClass    );
+    }
+ 
++
+    $(document).ready(function () {
+       init();
+ 
+    });
+ 
+-})(jQuery, window, document);
+\ No newline at end of file
++})(jQuery, window, document);
+diff --git a/assets/js/jquery.plugin.old.js b/assets/js/jquery.plugin.old.js
+new file mode 100644
+index 0000000..202ca29
+--- /dev/null
++++ b/assets/js/jquery.plugin.old.js
+@@ -0,0 +1,156 @@
++;(function ($, window, document, undefined) {
++   'use strict';
++
++   var $tabberContainer;
++   var $tabberTabs;      // array of cached tab labels
++   var $tabberContents;  // array of cached contents
++   var $theIcons;
++   var k;
++
++   /**
++    * Initializes all scripts via document ready function
++    */
++   var init = function () {
++      $tabberContainer = jQuery( '.tabber--container' );
++      $tabberTabs      = jQuery( '.tabber--tab' );
++      //$icons = $visibleContents.find('.collapsible-content--icon');
++      $theIcons        = $tabberTabs.find('.tabber-content--icon');
++
++      $tabberContents  = $tabberTabs.next();
++
++      $tabberTabs.on( 'click',
++         { contentType: 'tabber' },    // pass type
++         clickHandler                  // named function
++      );
++
++      // strip <br /> out thank you wpautop!!!!!!!!
++      $( 'br' ).remove();
++
++      // Wrap each contiguous tabber with a div wrapper
++      var $counter = 0;
++      $( ':not( .tabber--container ) + .tabber--container, * > .tabber--container:first-of-type' ).
++      each( function() {
++         $( this ).
++         nextUntil( ':not( .tabber--container )' ).
++         addBack().
++         wrapAll('<div class="tabber--wrapper" id="tabber--wrapper-' + $counter++ + '">');
++      });
++
++      var j = 0;
++
++      console.log( 'jQuery(".tabber--container").length: ' + jQuery(".tabber--container").length );
++      for ( j = 0; j < $('.tabber--container').length; j++ ) {
++         $('.tabber--container')[ k ].attr( 'id', 'tabber--container-' + j );
++         console.log( 'j: ' + j );
++      }
++      //for ( var j = 0; j < jQuery('.tabber--container').length;  ) {
++      //   $( '.tabber--container' ).attr( 'id', 'tabber--container-' + j++ );
++      //}
++
++      console.log( jQuery('.tabber--container').length );
++
++      //  loops through each group of tabbers
++      for ( k = 0; k < jQuery('div.tabber--wrapper').length; k++ ) {
++
++         jQuery( '#tabber--wrapper-' + k + ' .tabber--tab:first' ).trigger('click');
++      }
++   };
++
++   /**
++    * Click event handler
++    *
++    * @param event
++    */
++   var clickHandler = function ( event ) {
++
++      var index;
++      var $tabberContent;
++      var isTabberContentsShowing;
++      var isMobile;
++      var $wrapperId;
++      var $iconElement;
++      var showIcon;
++      var hideIcon;
++
++      index                   = $tabberTabs.index ( this );  // current index
++      $tabberContent          = $( $tabberContents[ index ] );
++      isTabberContentsShowing = $tabberContent.is(':visible');
++      isMobile                = Modernizr.mq( '( max-width: 767px )' );
++      $wrapperId              = $( $tabberContents[ index ] ).closest("div").prop("id");
++      $iconElement            = $( $theIcons[ index ] );
++      showIcon                = $iconElement.data( 'showIcon' );
++      hideIcon                = $iconElement.data( 'hideIcon' );
++
++      // Temporarily add class to the outer wrapper
++      $( '#' + $wrapperId ).addClass( 'selected' );
++
++      if ( isMobile ) { //  it is an accordion
++         changeIcon( index, isTabberContentsShowing );
++
++         // remove old content
++         jQuery( '.tabber--wrapper.selected .tabber--container.activated .tabber-content--icon' ).removeClass( 'fa-caret-down' ).addClass( 'fa-caret-left' );
++         jQuery( '.tabber--wrapper.selected .tabber--container.activated .tabber--content' ).slideUp();
++
++      } else {
++
++         // remove old content
++         jQuery( '.tabber--wrapper .tabber--container.activated .tabber--tab.current--tab' ).removeClass( 'current--tab' );
++         jQuery( '.tabber--wrapper.selected .tabber--container.activated .tabber--content' ).css( "display", "none");
++      }
++
++      jQuery( '.tabber--wrapper.selected .tabber--container.activated' ).removeClass( 'activated' );
++
++      // activate new tab
++      $( $tabberContainer[ $tabberTabs.index( this ) ] ).addClass( 'activated' );
++      jQuery( '.tabber--wrapper.selected .tabber--container.activated .tabber--tab' ).addClass( 'current--tab' );
++
++      if ( isMobile ) { //  it is an accordion
++
++         $( $tabberContents[ index ] ).slideDown();
++      } else {
++
++         $( $tabberContents[ index ] ).css( "display", "block");
++      }
++
++      // remove Temporarily class to the outer wrapper
++      $( '#' + $wrapperId ).removeClass( 'selected' );
++   };
++
++
++   /*******************
++    * Helper Functions
++    ******************/
++
++   /**
++    * Change the Icon Handler
++    */
++   function changeIcon( index, isHiddenContentShowing ) {
++      var $iconElement = $( $theIcons[ index ] ),
++         showIcon = $iconElement.data( 'showIcon' ),
++         hideIcon = $iconElement.data( 'hideIcon' ),
++         removeClass, addClass,
++         isMobile = Modernizr.mq( '( max-width: 767px )' );
++
++      console.log ( 'isHiddenContentShowing: ' + isHiddenContentShowing );
++
++      if ( isHiddenContentShowing ) {
++         addClass    = showIcon;
++         removeClass = hideIcon;
++
++      } else {
++         addClass    = hideIcon;
++         removeClass = showIcon;
++      }
++
++      $iconElement
++         .removeClass( removeClass )
++         .addClass(    addClass    );
++   }
++
++
++   $(document).ready(function () {
++      init();
++
++   });
++
++})(jQuery, window, document);
+diff --git a/assets/js/jquery.plugin.stuff.js b/assets/js/jquery.plugin.stuff.js
+new file mode 100644
+index 0000000..79a69e1
+--- /dev/null
++++ b/assets/js/jquery.plugin.stuff.js
+@@ -0,0 +1,169 @@
++;(function ($, window, document, undefined) {
++   'use strict';
++
++   var $tabberContainer;
++   var $tabberTabs;      // array of cached tab labels
++   var $tabberContents;  // array of cached contents
++   var $theIcons;
++   var j, k;
++
++   /**
++    * Initializes all scripts via document ready function
++    */
++   var init = function () {
++      $tabberContainer = jQuery( '.tabber--container' );
++      $tabberTabs      = jQuery( '.tabber--tab' );
++      //$icons = $visibleContents.find('.collapsible-content--icon');
++      $theIcons        = $tabberTabs.find('.tabber-content--icon');
++
++      $tabberContents  = $tabberTabs.next();
++
++      $tabberTabs.on( 'click',
++         { contentType: 'tabber' },    // pass type
++         clickHandler                  // named function
++      );
++
++      // strip <br /> out thank you wpautop!!!!!!!!
++      $( 'br' ).remove();
++
++      // Wrap each contiguous tabber with a div wrapper
++      var $counter = 0;
++      $( ':not( .tabber--container ) + .tabber--container, * > .tabber--container:first-of-type' ).
++      each( function() {
++         $( this ).
++         nextUntil( ':not( .tabber--container )' ).
++         addBack().
++         wrapAll('<div class="tabber--wrapper" id="tabber--wrapper-' + $counter++ + '">');
++      });
++
++      j = 0;
++      k = 0;
++
++      var $tabbers = jQuery('.tabber--container .tabber--tab');
++
++      for ( j = 0; j < $('.tabber--container').length; j++, k++ ) {
++         $( $tabbers[ k ] ) .attr( 'id', 'tabber--tab-' + j );
++      }
++
++      //  loops through each group of tabbers
++      for ( k = 0; k < jQuery('div.tabber--wrapper').length; k++ ) {
++
++         jQuery( '#tabber--wrapper-' + k + ' .tabber--tab:first' ).trigger('click');
++      }
++   };
++
++   /**
++    * Click event handler
++    *
++    * @param event
++    */
++   var clickHandler = function ( event ) {
++
++      var index;
++      var $tabber;
++      var $tabberTab;
++      var $tabberContent;
++      var isTabberContentsShowing;
++      var isMobile;
++      var $wrapperId;
++      var $iconElement;
++      var showIcon;
++      var hideIcon;
++      $tabberContainer        = jQuery( '.tabber--container' );
++
++      index                   = $tabberTabs.index ( this );  // current index
++      $tabberContent          = $( $tabberContents[ index ] );
++      $tabberTab              = $( '.tabber--tab.current--tab' );
++      //$tabber                 = $( $tabberContainer[ index ] ).closest("dt").prop("id");
++      isTabberContentsShowing = $tabberContent.is(':visible');
++      isMobile                = Modernizr.mq( '( max-width: 767px )' );
++      $wrapperId              = $( $tabberContents[ index ] ).closest("div").prop("id");
++      //$tabber               = $( $tabber[ index ] ).closest("dl").prop("id");
++      $iconElement            = $( $theIcons[ index ] );
++      showIcon                = $iconElement.data( 'showIcon' );
++      hideIcon                = $iconElement.data( 'hideIcon' );
++
++      //var str = JSON.stringify( $tabber, null, 3 ); // (Optional) beautiful indented output.
++      //console.log( 'str: ' + str )
++
++      // Temporarily add class to the outer wrapper
++      $( '#' + $wrapperId ).addClass( 'selected' );
++
++
++      if ( isMobile ) { //  it is an accordion
++         changeIcon( index, isTabberContentsShowing );
++
++         // remove old content
++         jQuery( '.tabber--wrapper.selected .tabber--container.activated .tabber-content--icon' ).removeClass( 'fa-caret-down' ).addClass( 'fa-caret-left' );
++         jQuery( '.tabber--wrapper.selected .tabber--container.activated .tabber--content' ).slideUp();
++
++      } else {
++         $tabber = $( '#' + $wrapperId + ' .tabber--tab.current--tab' ).closest("dt").prop("id");
++
++         console.log( 'current: ' + '#' + $wrapperId + ' #' +  $tabber  );
++
++         // remove old content
++         jQuery( '#' + $tabber ).removeClass( 'current--tab' );
++         jQuery( '.tabber--wrapper.selected .tabber--container.activated .tabber--content' ).css( "display", "none");
++      }
++
++      jQuery( '.tabber--wrapper.selected .tabber--container.activated' ).removeClass( 'activated' );
++
++      // activate new tab
++      $( $tabberContainer[ $tabberTabs.index( this ) ] ).addClass( 'activated' );
++      var $tabberId = $( '.tabber--wrapper.selected .tabber--container.activated .tabber--tab' ).closest("dt").prop("id");
++      console.log( '$tabberId:  #' + $tabberId );
++
++
++      jQuery( '.tabber--wrapper.selected .tabber--container.activated .tabber--tab' ).addClass( 'current--tab' );
++
++      if ( isMobile ) { //  it is an accordion
++
++         $( $tabberContents[ index ] ).slideDown();
++      } else {
++
++         $( $tabberContents[ index ] ).css( "display", "block");
++      }
++
++      // remove Temporarily class to the outer wrapper
++      $( '#' + $wrapperId ).removeClass( 'selected' );
++   };
++
++
++   /*******************
++    * Helper Functions
++    ******************/
++
++   /**
++    * Change the Icon Handler
++    */
++   function changeIcon( index, isHiddenContentShowing ) {
++      var $iconElement = $( $theIcons[ index ] ),
++         showIcon = $iconElement.data( 'showIcon' ),
++         hideIcon = $iconElement.data( 'hideIcon' ),
++         removeClass, addClass,
++         isMobile = Modernizr.mq( '( max-width: 767px )' );
++
++      //console.log ( 'isHiddenContentShowing: ' + isHiddenContentShowing );
++
++      if ( isHiddenContentShowing ) {
++         addClass    = showIcon;
++         removeClass = hideIcon;
++
++      } else {
++         addClass    = hideIcon;
++         removeClass = showIcon;
++      }
++
++      $iconElement
++         .removeClass( removeClass )
++         .addClass(    addClass    );
++   }
++
++
++   $(document).ready(function () {
++      init();
++
++   });
++
++})(jQuery, window, document);
+diff --git a/assets/sass/style.scss b/assets/sass/style.scss
+index 9ef9796..6cabe70 100644
+--- a/assets/sass/style.scss
++++ b/assets/sass/style.scss
+@@ -117,6 +117,14 @@ body {
+       vertical-align:          top;
+    }
+ 
++   .current--tab {
++      background-color:     #bbdefb;
++      border:               1px solid #64b5f6;
++      color:                #333;
++      border-top-left-radius:  5px;
++      border-top-right-radius: 5px;
++   }
++
+    .tabber-content--icon,
+    .dashicons-arrow-down-alt2:before  {
+       display: none;

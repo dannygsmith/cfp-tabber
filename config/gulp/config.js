@@ -196,11 +196,11 @@ module.exports=function (moduleRoot) {
 
    var watchSettings={
       browserSync: {
-         open:          true,    // Open project in a new tab?
-         injectChanges: false,     // Auto inject changes instead of full reload
-         proxy:         moduleSettings.domain,  // Use http://domainname.tld:3000 to use BrowserSync
+         open:          true,          // Open project in a new tab?
+         injectChanges: false,         // Auto inject changes instead of full reload
+         proxy:         "tabber.dev",  //moduleSettings.domain,  // Use http://domainname.tld:3000 to use BrowserSync
          watchOptions:  {
-            debounceDelay: 1000   // Wait 1 second before injecting
+            debounceDelay: 1000        // Wait 1 second before injecting
          }
       }
    }

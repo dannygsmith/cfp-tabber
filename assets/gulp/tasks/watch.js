@@ -28,5 +28,8 @@ module.exports=function (gulp, plugins, config) {
       gulp.watch(config.paths.scripts, ['scripts']);
       gulp.watch(config.paths.concatScripts, ['scripts']);
       gulp.watch(config.paths.sprites, ['sprites']);
+
+      gulp.watch("*.js").on("change", browserSync.reload);
+
    });
 };
