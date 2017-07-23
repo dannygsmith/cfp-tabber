@@ -23,24 +23,6 @@ body {
    font-family: "system";
 }
 
-.dashicons, .dashicons-before:before {
-   -moz-osx-font-smoothing: grayscale;
-   -webkit-font-smoothing:  antialiased;
-   -webkit-transition:      color .1s ease-in 0;
-   display:                 inline-block;
-   font-family:             dashicons;
-   font-size:               16px;
-   font-style:              normal;
-   font-weight:             400;
-   height:                  unset;
-   line-height:             1;
-   text-align:              left;
-   text-decoration:         inherit;
-   transition:              color .1s ease-in 0;
-   vertical-align:          top;
-   width:                   100%;
-}
-
 .tabber--wrapper {
    font-family:   system;
    //font-weight:   400;
@@ -88,6 +70,11 @@ body {
    display: block !important;
 }
 
+.rotate-down {
+   transform:  rotate(-90deg);
+   transition: transform .3s ease-out;
+}
+
 @media only screen and (min-width: 768px) {
 
    .tabber--wrapper {
@@ -107,6 +94,10 @@ body {
       width:                 auto;
    }
 
+   .tabber--container.activated .tabber-content--icon.fa:before {
+     content: '\f0d7';
+   }
+
    // dt
    .tabber--tab {
       background-color:        #eee;
@@ -122,11 +113,11 @@ body {
    }
 
    .current--tab {
-      background-color:     #78909c;
-      border:               1px solid #607d8b;
-      color:                #fff;
-      border-top-left-radius:  5px;
-      border-top-right-radius: 5px;
+      background-color:          #78909c;
+      border:                    1px solid #607d8b;
+      color:                     #fff;
+      border-top-left-radius:    5px;
+      border-top-right-radius:   5px;
    }
 
    .tabber-content--icon,

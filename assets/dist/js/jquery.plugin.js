@@ -6,7 +6,7 @@
    var $tabberContainer;
    var $tabberContents;  // array of cached contents
    var $tabberTabs;      // array of cached tab labels
-   var $theIcons;
+   //var $theIcons;
    var j;
    var k;
 
@@ -16,7 +16,7 @@
    var init = function () {
       $tabberContainer = jQuery( '.tabber--container' );
       $tabberTabs      = jQuery( '.tabber--tab' );
-      $theIcons        = $tabberTabs.find('.tabber-content--icon');
+      //$theIcons        = $tabberTabs.find('.tabber-content--icon');
       $tabberContents  = $tabberTabs.next();
 
       $tabberTabs.on(   'click',
@@ -40,7 +40,7 @@
       j = 0;
       k = 0;
 
-      console.log( $theIcons );
+      //console.log( $theIcons );
 
       var $tabbers = jQuery('.tabber--container .tabber--tab');
 
@@ -62,38 +62,28 @@
     */
    var clickHandler = function ( event ) {
 
-      var $iconElement;
+      //var $iconElement;
       var $tabber;
       var $tabberContent;
       var $tabberTab;
       var $wrapperId;
-      var hideIcon;
       var index;
       var isMobile;
-      var isTabberContentsShowing;
-      var showIcon;
 
       $tabberContainer        = jQuery( '.tabber--container' );
       index                   = $tabberTabs.index ( this );  // current index
-      $tabberContent          = $( $tabberContents[ index ] );
-      $tabberTab              = $( '.tabber--tab.current--tab' );
-      isTabberContentsShowing = $tabberContent.is(':visible');
+      //$tabberContent          = $( $tabberContents[ index ] );
+      //$tabberTab              = $( '.tabber--tab.current--tab' );
       isMobile                = Modernizr.mq( '( max-width: 767px )' );
       $wrapperId              = $( $tabberContents[ index ] ).closest("div").prop("id");
-      $iconElement            = $( $theIcons[ index ] );
-      showIcon                = $iconElement.data( 'showIcon' );
-      hideIcon                = $iconElement.data( 'hideIcon' );
 
       // Temporarily add class to the outer wrapper
       $( '#' + $wrapperId ).addClass( 'selected' );
 
       if ( isMobile ) { //  it is an accordion
-         changeIcon( index, isTabberContentsShowing );
-
-         //transform: rotate( '45deg' );
 
          // remove old content
-         jQuery( '.tabber--wrapper.selected .tabber--container.activated .tabber-content--icon' ).removeClass( 'fa-caret-down' ).addClass( 'fa-caret-left' );
+         jQuery( '.tabber--wrapper.selected .tabber--container.activated .tabber-content--icon' ).removeClass( 'rotate-down' );
          jQuery( '.tabber--wrapper.selected .tabber--container.activated .tabber--content' ).slideUp();
 
       } else {
@@ -113,6 +103,7 @@
       jQuery( '.tabber--wrapper.selected .tabber--container.activated .tabber--tab' ).addClass( 'current--tab' );
 
       if ( isMobile ) { //  it is an accordion
+         jQuery( '.tabber--wrapper.selected .tabber--container.activated .tabber-content--icon' ).addClass( 'rotate-down' );
 
          $( $tabberContents[ index ] ).slideDown();
       } else {
@@ -123,33 +114,6 @@
       // remove Temporarily class to the outer wrapper
       $( '#' + $wrapperId ).removeClass( 'selected' );
    };
-
-   /*******************
-    * Helper Functions
-    ******************/
-   /**
-    * Change the Icon Handler
-    */
-   function changeIcon( index, isHiddenContentShowing ) {
-      var $iconElement = $( $theIcons[ index ] ),
-         showIcon = $iconElement.data( 'showIcon' ),
-         hideIcon = $iconElement.data( 'hideIcon' ),
-         removeClass, addClass,
-         isMobile = Modernizr.mq( '( max-width: 767px )' );
-
-      if ( isHiddenContentShowing ) {
-         addClass    = showIcon;
-         removeClass = hideIcon;
-
-      } else {
-         addClass    = hideIcon;
-         removeClass = showIcon;
-      }
-
-      $iconElement
-         .removeClass( removeClass )
-         .addClass(    addClass    );
-   }
 
    $(document).ready(function () {
       init();
