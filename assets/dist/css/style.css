@@ -85,6 +85,10 @@ body {
   border-bottom: 1px solid #ccc;
 }
 
+.no-js .tabber--content {
+  display: block !important;
+}
+
 @media only screen and (min-width: 768px) {
   .tabber--wrapper {
     position: relative;
@@ -139,7 +143,7 @@ body {
   .dashicons-arrow-down-alt2:before {
     display: none;
   }
-  .tabber--content {
+  .js .tabber--content {
     -webkit-margin-start: 0;
     background-color: #ddd;
     border: 1px solid #ccc;
@@ -151,6 +155,9 @@ body {
     top: 100%;
     width: 100%;
     z-index: 99;
+  }
+  .no-js .tabber--content {
+    display: block !important;
   }
 }
 

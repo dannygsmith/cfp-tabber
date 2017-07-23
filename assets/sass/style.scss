@@ -84,6 +84,10 @@ body {
    border-bottom: 1px solid #ccc;
 }
 
+.no-js .tabber--content {
+   display: block !important;
+}
+
 @media only screen and (min-width: 768px) {
 
    .tabber--wrapper {
@@ -140,7 +144,7 @@ body {
    }
 
    // dd,
-   .tabber--content {
+   .js .tabber--content {
       -webkit-margin-start: 0;
       background-color:     #ddd;
       border:               1px solid #ccc;

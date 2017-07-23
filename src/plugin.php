@@ -46,6 +46,26 @@ function enqueue_assets() {
       );
 }
 
+///**
+// * @author Brad Dalton - WP Sites
+// *
+// * @link http://wpsites.net/web-design/style-images-custom-body-class/
+// */
+//function wpsites_add_custom_body_class( $classes ) {
+//   $classes[] = 'no-js';
+//   return $classes;
+//}
+//add_filter( 'body_class', 'wpsites_add_custom_body_class' );
+
+// Add landing page body class to the head.
+add_filter( 'body_class', __NAMESPACE__ . '\genesis_sample_add_body_class' );
+function genesis_sample_add_body_class( $classes ) {
+
+   $classes[] = 'no-js';
+
+   return $classes;
+}
+
 /**
  * Autoload plugin files.
  *
