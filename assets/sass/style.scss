@@ -101,6 +101,10 @@ body {
       margin:                0;
       padding:               0;
       width:                 auto;
+
+      &.activated .tabber-content--icon.fa:before {
+         content: '\f0d7';
+      }
    }
 
    // dt

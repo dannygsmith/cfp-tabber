@@ -4,7 +4,6 @@
    var $tabberContainer;
    var $tabberContents;  // array of cached contents
    var $tabberTabs;      // array of cached tab labels
-   var $theIcons;
    var j;
    var k;
 
@@ -14,7 +13,6 @@
    var init = function () {
       $tabberContainer = jQuery( '.tabber--container' );
       $tabberTabs      = jQuery( '.tabber--tab' );
-      $theIcons        = $tabberTabs.find('.tabber-content--icon');
       $tabberContents  = $tabberTabs.next();
 
       $tabberTabs.on(   'click',
@@ -58,16 +56,13 @@
     */
    var clickHandler = function ( event ) {
 
-      var $iconElement;
       var $tabber;
       var $tabberContent;
       var $tabberTab;
       var $wrapperId;
-      var hideIcon;
       var index;
       var isMobile;
       var isTabberContentsShowing;
-      var showIcon;
 
       $tabberContainer        = jQuery( '.tabber--container' );
       index                   = $tabberTabs.index ( this );  // current index
@@ -76,9 +71,6 @@
       isTabberContentsShowing = $tabberContent.is(':visible');
       isMobile                = Modernizr.mq( '( max-width: 767px )' );
       $wrapperId              = $( $tabberContents[ index ] ).closest("div").prop("id");
-      $iconElement            = $( $theIcons[ index ] );
-      showIcon                = $iconElement.data( 'showIcon' );
-      hideIcon                = $iconElement.data( 'hideIcon' );
 
       // Temporarily add class to the outer wrapper
       $( '#' + $wrapperId ).addClass( 'selected' );
@@ -117,33 +109,6 @@
       // remove Temporarily class to the outer wrapper
       $( '#' + $wrapperId ).removeClass( 'selected' );
    };
-
-   /*******************
-    * Helper Functions
-    ******************/
-   /**
-    * Change the Icon Handler
-    */
-   function changeIcon( index, isHiddenContentShowing ) {
-      var $iconElement = $( $theIcons[ index ] ),
-         showIcon = $iconElement.data( 'showIcon' ),
-         hideIcon = $iconElement.data( 'hideIcon' ),
-         removeClass, addClass,
-         isMobile = Modernizr.mq( '( max-width: 767px )' );
-
-      if ( isHiddenContentShowing ) {
-         addClass    = showIcon;
-         removeClass = hideIcon;
-
-      } else {
-         addClass    = hideIcon;
-         removeClass = showIcon;
-      }
-
-      $iconElement
-         .removeClass( removeClass )
-         .addClass(    addClass    );
-   }
 
    $(document).ready(function () {
       init();
