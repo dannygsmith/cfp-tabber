@@ -1,6 +1,8 @@
 ;(function ($, window, document, undefined) {
    'use strict';
 
+   document.body.className = document.body.className.replace("no-js","js");
+
    var $tabberContainer;
    var $tabberContents;  // array of cached contents
    var $tabberTabs;      // array of cached tab labels
@@ -37,6 +39,8 @@
 
       j = 0;
       k = 0;
+
+      console.log( $theIcons );
 
       var $tabbers = jQuery('.tabber--container .tabber--tab');
 
@@ -85,6 +89,8 @@
 
       if ( isMobile ) { //  it is an accordion
          changeIcon( index, isTabberContentsShowing );
+
+         //transform: rotate( '45deg' );
 
          // remove old content
          jQuery( '.tabber--wrapper.selected .tabber--container.activated .tabber-content--icon' ).removeClass( 'fa-caret-down' ).addClass( 'fa-caret-left' );
