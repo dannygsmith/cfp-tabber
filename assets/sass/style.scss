@@ -100,10 +100,16 @@ body {
       justify-content:       flex-start;
       margin:                0;
       padding:               0;
+      transition: all 0.1s linear;
       width:                 auto;
 
-      &.activated .tabber-content--icon.fa:before {
-         content: '\f0d7';
+      .tabber-content--icon.fa {
+         transition: all 0.1s linear;
+      }
+
+      &.activated .tabber-content--icon.fa {
+         transform: rotate(-90deg);
+         transition: all 0.1s linear;
       }
    }
 
