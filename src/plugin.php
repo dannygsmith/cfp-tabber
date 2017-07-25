@@ -13,6 +13,8 @@
 
 namespace CampFirePixels\Tabber;
 
+require_once __DIR__ . '/settings-page.php';
+
 add_action( 'wp_enqueue_scripts', __NAMESPACE__ . '\enqueue_assets' );
 /**
  * Enqueue the plugin assets (scripts and styles).
@@ -23,7 +25,7 @@ add_action( 'wp_enqueue_scripts', __NAMESPACE__ . '\enqueue_assets' );
  */
 function enqueue_assets() {
 
-   wp_enqueue_style('dashicons');
+   //wp_enqueue_style('dashicons');
 
    wp_enqueue_style(
       'font-awesome',
@@ -31,7 +33,6 @@ function enqueue_assets() {
       array (),
       CHILD_THEME_VERSION,
       'all' );
-
 
    wp_enqueue_script(
       'tabber-plugin-script',
@@ -43,19 +44,16 @@ function enqueue_assets() {
 
    wp_enqueue_style( 'tabber-plugin-style',
                      TABBER_URL . 'assets/dist/css/style.min.css'
-      );
+   );
 }
 
-///**
-// * @author Brad Dalton - WP Sites
-// *
-// * @link http://wpsites.net/web-design/style-images-custom-body-class/
-// */
-//function wpsites_add_custom_body_class( $classes ) {
-//   $classes[] = 'no-js';
-//   return $classes;
-//}
-//add_filter( 'body_class', 'wpsites_add_custom_body_class' );
+// Update CSS within in Admin
+function admin_styles() {
+   wp_enqueue_style('admin-styles',
+                    TABBER_URL . 'assets/sass/admin.css');
+
+}
+add_action('admin_enqueue_scripts', __NAMESPACE__ . '\admin_styles');
 
 // Add landing page body class to the head.
 add_filter( 'body_class', __NAMESPACE__ . '\genesis_sample_add_body_class' );

@@ -55,3 +55,12 @@ define( 'TABBER_URL', $plugin_url );
 define( 'TABBER_TEXT_DOMAIN', 'TABBER' );
 
 include( __DIR__ . '/src/plugin.php' );
+
+/**
+ * Get the bootstrap!
+ */
+if ( file_exists( __DIR__ . '/CMB2/init.php' ) ) {
+   require_once __DIR__ . '/CMB2/init.php';
+} elseif ( file_exists(  __DIR__ . '/CMB2/init.php' ) ) {
+   require_once __DIR__ . '/CMB2/init.php';
+}

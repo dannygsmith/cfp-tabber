@@ -41,7 +41,6 @@ function process_the_shortcode( $user_defined_attributes, $content, $shortcode_n
 
    // do the processing
    $attributes['show_icon'] = esc_attr( $attributes['show_icon'] );
-   $attributes['hide_icon'] = esc_attr( $attributes['hide_icon'] );
 
    if ( $content ) {
       $content = do_shortcode( $content ); // check for embedded shortcode
@@ -70,11 +69,18 @@ function get_shortcode_configuration( $shortcode_name ) {
       'view' => __DIR__ . '/views/' . $shortcode_name . '.php',
       'defaults' => array(
          'show_icon' => 'fa fa-caret-left',
-         'hide_icon' => 'fa fa-caret-down',
       ),
    );
 
    $config[ 'defaults' ][ 'tab' ] = '';
+
+   // Grab the metadata from the database
+   $show_icon = esc_html( cfp_get_option( 'icon_left' ) );
+
+   if ( $show_icon ) {
+      $config[ 'defaults' ][ 'show_icon' ] = $show_icon;
+   }
+   //ddd( $show_icon  );
 
    return $config;
 }

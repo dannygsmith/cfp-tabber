@@ -25,7 +25,6 @@ body {
 
 .tabber--wrapper {
    font-family:   system;
-   //font-weight:   400;
    position:      relative;
    margin-bottom: 70px;
 }
@@ -71,11 +70,11 @@ body {
 }
 
 .rotate-down {
-   transform:  rotate(-90deg);
+   transform:  rotate( -90deg );
    transition: transform .3s ease-out;
 }
 
-@media only screen and (min-width: 768px) {
+@media only screen and ( min-width: 768px ) {
 
    .tabber--wrapper {
       position:      relative;
@@ -83,7 +82,7 @@ body {
    }
 
    // dl,
-   .tabber--container {
+   .js .tabber--container {
       -webkit-margin-after:  0;
       -webkit-margin-before: 0;
       display:               inline-flex;
@@ -94,8 +93,12 @@ body {
       width:                 auto;
    }
 
+   .no-js .tabber--container {
+      display:               block;
+   }
+
    .tabber--container.activated .tabber-content--icon.fa:before {
-     content: '\f0d7';
+     //content: '\f0d7';
    }
 
    // dt
@@ -107,7 +110,8 @@ body {
       cursor:                  pointer;
       display:                 inline;
       margin-right:            2px;
-      padding:                 6px 15px 10px;
+      //padding:                 6px 15px 10px;
+      top:                     calc(50% - 7px);
       text-transform:          capitalize;
       vertical-align:          top;
    }
@@ -120,8 +124,7 @@ body {
       border-top-right-radius:   5px;
    }
 
-   .tabber-content--icon,
-   .dashicons-arrow-down-alt2:before  {
+   .tabber-content--icon {
       display: none;
    }
 

@@ -1,0 +1,11 @@
+ul {
+   list-style: square outside none;
+   padding: 0 30px;
+}
+
+pre {
+   background-color: #fff;
+   border: 1px solid #bbb;
+   margin: 0;
+   padding: 10px;
+}

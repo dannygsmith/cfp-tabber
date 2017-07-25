@@ -6,7 +6,6 @@
    var $tabberContainer;
    var $tabberContents;  // array of cached contents
    var $tabberTabs;      // array of cached tab labels
-   //var $theIcons;
    var j;
    var k;
 
@@ -16,7 +15,6 @@
    var init = function () {
       $tabberContainer = jQuery( '.tabber--container' );
       $tabberTabs      = jQuery( '.tabber--tab' );
-      //$theIcons        = $tabberTabs.find('.tabber-content--icon');
       $tabberContents  = $tabberTabs.next();
 
       $tabberTabs.on(   'click',
@@ -40,8 +38,6 @@
       j = 0;
       k = 0;
 
-      //console.log( $theIcons );
-
       var $tabbers = jQuery('.tabber--container .tabber--tab');
 
       for ( j = 0; j < $('.tabber--container').length; j++, k++ ) {
@@ -62,18 +58,13 @@
     */
    var clickHandler = function ( event ) {
 
-      //var $iconElement;
       var $tabber;
-      var $tabberContent;
-      var $tabberTab;
       var $wrapperId;
       var index;
       var isMobile;
 
       $tabberContainer        = jQuery( '.tabber--container' );
       index                   = $tabberTabs.index ( this );  // current index
-      //$tabberContent          = $( $tabberContents[ index ] );
-      //$tabberTab              = $( '.tabber--tab.current--tab' );
       isMobile                = Modernizr.mq( '( max-width: 767px )' );
       $wrapperId              = $( $tabberContents[ index ] ).closest("div").prop("id");
 
