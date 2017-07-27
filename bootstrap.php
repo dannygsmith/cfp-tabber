@@ -48,11 +48,14 @@ define( 'TABBER_PLUGIN', __FILE__ );
 define( 'TABBER_DIR', plugin_dir_path( __FILE__ ) );
 $plugin_url = plugin_dir_url( __FILE__ );
 
+//d( TABBER_PLUGIN );
+//ddd( TABBER_DIR );
+
 if ( is_ssl() ) {
    $plugin_url = str_replace( 'http://', 'https://', $plugin_url );
 }
 define( 'TABBER_URL', $plugin_url );
-define( 'TABBER_TEXT_DOMAIN', 'TABBER' );
+define( 'TABBER_TEXT_DOMAIN', 'tabber' );
 
 include( __DIR__ . '/src/plugin.php' );
 

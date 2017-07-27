@@ -118,7 +118,6 @@ class CFP_Admin {
       //$data =  "<p>Motivation is a multi-level concept</p>";
       //echo $data;
    }
-   //add_action( 'cmb2_render_human_name', 'cmb2_render_human_name', 10, 5 );
 
    public function add_options_page() {
       $this->options_page = add_submenu_page(
@@ -130,7 +129,7 @@ class CFP_Admin {
          array( $this, 'admin_page_display' )
       );
       // Include CMB CSS in the head to avoid FOUT
-      // add_action( "admin_print_styles-{$this->options_page}", array( 'CMB2_hookup', 'enqueue_cmb_css' ) );
+      add_action( "admin_print_styles-{$this->options_page}", array( 'CMB2_hookup', 'enqueue_cmb_css' ) );
    }
 
    /**
@@ -152,6 +151,7 @@ class CFP_Admin {
     */
    function add_options_page_metabox() {
       global $prefix;
+      //global $cmb;
 
       // hook in our save notices
       add_action( "cmb2_save_options-page_fields_{$this->metabox_id}", array( $this, 'settings_notices' ), 10, 2 );
@@ -169,10 +169,10 @@ class CFP_Admin {
 
       $cmb->add_field( array(
                           'name' =>   '<h3>Enter the shortcodes consecutively like below</h3>
-                                      <strong>You can use a different icon if you wish</strong><br><br>', 'cfp',
+                                      <strong>You can use a different icon if you wish</strong><br>', 'cfp',
                           //'desc' => esc_html__( 'This is a title description', 'cfp' ),
                           'id'   => $prefix . 'title',
-                          'type' => 'my-title',
+                          'type' => 'title',
                        ) );
 
       $cmb->add_field( array( 'name' => '<pre>
@@ -189,19 +189,56 @@ class CFP_Admin {
                                      ', 'cfp',
                           'desc' => esc_html__( 'This is a title description', 'cfp' ),
                           'id'   => $prefix . 'paragraph',
-                          'type' => 'my-paragraph',
+                          'type' => 'paragraph',
                        ) );
 
-      //$cmb->cfp_paragraph();
-
       $cmb->add_field( array(
-                               'name' => '<br>Font Awesome Icon<br>', 'cfp',
-                               'desc' => '<br>example: <strong><a href="http://fontawesome.io/icons/#directional" target="_blank">fa fa-caret-left</a></strong><br><br>', 'cfp',
+                               'name' => 'Font Awesome Icon', 'cfp',
+                               'desc' => 'example: <strong><a href="http://fontawesome.io/icons/#directional" target="_blank">fa fa-caret-left</a></strong><br><br>', 'cfp',
                                'id'   => 'icon_left',
                                'type' => 'text_medium',
                             ) );
-   }
 
+      // $group_field_id is the field id string, so in this case: $prefix . 'demo'
+      $group_field_id = $cmb->add_field( array(
+                                            'id'               => $prefix . 'demo',
+                                            'type'             => 'group',
+                                            'description'      => esc_html__( 'Generates reusable form entries', 'cfp' ),
+                                            'options'          => array(
+                                               'group_title'   => esc_html__( 'Entry {#}', 'cfp' ), // {#} gets replaced by row number
+                                               'add_button'    => esc_html__( 'Add Another Entry', 'cfp' ),
+                                               'remove_button' => esc_html__( 'Remove Entry', 'cfp' ),
+                                               'sortable'      => true, // beta
+                                               // 'closed'     => true, // true to have the groups closed by default
+                                            ),
+                                         ) );
+
+      /**
+       * Group fields works the same, except ids only need
+       * to be unique to the group. Prefix is not needed.
+       *
+       * The parent field's id needs to be passed as the first argument.
+       */
+      $cmb->add_group_field( $group_field_id, array(
+         'name'       => esc_html__( 'Tab Title', 'cfp' ),
+         'id'         => 'title',
+         'type'       => 'text',
+         //'repeatable' => true, // Repeatable fields are supported w/in repeatable groups (for most types)
+      ) );
+
+      $cmb->add_group_field( $group_field_id, array(
+         'name'               => esc_html__( 'Tab Content', 'cfp' ),
+         'id'                 => 'tab_content',
+         'type'               => 'wysiwyg',
+         'options'            => array(
+            'textarea_rows'   => 10,
+         ),
+         //'repeatable' => true, // Repeatable fields are supported w/in repeatable groups (for most types)
+      ) );
+
+      //\Kint::$maxLevels = 0; // 0 equals no limit
+      //ddd( $cmb );
+   }
 
    /**
     * Register settings notices for display
@@ -217,7 +254,7 @@ class CFP_Admin {
       }
 
       add_settings_error( $this->key . '-notices', '', __( 'Settings updated.', 'cfp' ), 'updated' );
-      settings_errors( $this->key . '-notices' );
+      settings_errors( $this->key    . '-notices' );
    }
 
    /**
@@ -234,7 +271,6 @@ class CFP_Admin {
 
       throw new Exception( 'Invalid property: ' . $field );
    }
-
 }
 
 /**
@@ -272,6 +308,73 @@ function cfp_get_option( $key = '', $default = false ) {
 
    return $val;
 }
+
+//add_action( 'cmb2_admin_init', 'cfp_register_repeatable_group_field_metabox' );
+/**
+ * Hook in and add a metabox to demonstrate repeatable grouped fields
+ */
+function cfp_register_repeatable_group_field_metabox() {
+   global $prefix;
+   //$prefix = 'cfp_group_';
+
+   /**
+    * Repeatable Field Groups
+    */
+   $cmb2 = new_cmb2_box( array(
+   //                        'id'         => $this->metabox_id,
+   //                                                'hookup'     => false,
+   //                                                'cmb_styles' => false,
+   //                                                'show_on'    => array(
+   //                           // These are important, don't remove
+   //                           'key'   => 'options-page',
+   //                           'value' => array( $this->key, )
+   //                        ),
+                                 'id'           => $prefix . 'metabox',
+                                 'title'        => esc_html__( 'Repeating Field Group', 'cfp' ),
+                                 'object_types' => array( 'page' ),
+                                 'show_on'    => array(
+                                    // These are important, don't remove
+                                    'key'   => 'options-page',
+                                    'value' => 'cfp_options'  //array( $this->key, )
+                                 )
+                              ) );
+
+   // $group_field_id is the field id string, so in this case: $prefix . 'demo'
+   $group_field_id = $cmb->add_field( array(
+                                         'id'          => $prefix . 'demo',
+                                         'type'        => 'group',
+                                         'description' => esc_html__( 'Generates reusable form entries', 'cfp' ),
+                                         'options'     => array(
+                                            'group_title'   => esc_html__( 'Entry {#}', 'cfp' ), // {#} gets replaced by row number
+                                            'add_button'    => esc_html__( 'Add Another Entry', 'cfp' ),
+                                            'remove_button' => esc_html__( 'Remove Entry', 'cfp' ),
+                                            'sortable'      => true, // beta
+                                            // 'closed'     => true, // true to have the groups closed by default
+                                         ),
+                                      ) );
+
+   /**
+    * Group fields works the same, except ids only need
+    * to be unique to the group. Prefix is not needed.
+    *
+    * The parent field's id needs to be passed as the first argument.
+    */
+   $cmb->add_group_field( $group_field_id, array(
+      'name'       => esc_html__( 'Entry Title', 'cfp' ),
+      'id'         => 'title',
+      'type'       => 'text',
+      // 'repeatable' => true, // Repeatable fields are supported w/in repeatable groups (for most types)
+   ) );
+
+   $cmb->add_group_field( $group_field_id, array(
+      'name'        => esc_html__( 'Description', 'cfp' ),
+      'description' => esc_html__( 'Write a short description for this entry', 'cfp' ),
+      'id'          => 'description',
+      'type'        => 'textarea_small',
+   ) );
+
+}
+
 
 // Get it started
 cfp_admin();

@@ -74,6 +74,7 @@ function genesis_sample_add_body_class( $classes ) {
 function autoload() {
    $files = array (
       'shortcode/shortcodes.php',
+      'tabber/module.php',
    );
 
    foreach ( $files as $file ) {

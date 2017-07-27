@@ -8,9 +8,9 @@ This plugin includes the following features:
 
 - Tabber    Shortcode: 
 ```
-[tabber tab="First Tab" ]Four score and seven years ...[/tabber]
+[tabber tab="First Tab" show_icon="fa fa-angle-left"]Four score and seven years ...[/tabber]
 [tabber tab="Second Tab"]Of mice and men ...[/tabber]
-[tabber tab="Third Tab" ]You can't handle the truth![/tabber]
+[tabber tab="Third Tab" show_icon="fa fa-caret-left"]You can't handle the truth![/tabber]
 [tabber tab="Fourth Tab"]Frankly Scarlet, I just don't give a damn![/tabber]
 ```
 - NOTICE: you do not have to put a div around the shortcode, the plugin takes care of that for you.
