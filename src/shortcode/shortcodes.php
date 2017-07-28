@@ -15,7 +15,7 @@ namespace CampFirePixels\Tabber;
 
 add_shortcode( 'tabber', __NAMESPACE__ . '\process_the_shortcode' );
 /**
- * Process the Tabber Shortcode to build a list of Tabs.
+ * Process the Tabber Shortcode to build a single tab.
  *
  * @since 0.1.0
  *
