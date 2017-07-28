@@ -74,7 +74,7 @@
       if ( isMobile ) { //  it is an accordion
 
          // remove old content
-         jQuery( '.tabber--wrapper.selected .tabber--container.activated .tabber-content--icon' ).removeClass( 'rotate-down' );
+         jQuery( '.tabber--wrapper.selected .tabber--container.activated .tabber-title--icon' ).removeClass( 'rotate-down' );
          jQuery( '.tabber--wrapper.selected .tabber--container.activated .tabber--content' ).slideUp();
 
       } else {
@@ -94,7 +94,7 @@
       jQuery( '.tabber--wrapper.selected .tabber--container.activated .tabber--tab' ).addClass( 'current--tab' );
 
       if ( isMobile ) { //  it is an accordion
-         jQuery( '.tabber--wrapper.selected .tabber--container.activated .tabber-content--icon' ).addClass( 'rotate-down' );
+         jQuery( '.tabber--wrapper.selected .tabber--container.activated .tabber-title--icon' ).addClass( 'rotate-down' );
 
          $( $tabberContents[ index ] ).slideDown();
       } else {

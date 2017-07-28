@@ -8,12 +8,12 @@
  * @link    https://CampFirePixels.com
  * @license GNU General Public License 2.0+
  *
- *  [tabber tab="First Tab"]The performance of this processor ...[/tabber]
+ *  [tab title="First Tab"]The performance of this processor ...[/tab]
  *
  */
 namespace CampFirePixels\Tabber;
 
-add_shortcode( 'tabber', __NAMESPACE__ . '\process_the_shortcode' );
+add_shortcode( 'tab', __NAMESPACE__ . '\process_the_shortcode' );
 /**
  * Process the Tabber Shortcode to build a single tab.
  *
@@ -25,7 +25,7 @@ add_shortcode( 'tabber', __NAMESPACE__ . '\process_the_shortcode' );
  *
  * @return string
  *
- * [tabber tab="First Tab"]The performance of this processor ...[/tabber]
+ * [tab title="First Tab"]The performance of this processor ...[/tab]
  *
  */
 function process_the_shortcode( $user_defined_attributes, $content, $shortcode_name ) {
@@ -72,7 +72,7 @@ function get_shortcode_configuration( $shortcode_name ) {
       ),
    );
 
-   $config[ 'defaults' ][ 'tab' ] = '';
+   $config[ 'defaults' ][ 'title' ] = '';
 
    // Grab the metadata from the database
    $show_icon = esc_html( cfp_get_option( 'icon_left' ) );

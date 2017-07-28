@@ -70,6 +70,8 @@ function render_topic_tabbers( array $attributes, array $config ) {
             'terms'    => $attributes[ 'topic' ],
          ),
       ),
+      'order'          => 'ASC',
+      'orderby'        => 'menu_order',
    );
 
    $query = new \WP_Query( $config_args );
@@ -85,13 +87,22 @@ function render_topic_tabbers( array $attributes, array $config ) {
    wp_reset_postdata();
 }
 
+/**
+ * Loop through the query and render out the Tabbers by topic.
+ *
+ * @since 0.1.3
+ *
+ * @param \WP_Query $query
+ * @param array     $attributes
+ * @param array     $config
+ */
 function loop_and_render_tabbers_by_topic( \WP_Query $query, array $attributes, array $config ) {
 
    while ( $query->have_posts() ) {
       $query->the_post();
 
-      $post_title     = get_the_title();
-      $post_content   = do_shortcode( get_the_content() );
+      $post_title   = get_the_title();
+      $post_content = do_shortcode( get_the_content() );
       include( $config[ 'views' ][ 'tabbers' ] );
    }
 }
@@ -99,7 +110,7 @@ function loop_and_render_tabbers_by_topic( \WP_Query $query, array $attributes, 
 /**
  * Render "none found" message handler.
  *
- * @since 1.0.0
+ * @since 0.1.3
  *
  * @param array $attributes
  *

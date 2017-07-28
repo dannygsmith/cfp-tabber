@@ -51,7 +51,7 @@ body {
    width:            100%;
 }
 
-.tabber-content--icon {
+.tabber-title--icon {
    font-size: 28px;
 }
 
@@ -97,7 +97,7 @@ body {
       display:               block;
    }
 
-   .tabber--container.activated .tabber-content--icon.fa:before {
+   .tabber--container.activated .tabber-title--icon.fa:before {
      //content: '\f0d7';
    }
 
@@ -124,7 +124,7 @@ body {
       border-top-right-radius:   5px;
    }
 
-   .tabber-content--icon {
+   .tabber-title--icon {
       display: none;
    }
 
