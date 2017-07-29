@@ -13,7 +13,7 @@ namespace CampFirePixels\Module\Tabber\Template;
 remove_action( 'genesis_loop', 'genesis_do_loop' );
 add_action( 'genesis_loop', __NAMESPACE__ . '\do_tabber_archive_loop' );
 /**
- * Do the FAQ Archive Loop and render out the HTML.
+ * Do the Tabber Archive Loop and render out the HTML.
  *
  * NOTE: The variables are set to call the right HTML
  * markup the container.php view file.
@@ -37,7 +37,9 @@ function do_tabber_archive_loop() {
    foreach ( $records as $record ) {
 		$term_slug = $record['term_slug'];
 
-      include( TABBER_MODULE_DIR . 'template/views/container.php' );
+      //include( TABBER_MODULE_DIR . 'template/views/container.php' );
+      echo TABBER_MODULE_DIR . "../views/container-topic.php";
+      include( TABBER_MODULE_DIR . '../views/container-topic.php' );
    }
 }
 
@@ -57,6 +59,7 @@ function loop_and_render_tabbers( array $tabbers ) {
 	);
 
 	foreach ( $tabbers as $tabber ) {
+
 		$post_content = do_shortcode( $tabber['post_content'] );
       $post_title   = $tabber['post_title'];
 

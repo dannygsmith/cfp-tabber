@@ -83,7 +83,7 @@ function get_post_type_labels_config( $post_type, $singular_label, $plural_label
 /**
  * Get all the post type features for the given post type.
  *
- * @since 1.0.0
+ * @since 0.1.3
  *
  * @param string $post_type        Given post type
  * @param array  $exclude_features Array of features to exclude

@@ -99,7 +99,8 @@ function loop_and_render_tabbers_by_topic( \WP_Query $query, array $attributes, 
       $query->the_post();
 
       $post_title   = get_the_title();
-      $post_content = do_shortcode( get_the_content() );
+      //$post_content = do_shortcode( get_the_content() );
+      $post_content = do_shortcode( apply_filters( 'the_content', get_the_content() ) );
       //include( $config[ 'views' ][ 'tabbers' ] );
       include( $config[ 'views' ][ 'container_topic' ] );
    }
