@@ -15,8 +15,6 @@ define( 'TABBER_MODULE_TEXT_DOMAIN', TABBER_TEXT_DOMAIN ); // 'tabber'
 define( 'TABBER_MODULE_PLUGIN', TABBER_PLUGIN ); // "/app/public/wp-content/plugins/cfp-tabber/bootstrap.php"
 define( 'TABBER_MODULE_DIR', plugin_dir_path( __FILE__  ) );
 
-//ddd( TABBER_MODULE_DIR );
-
 /**
  * Autoload plugin files.
  *

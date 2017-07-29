@@ -12,7 +12,7 @@
 //d( 'top of container' );
 
 use CampFirePixels\Module\Tabber\Shortcode as Shortcode;
-use CampFirePixels\Module\Tabber\Template as Template;
+use CampFirePixels\Module\Tabber\Template  as Template;
 
 //add_filter( 'genesis_site_layout', '__genesis_return_full_width_content' );
 

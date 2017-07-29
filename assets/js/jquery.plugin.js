@@ -46,8 +46,15 @@
 
       //  loops through each group of tabbers
       for ( k = 0; k < jQuery('div.tabber--wrapper').length; k++ ) {
+         //console.log( 'wrapper: ' + '#tabber--wrapper-' + k + ' length: ' + jQuery('div.tabber--wrapper').length );
 
          jQuery( '#tabber--wrapper-' + k + ' .tabber--tab:first' ).trigger('click');
+
+         //var wrapper = jQuery( '#tabber--wrapper-' + k + ' .tabber--tab.current--tab' );
+         //console.log( wrapper );
+//
+         //wrapper.next().css( 'height', wrapper.next().outerHeight(true));
+         ////console.log( wrapper.outerHeight( true ) );
       }
    };
 
@@ -67,6 +74,15 @@
       index                   = $tabberTabs.index ( this );  // current index
       isMobile                = Modernizr.mq( '( max-width: 767px )' );
       $wrapperId              = $( $tabberContents[ index ] ).closest("div").prop("id");
+
+      //  loops through each group of tabbers
+      for ( k = 0; k < jQuery('div.tabber--wrapper').length; k++ ) {
+         //console.log( 'wrapper: ' + '#tabber--wrapper-' + k + ' length: ' + jQuery('div.tabber--wrapper').length );
+
+         //var wrapper = jQuery( '#tabber--wrapper-' + k + ' .tabber--tab.current--tab' );
+         //wrapper.next().css( 'height', wrapper.next().outerHeight( true ) );
+         //console.log( wrapper.outerHeight( true ) );
+      }
 
       // Temporarily add class to the outer wrapper
       $( '#' + $wrapperId ).addClass( 'selected' );

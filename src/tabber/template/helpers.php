@@ -22,6 +22,8 @@ add_filter( 'archive_template', __NAMESPACE__ . '\load_the_tabber_archive_templa
  */
 function load_the_tabber_archive_template( $theme_archive_template ) {
 
+   //ddd( 'in load_the_tabber_archive_template' );
+
    if ( ! is_post_type_archive( 'tabber' ) ) {
 		return $theme_archive_template;
 	}

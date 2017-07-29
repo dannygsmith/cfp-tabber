@@ -31,8 +31,6 @@ function process_the_shortcode( $user_defined_attributes, $content, $shortcode_n
       $user_defined_attributes
    );
 
-   //ddd( $attributes );
-
    if ( !$attributes[ 'topic' ] ) {
       return '';
    }
@@ -79,10 +77,9 @@ function render_topic_tabbers( array $attributes, array $config ) {
    if ( !$query->have_posts() ) {
 
       return render_none_found_message( $attributes );
-
    }
 
-   include( $config[ 'views' ][ 'container_topic' ] );
+   loop_and_render_tabbers_by_topic( $query, $attributes, $config );
 
    wp_reset_postdata();
 }
@@ -103,7 +100,8 @@ function loop_and_render_tabbers_by_topic( \WP_Query $query, array $attributes, 
 
       $post_title   = get_the_title();
       $post_content = do_shortcode( get_the_content() );
-      include( $config[ 'views' ][ 'tabbers' ] );
+      //include( $config[ 'views' ][ 'tabbers' ] );
+      include( $config[ 'views' ][ 'container_topic' ] );
    }
 }
 

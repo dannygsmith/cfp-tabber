@@ -2,7 +2,7 @@
 /**
  * Tabber Archive Template
  *
- * @package CampFirePixels\Module\Tabber\Template;
+ * @package CampFirePixels\Module\Tabber;
  * @since   0.1.3
  * @author  Danny G Smith
  * @link    https://CampFirePixels.com
@@ -23,7 +23,6 @@ add_action( 'genesis_loop', __NAMESPACE__ . '\do_tabber_archive_loop' );
  * @return void
  */
 function do_tabber_archive_loop() {
-   //ddd( 'inside do_tabber_archive_loop' );
 
    $records = get_posts_grouped_by_term( 'tabber', 'topic' );
 	if ( ! $records ) {
@@ -60,8 +59,6 @@ function loop_and_render_tabbers( array $tabbers ) {
 	foreach ( $tabbers as $tabber ) {
 		$post_content = do_shortcode( $tabber['post_content'] );
       $post_title   = $tabber['post_title'];
-
-      //ddd( $tabber['post_title'] );
 
 		include( TABBER_MODULE_DIR . 'template/views/tabber.php' );
 	}
