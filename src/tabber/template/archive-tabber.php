@@ -58,8 +58,8 @@ function loop_and_render_tabbers( array $tabbers ) {
 
 	foreach ( $tabbers as $tabber ) {
 
-      $post_content = do_shortcode( $tabber['post_content'] );
-      $post_content = do_shortcode( $tabber['post_content'] );
+      //$post_content = do_shortcode( $tabber['post_content'] );
+      $post_content = do_shortcode( apply_filters( 'the_content', $tabber['post_content'] ) );
       $post_title   = $tabber['post_title'];
 
       include( TABBER_MODULE_DIR . 'template/views/tabber.php' );
