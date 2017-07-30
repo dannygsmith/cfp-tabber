@@ -8,14 +8,14 @@
  * @link    https://CampFirePixels.com
  * @license GNU General Public License 2.0+
  *
- *  [tabber tab="First Tab"]The performance of this processor ...[/tabber]
+ *  [tab title="First Tab"]The performance of this processor ...[/tab]
  *
  */
 namespace CampFirePixels\Tabber;
 
-add_shortcode( 'tabber', __NAMESPACE__ . '\process_the_shortcode' );
+add_shortcode( 'tab', __NAMESPACE__ . '\process_the_shortcode' );
 /**
- * Process the Tabber Shortcode to build a list of Tabs.
+ * Process the Tabber Shortcode to build a single tab.
  *
  * @since 0.1.0
  *
@@ -25,7 +25,7 @@ add_shortcode( 'tabber', __NAMESPACE__ . '\process_the_shortcode' );
  *
  * @return string
  *
- * [tabber tab="First Tab"]The performance of this processor ...[/tabber]
+ * [tab title="First Tab"]The performance of this processor ...[/tab]
  *
  */
 function process_the_shortcode( $user_defined_attributes, $content, $shortcode_name ) {
@@ -37,11 +37,8 @@ function process_the_shortcode( $user_defined_attributes, $content, $shortcode_n
       $shortcode_name
    );
 
-   //d( $attributes );
-
    // do the processing
    $attributes['show_icon'] = esc_attr( $attributes['show_icon'] );
-   $attributes['hide_icon'] = esc_attr( $attributes['hide_icon'] );
 
    if ( $content ) {
       $content = do_shortcode( $content ); // check for embedded shortcode
@@ -51,7 +48,6 @@ function process_the_shortcode( $user_defined_attributes, $content, $shortcode_n
    ob_start();
    include( $config[ 'view' ] );
 
-   //d( $config );
    return ob_get_clean();
 }
 
@@ -70,11 +66,17 @@ function get_shortcode_configuration( $shortcode_name ) {
       'view' => __DIR__ . '/views/' . $shortcode_name . '.php',
       'defaults' => array(
          'show_icon' => 'fa fa-caret-left',
-         'hide_icon' => 'fa fa-caret-down',
       ),
    );
 
-   $config[ 'defaults' ][ 'tab' ] = '';
+   $config[ 'defaults' ][ 'title' ] = '';
+
+   // Grab the metadata from the database
+   $show_icon = esc_html( cfp_get_option( 'icon_left' ) );
+
+   if ( $show_icon ) {
+      $config[ 'defaults' ][ 'show_icon' ] = $show_icon;
+   }
 
    return $config;
 }

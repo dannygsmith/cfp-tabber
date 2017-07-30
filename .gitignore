@@ -41,6 +41,7 @@ tests/mocks/env/
 # Development files
 /node_modules/
 /assets/vendor/
+/CMB2/
 
 /bower_components/adaptive-placeholders/
 /bower_components/breakpoint-sass/

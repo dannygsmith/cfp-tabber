@@ -1,0 +1,31 @@
+ul {
+   list-style: square outside none;
+   padding: 0 30px;
+}
+
+pre {
+   background-color: #fff;
+   border: 1px solid #bbb;
+   margin: 0;
+   padding: 10px;
+   width: 800px;
+}
+
+.cmb-type-paragraph .cmb-th {
+   margin-bottom:  0;
+   padding-bottom: 0;
+   width: 800px;
+}
+
+.cmb-type-text-medium  .cmb-th,
+.cmb-type-text-medium  .cmb-td,
+.cmb-group-description .cmb-th,
+p.cmb2-metabox-description  {
+   margin-bottom:  0;
+   padding-bottom: 0;
+}
+
+.cmb-type-paragraph .cmb-td {
+   display: none;
+   height: 0;
+}

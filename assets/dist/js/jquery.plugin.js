@@ -3,19 +3,16 @@
 
    document.body.className = document.body.className.replace("no-js","js");
 
-   var $tabberContainer;
-   var $tabberContents;  // array of cached contents
-   var $tabberTabs;      // array of cached tab labels
-   var j;
-   var k;
+   var $tabberContainer = jQuery( '.tabber--container' );
+   var $tabberTabs      = jQuery( '.tabber--tab' );
+   var $tabberContents  = $tabberTabs.next();
 
    /**
     * Initializes all scripts via document ready function
     */
    var init = function () {
-      $tabberContainer = jQuery( '.tabber--container' );
-      $tabberTabs      = jQuery( '.tabber--tab' );
-      $tabberContents  = $tabberTabs.next();
+      var j = 0;
+      var k = 0;
 
       $tabberTabs.on(   'click',
          { contentType: 'tabber' },    // pass type
@@ -35,11 +32,6 @@
          wrapAll('<div class="tabber--wrapper" id="tabber--wrapper-' + $counter++ + '">');
       });
 
-      j = 0;
-      k = 0;
-
-      console.log( $theIcons );
-
       var $tabbers = jQuery('.tabber--container .tabber--tab');
 
       for ( j = 0; j < $('.tabber--container').length; j++, k++ ) {
@@ -47,9 +39,9 @@
       }
 
       //  loops through each group of tabbers
-      for ( k = 0; k < jQuery('div.tabber--wrapper').length; k++ ) {
+      for ( var z = 0; z < jQuery('div.tabber--wrapper').length; z++ ) {
 
-         jQuery( '#tabber--wrapper-' + k + ' .tabber--tab:first' ).trigger('click');
+         jQuery( '#tabber--wrapper-' + z + ' .tabber--tab:first' ).trigger('click');
       }
    };
 
@@ -61,18 +53,13 @@
    var clickHandler = function ( event ) {
 
       var $tabber;
-      var $tabberContent;
-      var $tabberTab;
       var $wrapperId;
       var index;
       var isMobile;
-      var isTabberContentsShowing;
+      var k;
 
       $tabberContainer        = jQuery( '.tabber--container' );
       index                   = $tabberTabs.index ( this );  // current index
-      $tabberContent          = $( $tabberContents[ index ] );
-      $tabberTab              = $( '.tabber--tab.current--tab' );
-      isTabberContentsShowing = $tabberContent.is(':visible');
       isMobile                = Modernizr.mq( '( max-width: 767px )' );
       $wrapperId              = $( $tabberContents[ index ] ).closest("div").prop("id");
 
@@ -80,12 +67,9 @@
       $( '#' + $wrapperId ).addClass( 'selected' );
 
       if ( isMobile ) { //  it is an accordion
-         changeIcon( index, isTabberContentsShowing );
-
-         //transform: rotate( '45deg' );
 
          // remove old content
-         jQuery( '.tabber--wrapper.selected .tabber--container.activated .tabber-content--icon' ).removeClass( 'fa-caret-down' ).addClass( 'fa-caret-left' );
+         jQuery( '.tabber--wrapper.selected .tabber--container.activated .tabber-title--icon' ).removeClass( 'rotate-down' );
          jQuery( '.tabber--wrapper.selected .tabber--container.activated .tabber--content' ).slideUp();
 
       } else {
@@ -104,12 +88,29 @@
 
       jQuery( '.tabber--wrapper.selected .tabber--container.activated .tabber--tab' ).addClass( 'current--tab' );
 
+      //  add a margin-bottom of 20px to each div wrapper to get around the absolute positioning
+      // this only occurs when screen is greater than 768 or in tabber mode
+      for ( k = 0; k < jQuery('div.tabber--wrapper').length; k++ ) {
+
+         var query = Modernizr.mq('(min-width: 768px)');
+         if ( query ) {
+            var wrapperIndex = '#tabber--wrapper-' + k;
+            var wrapper = jQuery( wrapperIndex + ' .tabber--tab.current--tab' ).next();
+            var offset = wrapper.outerHeight( true );
+            offset += 22;
+            jQuery( wrapperIndex ).css( 'margin-bottom', offset );
+         } else {
+            offset = 22;
+         }
+      }
+
       if ( isMobile ) { //  it is an accordion
+         jQuery( '.tabber--wrapper.selected .tabber--container.activated .tabber-title--icon' ).addClass( 'rotate-down' );
 
          $( $tabberContents[ index ] ).slideDown();
       } else {
 
-         $( $tabberContents[ index ] ).css( "display", "block");
+         $( $tabberContents[ index ] ).css( "display", "block" );
       }
 
       // remove Temporarily class to the outer wrapper
