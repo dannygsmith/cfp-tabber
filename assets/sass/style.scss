@@ -97,6 +97,15 @@ body {
       margin:                0;
       padding:               0;
       width:                 auto;
+
+      .tabber-content--icon.fa {
+         transition: all 0.1s linear;
+      }
+
+      &.activated .tabber-content--icon.fa {
+         transform: rotate(-90deg);
+         transition: all 0.1s linear;
+      }
    }
 
    .no-js .tabber--container {
@@ -153,9 +162,5 @@ body {
       //display: none;
       //width: 100%;
       //flex-basis: auto;
-   }
-
-   .no-js .tabber--content {
-      display: block !important;
    }
 }
