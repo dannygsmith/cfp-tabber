@@ -53,11 +53,13 @@ function do_tabber_archive_loop() {
 function loop_and_render_tabbers( array $tabbers ) {
 	$attributes = array(
       'show_icon' => 'fa fa-caret-left',
+
 	);
 
 	foreach ( $tabbers as $tabber ) {
 
-		$post_content = do_shortcode( $tabber['post_content'] );
+      $post_content = do_shortcode( $tabber['post_content'] );
+      $post_content = do_shortcode( $tabber['post_content'] );
       $post_title   = $tabber['post_title'];
 
       include( TABBER_MODULE_DIR . 'template/views/tabber.php' );
