@@ -11,7 +11,7 @@
     * Initializes all scripts via document ready function
     */
    var init = function () {
-      var j = 0
+      var j = 0;
       var k = 0;
 
       $tabberTabs.on(   'click',
@@ -96,9 +96,12 @@
          if ( query ) {
             var wrapperIndex = '#tabber--wrapper-' + k;
             var wrapper = jQuery( wrapperIndex + ' .tabber--tab.current--tab' ).next();
-            var offset = wrapper.outerHeight(true);
+            var offset = wrapper.outerHeight( true );
             offset += 22;
-            jQuery( wrapperIndex ).css( 'margin-bottom', offset );         }
+            jQuery( wrapperIndex ).css( 'margin-bottom', offset );
+         } else {
+            offset = 22;
+         }
       }
 
       if ( isMobile ) { //  it is an accordion
@@ -107,7 +110,7 @@
          $( $tabberContents[ index ] ).slideDown();
       } else {
 
-         $( $tabberContents[ index ] ).css( "display", "block");
+         $( $tabberContents[ index ] ).css( "display", "block" );
       }
 
       // remove Temporarily class to the outer wrapper

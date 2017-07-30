@@ -37,9 +37,7 @@ function do_tabber_archive_loop() {
    foreach ( $records as $record ) {
 		$term_slug = $record['term_slug'];
 
-      //include( TABBER_MODULE_DIR . 'template/views/container.php' );
-      echo TABBER_MODULE_DIR . "../views/container-topic.php";
-      include( TABBER_MODULE_DIR . '../views/container-topic.php' );
+      include( TABBER_MODULE_DIR . 'template/views/container.php' );
    }
 }
 
@@ -54,8 +52,7 @@ function do_tabber_archive_loop() {
  */
 function loop_and_render_tabbers( array $tabbers ) {
 	$attributes = array(
-		'show_icon' => 'dashicons dashicons-arrow-down-alt2',
-		'hide_icon' => 'dashicons dashicons-arrow-up-alt2',
+      'show_icon' => 'fa fa-caret-left',
 	);
 
 	foreach ( $tabbers as $tabber ) {
@@ -63,7 +60,7 @@ function loop_and_render_tabbers( array $tabbers ) {
 		$post_content = do_shortcode( $tabber['post_content'] );
       $post_title   = $tabber['post_title'];
 
-		include( TABBER_MODULE_DIR . 'template/views/tabber.php' );
+      include( TABBER_MODULE_DIR . 'template/views/tabber.php' );
 	}
 }
 

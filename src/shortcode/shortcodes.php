@@ -37,8 +37,6 @@ function process_the_shortcode( $user_defined_attributes, $content, $shortcode_n
       $shortcode_name
    );
 
-   //d( $attributes );
-
    // do the processing
    $attributes['show_icon'] = esc_attr( $attributes['show_icon'] );
 
@@ -50,7 +48,6 @@ function process_the_shortcode( $user_defined_attributes, $content, $shortcode_n
    ob_start();
    include( $config[ 'view' ] );
 
-   //d( $config );
    return ob_get_clean();
 }
 
@@ -80,7 +77,6 @@ function get_shortcode_configuration( $shortcode_name ) {
    if ( $show_icon ) {
       $config[ 'defaults' ][ 'show_icon' ] = $show_icon;
    }
-   //ddd( $show_icon  );
 
    return $config;
 }

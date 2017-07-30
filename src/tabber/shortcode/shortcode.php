@@ -79,6 +79,10 @@ function render_topic_tabbers( array $attributes, array $config ) {
       return render_none_found_message( $attributes );
    }
 
+   $use_term_container = true;
+   $is_calling_source  = 'shortcode-by-topic';
+   $term_slug          = $attributes['topic'];
+
    loop_and_render_tabbers_by_topic( $query, $attributes, $config );
 
    wp_reset_postdata();
