@@ -6,7 +6,7 @@ CampFirePixels Responsive Tabber is a WordPress Plugin that shows and hides hidd
 
 This plugin includes the following features:
 
-- Tabber    Shortcode: 
+- Tab Shortcode to enter the data with the shortcode: 
 ```
 [tabber tab="First Tab" show_icon="fa fa-angle-left"]Four score and seven years ...[/tabber]
 [tabber tab="Second Tab"]Of mice and men ...[/tabber]
@@ -14,6 +14,15 @@ This plugin includes the following features:
 [tabber tab="Fourth Tab"]Frankly Scarlet, I just don't give a damn![/tabber]
 ```
 - NOTICE: you do not have to put a div around the shortcode, the plugin takes care of that for you.
+
+- Tabbers Shortcode to use the tabber custom post type in the backend: 
+
+```
+[tabbers topic="Rocky"][/tabbers]
+```
+- NOTICE: For this to work you have to have a custom post type rocky, and tabber posts created in the back end tabber custom post type with the taxonomy rocky
+
+
 - Font icon visual indicator
 - jQuery sliding animation
 
