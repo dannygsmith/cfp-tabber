@@ -18,8 +18,6 @@ add_action( 'init', __NAMESPACE__ . '\register_custom_post_type' );
  * @since 0.1.3
  *
  * @return void
- *
- * https://www.billerickson.net/code/wp_query-arguments/
  */
 function register_custom_post_type() {
 
