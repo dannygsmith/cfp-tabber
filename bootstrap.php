@@ -45,7 +45,7 @@ if ( !defined( 'ABSPATH' ) ) {
 }
 
 define( 'TABBER_PLUGIN', __FILE__ );
-define( 'TABBER_DIR', plugin_dir_path( __FILE__ ) );
+define( 'TABBER_DIR', trailingslashit( __DIR__ ) );
 $plugin_url = plugin_dir_url( __FILE__ );
 
 //d( TABBER_PLUGIN );
@@ -64,6 +64,6 @@ include( __DIR__ . '/src/plugin.php' );
  */
 if ( file_exists( __DIR__ . '/CMB2/init.php' ) ) {
    require_once __DIR__ . '/CMB2/init.php';
-} elseif ( file_exists(  __DIR__ . '/CMB2/init.php' ) ) {
+} elseif ( file_exists( __DIR__ . '/CMB2/init.php' ) ) {
    require_once __DIR__ . '/CMB2/init.php';
 }
