@@ -20,15 +20,16 @@ add_action( 'init', __NAMESPACE__ . '\register_custom_taxonomy' );
  * @return void
  */
 function register_custom_taxonomy() {
-   $args = array(
+   $args = array (
       'label'             => __( 'Topics', TABBER_MODULE_TEXT_DOMAIN ),
       'labels'            => get_taxonomy_labels_config( 'Topic', 'Topics' ),
       'hierarchical'      => true,
       'show_admin_column' => true,
-      //'show_ui'           => true,
+      'public'            => false,
+      'show_ui'           => true,
    );
 
-   register_taxonomy( 'topic', array( 'tabber' ), $args );
+   register_taxonomy( 'topic', array ( 'tabber' ), $args );
 }
 
 /**
@@ -44,11 +45,11 @@ function register_custom_taxonomy() {
  */
 function get_taxonomy_labels_config( $singular_label, $plural_label, $menu_label = '' ) {
 
-   if ( ! $menu_label ) {
+   if ( !$menu_label ) {
       $menu_label = $plural_label;
    }
 
-   return array(
+   return array (
       'name'                       => _x( $plural_label, 'taxonomy general name', TABBER_MODULE_TEXT_DOMAIN ),
       'singular_name'              => _x( $singular_label, 'taxonomy singular name', TABBER_MODULE_TEXT_DOMAIN ),
       'search_items'               => __( 'Search ' . $plural_label, TABBER_MODULE_TEXT_DOMAIN ),

@@ -13,7 +13,8 @@ namespace CampFirePixels\Module\Tabber;
 
 define( 'TABBER_MODULE_TEXT_DOMAIN', TABBER_TEXT_DOMAIN ); // 'tabber'
 define( 'TABBER_MODULE_PLUGIN', TABBER_PLUGIN ); // "/app/public/wp-content/plugins/cfp-tabber/bootstrap.php"
-define( 'TABBER_MODULE_DIR', plugin_dir_path( __FILE__  ) );
+define( 'TABBER_MODULE_DIR', __DIR__  );         // "/app/public/wp-content/plugins/cfp-tabber/src/tabber"
+//ddd( TABBER_MODULE_DIR );
 
 /**
  * Autoload plugin files.

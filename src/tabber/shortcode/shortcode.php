@@ -142,8 +142,8 @@ function render_none_found_message( array $attributes ) {
 function get_shortcode_configuration() {
    return array (
       'views'    => array (
-         'container_topic' => __DIR__ . '/views/container-topic.php',
-         'tabbers'         => __DIR__ . '/views/tabber.php',
+         'container_topic' => TABBER_MODULE_DIR . '/views/container-topic.php',
+         'tabbers'         => TABBER_MODULE_DIR . '/views/tabber.php',
       ),
       'defaults' => array (
          'show_icon'               => 'dashicons dashicons-arrow-down-alt2',
