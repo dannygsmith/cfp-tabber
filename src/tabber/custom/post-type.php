@@ -18,6 +18,8 @@ add_action( 'init', __NAMESPACE__ . '\register_custom_post_type' );
  * @since 0.1.3
  *
  * @return void
+ *
+ * https://www.billerickson.net/code/wp_query-arguments/
  */
 function register_custom_post_type() {
 
@@ -38,10 +40,8 @@ function register_custom_post_type() {
       'labels'      => get_post_type_labels_config( 'tabber', 'Tabber', 'Tabbers' ),
       'public'      => true,
       'supports'    => $features,
-      //'query_var'          => true,
-      //'rewrite'            => array( 'slug' => 'tabber' ),
-      //'capability_type'    => 'post',
-      'has_archive'        => true,
+      'menu_icon'   => 'dashicons-index-card',
+      'has_archive' => true,
    );
    register_post_type( 'tabber', $args );
 }
