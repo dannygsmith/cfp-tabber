@@ -10,17 +10,17 @@ This plugin includes the following features:
 
 - Tab Shortcode to enter individual consecutive tabs via a shortcode: 
 ```
-[tabber tab="First Tab" show_icon="fa fa-angle-left"]Four score and seven years ...[/tabber]
-[tabber tab="Second Tab"]Of mice and men ...[/tabber]
-[tabber tab="Third Tab" show_icon="fa fa-caret-left"]You can't handle the truth![/tabber]
-[tabber tab="Fourth Tab"]Frankly Scarlet, I just don't give a damn![/tabber]
+[tab title="First Tab" show_icon="fa fa-angle-left"]Four score and seven years ...[/tab]
+[tab title="Second Tab"]Of mice and men ...[/tab]
+[tab title="Third Tab" show_icon="fa fa-caret-left"]You can't handle the truth![/tab]
+[tab title="Fourth Tab"]Frankly Scarlet, I just don't give a damn![/tab]
 ```
 - NOTICE: you do not have to put a div around the shortcode, the plugin takes care of that for you.
 
 - Tabbers Shortcode to use the tabber custom post type in the backend located at => Tabbers/Add New and Tabbers/Topics: 
 
 ```
-[tabbers topic="Rocky"][/tabbers]
+[tabber topic="Rocky"][/tabber]
 ```
 - NOTICE: For this to work you have to have a custom post type rocky, and tabber posts created in the back end tabber custom post type with the taxonomy rocky
 

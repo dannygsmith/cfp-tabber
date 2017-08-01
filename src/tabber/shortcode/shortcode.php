@@ -11,7 +11,7 @@
 
 namespace CampFirePixels\Module\Tabber\Shortcode;
 
-add_shortcode( 'tabbers', __NAMESPACE__ . '\process_the_shortcode' );
+add_shortcode( 'tabber', __NAMESPACE__ . '\process_the_shortcode' );
 /**
  * Process the Tabbers Shortcode to build a list of Tabbers.
  *
