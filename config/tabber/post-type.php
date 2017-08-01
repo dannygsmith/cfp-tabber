@@ -16,10 +16,11 @@ return array (
    'post_type' => 'tabber',
 
    'labels' => array (
-      'type'           => 'tabber',
-      'singular_label' => 'Tabber',
-      'plural_label'   => 'Tabbers',
-      'text_domain'    => TABBER_MODULE_TEXT_DOMAIN,
+      'type'              => 'tabber',
+      'singular_label'    => 'Tabber',
+      'plural_label'      => 'Tabbers',
+      'in_sentence_label' => 'tabbers',
+      'text_domain'       => TABBER_MODULE_TEXT_DOMAIN,
    ),
 
    'features' => array (

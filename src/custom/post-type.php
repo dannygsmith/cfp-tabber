@@ -6,10 +6,109 @@
  * and then registering the post type with WordPress
  *
  * @package CampFirePixels\Module\Custom;
- * @since   0.1.0
+ * @since   0.1.4
  * @author  Danny G Smith
  * @link    https://CampFirePixels.com
  * @license GNU General Public License 2.0+
  */
 
 namespace CampFirePixels\Module\Custom;
+
+//add_action( 'init', __NAMESPACE__ . '\register_the_custom_post_types' );
+/**
+ * Register the custom post types.
+ *
+ * @since 0.1.4
+ *
+ * @return void
+ */
+function register_the_custom_post_types() {
+   // accept the configurations for each custom post type
+   // FAQ, Testimonial, Portfolio
+
+   $configs = array();
+   foreach ( $configs as $post_type => $config ) {
+      register_the_custom_post_type( $post_type, $config );
+   }
+}
+/**
+ * Register a single custom post type.
+ *
+ * @since 0.1.4
+ *
+ * @param string $post_type Post type name to be registered with WordPress
+ * @param array $config An array of post type runtime configuration parameters.
+ *
+ * @return void
+ */
+function register_the_custom_post_type( $post_type, array $config ) {
+
+   $args = $config['args'];
+   if ( ! $args['supports'] ) {
+      $args['supports'] = generate_supported_post_type_features( $config['features'] );
+   }
+
+   if ( ! $args['labels'] ) {
+      $args['labels'] = get_post_type_labels_config( $config['labels'] );
+   }
+   register_post_type( $post_type, $args );
+}
+/**
+ * Get all the post type features for the given post type.
+ *
+ * @since 0.1.4
+ *
+ * @param array $config Runtime configuration parameters
+ *
+ * @return array
+ */
+function generate_supported_post_type_features( array $config ) {
+   $base_post_type_features = get_all_post_type_supports( $config['base_post_type'] );
+   $supported_features = exclude_post_type_features( $base_post_type_features, $config['exclude'] );
+   $supported_features = merge_post_type_features( $supported_features, $config['additional'] );
+   return $supported_features;
+}
+/**
+ * Excluding features from the given supported features.
+ *
+ * @since 0.1.4
+ *
+ * @param array $supported_features Array of supported post type features
+ * @param array|string $exclude_features (optional) Array of features to exclude
+ *
+ * @return array
+ */
+function exclude_post_type_features( array $supported_features, $exclude_features ) {
+
+   if ( ! $exclude_features ) {
+      return array_keys( $supported_features );
+   }
+
+   $features = array();
+
+   foreach ( $supported_features as $feature => $value ) {
+      if ( in_array( $feature, $exclude_features ) ) {
+         continue;
+      }
+      $features[] = $feature;
+   }
+   return $features;
+}
+/**
+ * Merge post type's supported features.
+ *
+ * @since 0.1.4
+ *
+ * @param array $supported_features Array of supported post type features.
+ * @param array|string $additional_features The additional features to merge
+ *                                          with our supported features.
+ *
+ * @return array
+ */
+function merge_post_type_features( array $supported_features, $additional_features ) {
+
+   if ( ! $additional_features ) {
+      return $supported_features;
+   }
+   return wp_parse_args( $additional_features, $supported_features );
+}
