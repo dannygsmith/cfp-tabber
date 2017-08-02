@@ -17,7 +17,7 @@ This plugin includes the following features:
 ```
 - NOTICE: you do not have to put a div around the shortcode, the plugin takes care of that for you.
 
-- Tabbers Shortcode to use the tabber custom post type in the backend located at => Tabbers/Add New and Tabbers/Topics: 
+- Tabber Shortcode uses the tabber custom post type in the backend located at => Tabbers/Add New and Tabbers/Topics: 
 
 ```
 [tabber topic="Rocky"][/tabber]

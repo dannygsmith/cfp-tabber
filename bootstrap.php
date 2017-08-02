@@ -9,9 +9,9 @@
  *
  * @wordpress-plugin
  * Plugin Name:     CampFirePixels Tabber
- * Plugin URI:      _
+ * Plugin URI:      https://campfirepixels.com
  * Description:     CampFirePixels Tabber is a WordPress Plugin that shows and hides hidden content.
- * Version:         0.1.0
+ * Version:         0.1.4
  * Author:          Danny G Smith
  * Author URI:      https://campfirepixels.com
  * Text Domain:     cfp_tabber
