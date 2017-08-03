@@ -2,9 +2,13 @@
 
 CampFirePixels Responsive Tabber is a WordPress Plugin that shows and hides hidden content.  Click the icon to open and reveal the content. Click again to close and hide it. Below 767px it is an accordion, and above it is a tabber.
 
+## Version
+v0.1.4
+
 ## Features
 
-Be sure and check out the Instructions and Configurations at => Settings/Responsive Tabber to see all of the options.
+Be sure and check out the Instructions and Configurations at:
+   => Settings/Responsive Tabber to see all of the options.
 
 This plugin includes the following features:
 
