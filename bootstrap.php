@@ -40,6 +40,8 @@
 
 namespace CampFirePixels\Tabber;
 
+use CampFirePixels\Module\Custom as CustomModule;
+
 if ( !defined( 'ABSPATH' ) ) {
    die( "Oh, silly, there's nothing to see here." );
 }
@@ -67,3 +69,5 @@ if ( file_exists( __DIR__ . '/CMB2/init.php' ) ) {
 } elseif ( file_exists( __DIR__ . '/CMB2/init.php' ) ) {
    require_once __DIR__ . '/CMB2/init.php';
 }
+
+CustomModule\register_plugin( __FILE__ );

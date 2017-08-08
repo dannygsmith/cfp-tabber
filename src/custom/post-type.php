@@ -12,29 +12,40 @@
  * @license GNU General Public License 2.0+
  */
 
-namespace CampFirePixels\Module\Custom;
+namespace CampFirePixels\Module\Tabber;
 
-//add_action( 'init', __NAMESPACE__ . '\register_the_custom_post_types' );
+add_action( 'init', __NAMESPACE__ . '\register_the_custom_post_types' );
 /**
  * Register the custom post types.
  *
- * @since 0.1.4
+ * @since 0.1.5
  *
  * @return void
  */
 function register_the_custom_post_types() {
-   // accept the configurations for each custom post type
-   // FAQ, Testimonial, Portfolio
+   /**
+    * Add custom post type runtime configurations for generating and
+    * registering each with WordPress.
+    *
+    * @since 0.1.5
+    *
+    * @param array Array of configurations.
+    *
+    * @return array
+    */
+   $configs = (array) apply_filters( 'add_custom_post_type_runtime_config', array() );
 
-   $configs = array();
+   //ddd( $configs );
+
    foreach ( $configs as $post_type => $config ) {
       register_the_custom_post_type( $post_type, $config );
    }
 }
+
 /**
  * Register a single custom post type.
  *
- * @since 0.1.4
+ * @since 0.1.5
  *
  * @param string $post_type Post type name to be registered with WordPress
  * @param array $config An array of post type runtime configuration parameters.
@@ -42,21 +53,23 @@ function register_the_custom_post_types() {
  * @return void
  */
 function register_the_custom_post_type( $post_type, array $config ) {
-
    $args = $config['args'];
+
    if ( ! $args['supports'] ) {
       $args['supports'] = generate_supported_post_type_features( $config['features'] );
    }
 
    if ( ! $args['labels'] ) {
-      $args['labels'] = get_post_type_labels_config( $config['labels'] );
+      $args['labels'] = generate_the_custom_labels( $config['labels'] );
    }
+
    register_post_type( $post_type, $args );
 }
+
 /**
  * Get all the post type features for the given post type.
  *
- * @since 0.1.4
+ * @since 0.1.5
  *
  * @param array $config Runtime configuration parameters
  *
@@ -68,10 +81,11 @@ function generate_supported_post_type_features( array $config ) {
    $supported_features = merge_post_type_features( $supported_features, $config['additional'] );
    return $supported_features;
 }
+
 /**
  * Excluding features from the given supported features.
  *
- * @since 0.1.4
+ * @since 0.1.5
  *
  * @param array $supported_features Array of supported post type features
  * @param array|string $exclude_features (optional) Array of features to exclude
@@ -79,7 +93,6 @@ function generate_supported_post_type_features( array $config ) {
  * @return array
  */
 function exclude_post_type_features( array $supported_features, $exclude_features ) {
-
    if ( ! $exclude_features ) {
       return array_keys( $supported_features );
    }
@@ -92,16 +105,18 @@ function exclude_post_type_features( array $supported_features, $exclude_feature
       }
       $features[] = $feature;
    }
+
    return $features;
 }
+
 /**
  * Merge post type's supported features.
  *
- * @since 0.1.4
+ * @since 0.1.5
  *
  * @param array $supported_features Array of supported post type features.
- * @param array|string $additional_features The additional features to merge
- *                                          with our supported features.
+ * @param array $additional_features The additional features to merge
+ *                                   with our supported features.
  *
  * @return array
  */
@@ -110,5 +125,6 @@ function merge_post_type_features( array $supported_features, $additional_featur
    if ( ! $additional_features ) {
       return $supported_features;
    }
-   return wp_parse_args( $additional_features, $supported_features );
+
+   return array_merge( $supported_features, $additional_features );
 }

@@ -13,6 +13,8 @@
 
 namespace CampFirePixels\Tabber;
 
+use CampFirePixels\Module\Custom as CustomModule;
+
 require_once __DIR__ . '/settings-page.php';
 
 add_action( 'wp_enqueue_scripts', __NAMESPACE__ . '\enqueue_assets' );

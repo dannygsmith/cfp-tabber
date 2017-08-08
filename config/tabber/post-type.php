@@ -9,13 +9,19 @@
  * @license GNU General Public License 2.0+
  */
 
-namespace CampFirePixels\Module\Tabber\Custom;
-
+namespace CampFirePixels\Module\Tabber;
 
 return array (
+   /**=====================================
+    * The post type name.
+    *======================================*/
    'post_type' => 'tabber',
 
-   'labels' => array (
+   /**=====================================
+    * These are label configuration.
+    *======================================*/
+   'labels'    => array (
+      'custom_type'       => 'tabber',
       'type'              => 'tabber',
       'singular_label'    => 'Tabber',
       'plural_label'      => 'Tabbers',
@@ -23,23 +29,28 @@ return array (
       'text_domain'       => TABBER_MODULE_TEXT_DOMAIN,
    ),
 
-   'features' => array (
+   /**=====================================
+    * Supported features for this post type.
+    *======================================*/
+   'features'  => array (
       'base_post_type' => 'post',
 
-      'exclude' => array (
+      'exclude'    => array (
          'excerpt',
          'comments',
          'trackbacks',
          'custom-fields',
          'thumbnail',
       ),
+      'additional' => array (
+         'page-attributes',
+      ),
    ),
 
-   'additional' => array (
-      'page-attributes',
-   ),
-
-   'args' => array (
+   /**=====================================
+    * Registration arguments.
+    *======================================*/
+   'args'      => array (
       'description' => 'CampFirePixels Responsive Tabber',
       'label'       => __( 'Tabber', TABBER_MODULE_TEXT_DOMAIN ),
       'labels'      => '', // automatically generate the labels
@@ -49,3 +60,5 @@ return array (
       'has_archive' => true,
    ),
 );
+
+//ddd( $buff );
