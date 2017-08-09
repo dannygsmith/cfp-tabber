@@ -23,13 +23,12 @@
       $( 'br' ).remove();
 
       // Wrap each contiguous tabber with a div wrapper
-      var $counter = 0;
       $( ':not( .tabber--container ) + .tabber--container, * > .tabber--container:first-of-type' ).
-      each( function() {
+      each( function( $index ) {
          $( this ).
          nextUntil( ':not( .tabber--container )' ).
          addBack().
-         wrapAll('<div class="tabber--wrapper" id="tabber--wrapper-' + $counter++ + '">');
+         wrapAll('<div class="tabber--wrapper" id="tabber--wrapper-' + $index + '">');
       });
 
       var $tabbers = jQuery('.tabber--container .tabber--tab');
