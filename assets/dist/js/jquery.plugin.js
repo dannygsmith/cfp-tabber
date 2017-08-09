@@ -3,8 +3,8 @@
 
    document.body.className = document.body.className.replace("no-js","js");
 
-   var $tabberContainer = jQuery( '.tabber--container' );
-   var $tabberTabs      = jQuery( '.tabber--tab' );
+   var $tabberContainer = $( '.tabber--container' );
+   var $tabberTabs      = $( '.tabber--tab' );
    var $tabberContents  = $tabberTabs.next();
 
    /**
@@ -31,16 +31,16 @@
          wrapAll('<div class="tabber--wrapper" id="tabber--wrapper-' + $index + '">');
       });
 
-      var $tabbers = jQuery('.tabber--container .tabber--tab');
+      var $tabbers = $('.tabber--container .tabber--tab');
 
       for ( j = 0; j < $('.tabber--container').length; j++, k++ ) {
          $( $tabbers[ k ] ) .attr( 'id', 'tabber--tab-' + j );
       }
 
       //  loops through each group of tabbers
-      for ( var z = 0; z < jQuery('div.tabber--wrapper').length; z++ ) {
+      for ( var z = 0; z < $('div.tabber--wrapper').length; z++ ) {
 
-         jQuery( '#tabber--wrapper-' + z + ' .tabber--tab:first' ).trigger('click');
+         $( '#tabber--wrapper-' + z + ' .tabber--tab:first' ).trigger('click');
       }
    };
 
@@ -57,7 +57,7 @@
       var isMobile;
       var k;
 
-      $tabberContainer        = jQuery( '.tabber--container' );
+      $tabberContainer        = $( '.tabber--container' );
       index                   = $tabberTabs.index ( this );  // current index
       isMobile                = Modernizr.mq( '( max-width: 767px )' );
       $wrapperId              = $( $tabberContents[ index ] ).closest("div").prop("id");
@@ -68,43 +68,43 @@
       if ( isMobile ) { //  it is an accordion
 
          // remove old content
-         jQuery( '.tabber--wrapper.selected .tabber--container.activated .tabber-title--icon' ).removeClass( 'rotate-down' );
-         jQuery( '.tabber--wrapper.selected .tabber--container.activated .tabber--content' ).slideUp();
+         $( '.tabber--wrapper.selected .tabber--container.activated .tabber-title--icon' ).removeClass( 'rotate-down' );
+         $( '.tabber--wrapper.selected .tabber--container.activated .tabber--content' ).slideUp();
 
       } else {
          $tabber = $( '#' + $wrapperId + ' .tabber--tab.current--tab' ).closest("dt").prop("id");
 
          // remove old content
-         jQuery( '#' + $tabber ).removeClass( 'current--tab' );
-         jQuery( '.tabber--wrapper.selected .tabber--container.activated .tabber--content' ).css( "display", "none");
+         $( '#' + $tabber ).removeClass( 'current--tab' );
+         $( '.tabber--wrapper.selected .tabber--container.activated .tabber--content' ).css( "display", "none");
       }
 
-      jQuery( '.tabber--wrapper.selected .tabber--container.activated' ).removeClass( 'activated' );
+      $( '.tabber--wrapper.selected .tabber--container.activated' ).removeClass( 'activated' );
 
       // activate new tab
       $( $tabberContainer[ $tabberTabs.index( this ) ] ).addClass( 'activated' );
       var $tabberId = $( '.tabber--wrapper.selected .tabber--container.activated .tabber--tab' ).closest("dt").prop("id");
 
-      jQuery( '.tabber--wrapper.selected .tabber--container.activated .tabber--tab' ).addClass( 'current--tab' );
+      $( '.tabber--wrapper.selected .tabber--container.activated .tabber--tab' ).addClass( 'current--tab' );
 
       //  add a margin-bottom of 20px to each div wrapper to get around the absolute positioning
       // this only occurs when screen is greater than 768 or in tabber mode
-      for ( k = 0; k < jQuery('div.tabber--wrapper').length; k++ ) {
+      for ( k = 0; k < $('div.tabber--wrapper').length; k++ ) {
 
          var query = Modernizr.mq('(min-width: 768px)');
          if ( query ) {
             var wrapperIndex = '#tabber--wrapper-' + k;
-            var wrapper = jQuery( wrapperIndex + ' .tabber--tab.current--tab' ).next();
+            var wrapper = $( wrapperIndex + ' .tabber--tab.current--tab' ).next();
             var offset = wrapper.outerHeight( true );
             offset += 22;
-            jQuery( wrapperIndex ).css( 'margin-bottom', offset );
+            $( wrapperIndex ).css( 'margin-bottom', offset );
          } else {
             offset = 22;
          }
       }
 
       if ( isMobile ) { //  it is an accordion
-         jQuery( '.tabber--wrapper.selected .tabber--container.activated .tabber-title--icon' ).addClass( 'rotate-down' );
+         $( '.tabber--wrapper.selected .tabber--container.activated .tabber-title--icon' ).addClass( 'rotate-down' );
 
          $( $tabberContents[ index ] ).slideDown();
       } else {
