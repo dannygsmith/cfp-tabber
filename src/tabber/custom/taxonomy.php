@@ -11,7 +11,7 @@
 
 namespace CampFirePixels\Module\Tabber;
 
-add_action( 'init', __NAMESPACE__ . '\register_custom_taxonomy' );
+add_filter( 'add_custom_taxonomy_runtime_config', __NAMESPACE__ . '\register_custom_taxonomy' );
 /**
  * Register the taxonomy.
  *
@@ -20,16 +20,9 @@ add_action( 'init', __NAMESPACE__ . '\register_custom_taxonomy' );
  * @return void
  */
 function register_custom_taxonomy() {
-   $args = array (
-      'label'             => __( 'Topics', TABBER_MODULE_TEXT_DOMAIN ),
-      'labels'            => get_taxonomy_labels_config( 'Topic', 'Topics' ),
-      'hierarchical'      => true,
-      'show_admin_column' => true,
-      'public'            => false,
-      'show_ui'           => true,
-   );
-
-   register_taxonomy( 'topic', array ( 'tabber' ), $args );
+   $config = include( TABBER_DIR . 'config/tabber/taxonomy.php' );
+   $configs[ $config['taxonomy'] ] = $config;
+   return $configs;
 }
 
 /**

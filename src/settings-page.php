@@ -176,10 +176,10 @@ class CFP_Admin {
                        ) );
 
       $cmb->add_field( array( 'name' => '<pre>
-[tabber tab="First Tab" show_icon="fa fa-angle-left"]Four score and seven years ...[/tabber]
-[tabber tab="Second Tab"]Of mice and men ...[/tabber]
-[tabber tab="Third Tab" show_icon="fa fa-caret-left"]You can\'t handle the truth![/tabber]
-[tabber tab="Fourth Tab"]Frankly Scarlet, I just don\'t give a damn![/tabber]</pre>
+[tab title="First Tab" show_icon="fa fa-angle-left"]Four score and seven years ...[/tab]
+[tab title="Second Tab"]Of mice and men ...[/tab]
+[tab title="Third Tab" show_icon="fa fa-caret-left"]You can\'t handle the truth![/tab]
+[tab title="Fourth Tab"]Frankly Scarlet, I just don\'t give a damn![/tab]</pre>
    <h4>This plugin includes the following features:</h4>
    <ul>
       <li>NOTICE: you do not have to put a div around the shortcode, the plugin takes care of that for you.</li>

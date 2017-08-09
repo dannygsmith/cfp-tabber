@@ -38,5 +38,14 @@ function autoload() {
    }
 }
 
+add_filter( 'add_custom_post_type_runtime_config', __NAMESPACE__ . '\register_tabber_custom_configuration' );
+add_filter( 'add_custom_taxonomy_runtime_config',  __NAMESPACE__ . '\register_tabber_custom_configuration' );
+
+function register_tabber_custom_configuration( array $configs ) {
+
+
+}
+
+
 autoload();
 
