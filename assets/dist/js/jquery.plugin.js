@@ -3,16 +3,16 @@
 
    document.body.className = document.body.className.replace("no-js","js");
 
-   var $tabberContainer = $( '.tabber--container' );
-   var $tabberTabs      = $( '.tabber--tab' );
-   var $tabberContents  = $tabberTabs.next();
+   var $tabberContainer = $( '.tabber--container' ),
+       $tabberTabs      = $( '.tabber--tab' ),
+       $tabberContents  = $tabberTabs.next();
 
    /**
     * Initializes all scripts via document ready function
     */
    var init = function () {
-      var j = 0;
-      var k = 0;
+      var j,
+          k = 0;
 
       $tabberTabs.on(   'click',
          { contentType: 'tabber' },    // pass type
@@ -51,11 +51,11 @@
     */
    var clickHandler = function ( event ) {
 
-      var $tabber;
-      var $wrapperId;
-      var index;
-      var isMobile;
-      var k;
+      var $tabber,
+          $wrapperId,
+          index,
+          isMobile,
+          k;
 
       $tabberContainer        = $( '.tabber--container' );
       index                   = $tabberTabs.index ( this );  // current index
