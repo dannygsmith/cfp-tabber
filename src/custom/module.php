@@ -10,8 +10,10 @@
  */
 
 namespace CampFirePixels\Module\Custom;
+//ddd( __namespace__ );
 
 define( 'CUSTOM_MODULE_DIR', __DIR__  );
+//ddd( CUSTOM_MODULE_DIR );
 
 /**
  * Autoload plugin files.
@@ -57,5 +59,6 @@ function register_plugin( $plugin_file ) {
  * @return void
  */
 function delete_rewrite_rules_on_plugin_status_change() {
+   //ddd( 'inside delete ' );
    delete_option( 'rewrite_rules' );
 }
