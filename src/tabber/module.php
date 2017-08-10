@@ -15,8 +15,43 @@ use CampFirePixels\Module\Custom as CustomModule;
 
 define( 'TABBER_MODULE_TEXT_DOMAIN', TABBER_TEXT_DOMAIN ); // 'tabber'
 define( 'TABBER_MODULE_PLUGIN', TABBER_PLUGIN ); // "/app/public/wp-content/plugins/cfp-tabber/bootstrap.php"
-define( 'TABBER_MODULE_DIR', __DIR__  );         // "/app/public/wp-content/plugins/cfp-tabber/src/tabber"
+define( 'TABBER_MODULE_DIR', trailingslashit( __DIR__ ) );         // "/app/public/wp-content/plugins/cfp-tabber/src/tabber"
 //ddd( TABBER_MODULE_DIR );
+
+add_filter( 'add_custom_post_type_runtime_config', __NAMESPACE__ . '\register_tabber_custom_configuration' );
+add_filter( 'add_custom_taxonomy_runtime_config',  __NAMESPACE__ . '\register_tabber_custom_configuration' );
+
+/**
+ * Loading in the post type and taxonomy runtime configurations with
+ * the Custom Module.
+ *
+ * @since 1.0.0
+ *
+ * @param array $configurations Array of all the configurations.
+ *
+ * @return void
+ */
+function register_tabber_custom_configuration( array $configurations ) {
+
+   $doing_post_type = current_filter() == 'add_custom_post_type_runtime_config';
+   //d( current_filter() );
+
+   $filename = $doing_post_type
+      ? 'post-type'
+      : 'taxonomy';
+   $runtime_config = (array) require( TABBER_MODULE_DIR . '/config/' . $filename . '.php' );
+   if ( ! $runtime_config ) {
+      return $configurations;
+   }
+
+   $key = $doing_post_type
+      ? $runtime_config['post_type']
+      : $runtime_config['taxonomy'];
+   $configurations[ $key ] = $runtime_config;
+
+   //d( $configurations );
+   return $configurations;
+}
 
 /**
  * Autoload plugin files.
@@ -27,8 +62,6 @@ define( 'TABBER_MODULE_DIR', __DIR__  );         // "/app/public/wp-content/plug
  */
 function autoload() {
    $files = array (
-      'custom/post-type.php',
-      'custom/taxonomy.php',
       'shortcode/shortcode.php',
       'template/helpers.php'
    );
@@ -36,14 +69,6 @@ function autoload() {
    foreach ( $files as $file ) {
       include( __DIR__ . '/' . $file );
    }
-}
-
-add_filter( 'add_custom_post_type_runtime_config', __NAMESPACE__ . '\register_tabber_custom_configuration' );
-add_filter( 'add_custom_taxonomy_runtime_config',  __NAMESPACE__ . '\register_tabber_custom_configuration' );
-
-function register_tabber_custom_configuration( array $configs ) {
-
-
 }
 
 

@@ -9,7 +9,7 @@
  * @license GNU General Public License 2.0+
  */
 
-namespace CampFirePixels\Module\Tabber;
+namespace CampFirePixels\Module\Custom;
 
 
 /**
@@ -23,6 +23,7 @@ namespace CampFirePixels\Module\Tabber;
  * @return array
  */
 function generate_the_custom_labels( array $config, $custom_type = 'post type' ) {
+   //d( 'the call is from: ' . $custom_type );
    $config = array_merge(
       array(
          'custom_type'       => '',
@@ -58,19 +59,21 @@ function generate_the_custom_labels( array $config, $custom_type = 'post type' )
    $custom_type_generator .= $custom_type == 'taxonomy'
       ? '\generate_custom_labels_for_taxonomy'
       : '\generate_custom_labels_for_post_type';
-
+   //d( $custom_type_generator );
    $labels = array_merge(
       $labels,
       $custom_type_generator( $config ),
       $config['specific_labels']
    );
-
+   //d( $labels );
    if ( $config['specific_labels'] ) {
       $labels = array_merge(
          $labels,
          $config['specific_labels']
       );
    }
+   //d( $labels );
+
    return $labels;
 }
 /**

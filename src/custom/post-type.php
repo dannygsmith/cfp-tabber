@@ -12,7 +12,7 @@
  * @license GNU General Public License 2.0+
  */
 
-namespace CampFirePixels\Module\Tabber;
+namespace CampFirePixels\Module\Custom;
 
 add_action( 'init', __NAMESPACE__ . '\register_the_custom_post_types' );
 /**

@@ -2,14 +2,14 @@
 /**
  * Runtime configuration for the Topic taxonomy.
  *
- * @package CampFirePixels\Module\Tabber\Custom;
+ * @package CampFirePixels\Module\Tabber;
  * @since   0.1.0
  * @author  Danny G Smith
  * @link    https://CampFirePixels.com
  * @license GNU General Public License 2.0+
  */
 
-namespace CampFirePixels\Module\Tabber\Custom;
+namespace CampFirePixels\Module\Tabber;
 
 return array (
    /**=====================================

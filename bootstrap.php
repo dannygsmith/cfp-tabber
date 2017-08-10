@@ -39,6 +39,7 @@
 */
 
 namespace CampFirePixels\Tabber;
+//ddd( CampFirePixels );
 
 use CampFirePixels\Module\Custom as CustomModule;
 
