@@ -29,29 +29,31 @@
 class CFP_Admin {
 
    /**
+    * Holds an instance of the object
+    *
+    * @var CFP_Admin
+    */
+   protected static $instance = null;
+   /**
     * Option key, and option page slug
     * @var string
     */
    protected $key = 'cfp_options';
-
    /**
     * Option key, and option page slug
     * @var string
     */
    protected $prefix = 'cfp_options_';
-
    /**
     * Options page metabox id
     * @var string
     */
    protected $metabox_id = 'cfp_option_metabox';
-
    /**
     * Options Page title
     * @var string
     */
    protected $title = 'CampFirePixels Responsive Tabber';
-
    /**
     * Options Page hook
     * @var string
@@ -59,11 +61,13 @@ class CFP_Admin {
    protected $options_page = '';
 
    /**
-    * Holds an instance of the object
-    *
-    * @var CFP_Admin
+    * Constructor
+    * @since 0.1.0
     */
-   protected static $instance = null;
+   protected function __construct() {
+      // Set our title
+      $this->title = __( 'Responsive Tabber', 'cfp' );
+   }
 
    /**
     * Returns the running object
@@ -80,22 +84,13 @@ class CFP_Admin {
    }
 
    /**
-    * Constructor
-    * @since 0.1.0
-    */
-   protected function __construct() {
-      // Set our title
-      $this->title = __( 'Responsive Tabber', 'cfp' );
-   }
-
-   /**
     * Initiate our hooks
     * @since 0.1.0
     */
    public function hooks() {
-      add_action( 'admin_init',        array( $this, 'init' ) );
-      add_action( 'admin_menu',        array( $this, 'add_options_page' ) );
-      add_action( 'cmb2_admin_init',   array( $this, 'add_options_page_metabox' ) );
+      add_action( 'admin_init', array ( $this, 'init' ) );
+      add_action( 'admin_menu', array ( $this, 'add_options_page' ) );
+      add_action( 'cmb2_admin_init', array ( $this, 'add_options_page_metabox' ) );
    }
 
    /**
@@ -107,13 +102,13 @@ class CFP_Admin {
    }
 
    public function paragraph() {
-      return $this->get_new_render_type( __FUNCTION__, 'CMB2_Type_Text', array(
+      return $this->get_new_render_type( __FUNCTION__, 'CMB2_Type_Text', array (
          'class' => 'cmb2-paragraph',
          'desc'  => $this->_desc(),
       ), 'input' )->render();
    }
 
-   public function cfp_paragraph( $args = array() ) {
+   public function cfp_paragraph( $args = array () ) {
       return $this->get_new_render_type( __FUNCTION__, 'paragraph', $args )->render();
       //$data =  "<p>Motivation is a multi-level concept</p>";
       //echo $data;
@@ -126,10 +121,10 @@ class CFP_Admin {
          $this->title,
          'manage_options',
          $this->key,
-         array( $this, 'admin_page_display' )
+         array ( $this, 'admin_page_display' )
       );
       // Include CMB CSS in the head to avoid FOUT
-      add_action( "admin_print_styles-{$this->options_page}", array( 'CMB2_hookup', 'enqueue_cmb_css' ) );
+      add_action( "admin_print_styles-{$this->options_page}", array ( 'CMB2_hookup', 'enqueue_cmb_css' ) );
    }
 
    /**
@@ -154,28 +149,28 @@ class CFP_Admin {
       //global $cmb;
 
       // hook in our save notices
-      add_action( "cmb2_save_options-page_fields_{$this->metabox_id}", array( $this, 'settings_notices' ), 10, 2 );
+      add_action( "cmb2_save_options-page_fields_{$this->metabox_id}", array ( $this, 'settings_notices' ), 10, 2 );
 
-      $cmb = new_cmb2_box( array(
+      $cmb = new_cmb2_box( array (
                               'id'         => $this->metabox_id,
                               'hookup'     => false,
                               'cmb_styles' => false,
-                              'show_on'    => array(
+                              'show_on'    => array (
                                  // These are important, don't remove
                                  'key'   => 'options-page',
-                                 'value' => array( $this->key, )
+                                 'value' => array ( $this->key, )
                               ),
                            ) );
 
-      $cmb->add_field( array(
-                          'name' =>   '<h3>Enter the shortcodes consecutively like below</h3>
+      $cmb->add_field( array (
+                          'name' => '<h3>Enter the shortcodes consecutively like below</h3>
                                       <strong>You can use a different icon if you wish</strong><br>', 'cfp',
                           //'desc' => esc_html__( 'This is a title description', 'cfp' ),
                           'id'   => $prefix . 'title',
                           'type' => 'title',
                        ) );
 
-      $cmb->add_field( array( 'name' => '<pre>
+      $cmb->add_field( array ( 'name' => '<pre>
 [tab title="First Tab" show_icon="fa fa-angle-left"]Four score and seven years ...[/tab]
 [tab title="Second Tab"]Of mice and men ...[/tab]
 [tab title="Third Tab" show_icon="fa fa-caret-left"]You can\'t handle the truth![/tab]
@@ -187,24 +182,24 @@ class CFP_Admin {
       <li>jQuery sliding animation</li>
    </ul>
                                      ', 'cfp',
-                          'desc' => esc_html__( 'This is a title description', 'cfp' ),
-                          'id'   => $prefix . 'paragraph',
-                          'type' => 'paragraph',
+                               'desc' => esc_html__( 'This is a title description', 'cfp' ),
+                               'id'   => $prefix . 'paragraph',
+                               'type' => 'paragraph',
                        ) );
 
-      $cmb->add_field( array(
-                               'name' => 'Font Awesome Icon', 'cfp',
-                               'desc' => 'example: <strong><a href="http://fontawesome.io/icons/#directional" target="_blank">fa fa-caret-left</a></strong><br><br>', 'cfp',
-                               'id'   => 'icon_left',
-                               'type' => 'text_medium',
-                            ) );
+      $cmb->add_field( array (
+                          'name' => 'Font Awesome Icon', 'cfp',
+                          'desc' => 'example: <strong><a href="http://fontawesome.io/icons/#directional" target="_blank">fa fa-caret-left</a></strong><br><br>', 'cfp',
+                          'id'   => 'icon_left',
+                          'type' => 'text_medium',
+                       ) );
 
       // $group_field_id is the field id string, so in this case: $prefix . 'demo'
-      $group_field_id = $cmb->add_field( array(
-                                            'id'               => $prefix . 'demo',
-                                            'type'             => 'group',
-                                            'description'      => esc_html__( 'Generates reusable form entries', 'cfp' ),
-                                            'options'          => array(
+      $group_field_id = $cmb->add_field( array (
+                                            'id'          => $prefix . 'demo',
+                                            'type'        => 'group',
+                                            'description' => esc_html__( 'Generates reusable form entries', 'cfp' ),
+                                            'options'     => array (
                                                'group_title'   => esc_html__( 'Entry {#}', 'cfp' ), // {#} gets replaced by row number
                                                'add_button'    => esc_html__( 'Add Another Entry', 'cfp' ),
                                                'remove_button' => esc_html__( 'Remove Entry', 'cfp' ),
@@ -219,19 +214,19 @@ class CFP_Admin {
        *
        * The parent field's id needs to be passed as the first argument.
        */
-      $cmb->add_group_field( $group_field_id, array(
-         'name'       => esc_html__( 'Tab Title', 'cfp' ),
-         'id'         => 'title',
-         'type'       => 'text',
+      $cmb->add_group_field( $group_field_id, array (
+         'name' => esc_html__( 'Tab Title', 'cfp' ),
+         'id'   => 'title',
+         'type' => 'text',
          //'repeatable' => true, // Repeatable fields are supported w/in repeatable groups (for most types)
       ) );
 
-      $cmb->add_group_field( $group_field_id, array(
-         'name'               => esc_html__( 'Tab Content', 'cfp' ),
-         'id'                 => 'tab_content',
-         'type'               => 'wysiwyg',
-         'options'            => array(
-            'textarea_rows'   => 10,
+      $cmb->add_group_field( $group_field_id, array (
+         'name'    => esc_html__( 'Tab Content', 'cfp' ),
+         'id'      => 'tab_content',
+         'type'    => 'wysiwyg',
+         'options' => array (
+            'textarea_rows' => 10,
          ),
          //'repeatable' => true, // Repeatable fields are supported w/in repeatable groups (for most types)
       ) );
@@ -254,18 +249,18 @@ class CFP_Admin {
       }
 
       add_settings_error( $this->key . '-notices', '', __( 'Settings updated.', 'cfp' ), 'updated' );
-      settings_errors( $this->key    . '-notices' );
+      settings_errors( $this->key . '-notices' );
    }
 
    /**
     * Public getter method for retrieving protected/private variables
     * @since  0.1.0
-    * @param  string  $field Field to retrieve
+    * @param  string $field Field to retrieve
     * @return mixed          Field value or exception is thrown
     */
    public function __get( $field ) {
       // Allowed fields to retrieve
-      if ( in_array( $field, array( 'key', 'metabox_id', 'title', 'options_page' ), true ) ) {
+      if ( in_array( $field, array ( 'key', 'metabox_id', 'title', 'options_page' ), true ) ) {
          return $this->{$field};
       }
 
@@ -320,31 +315,23 @@ function cfp_register_repeatable_group_field_metabox() {
    /**
     * Repeatable Field Groups
     */
-   $cmb2 = new_cmb2_box( array(
-   //                        'id'         => $this->metabox_id,
-   //                                                'hookup'     => false,
-   //                                                'cmb_styles' => false,
-   //                                                'show_on'    => array(
-   //                           // These are important, don't remove
-   //                           'key'   => 'options-page',
-   //                           'value' => array( $this->key, )
-   //                        ),
-                                 'id'           => $prefix . 'metabox',
-                                 'title'        => esc_html__( 'Repeating Field Group', 'cfp' ),
-                                 'object_types' => array( 'page' ),
-                                 'show_on'    => array(
-                                    // These are important, don't remove
-                                    'key'   => 'options-page',
-                                    'value' => 'cfp_options'  //array( $this->key, )
-                                 )
-                              ) );
+   $cmb2 = new_cmb2_box( array (
+                            'id'           => $prefix . 'metabox',
+                            'title'        => esc_html__( 'Repeating Field Group', 'cfp' ),
+                            'object_types' => array ( 'page' ),
+                            'show_on'      => array (
+                               // These are important, don't remove
+                               'key'   => 'options-page',
+                               'value' => 'cfp_options'  //array( $this->key, )
+                            )
+                         ) );
 
    // $group_field_id is the field id string, so in this case: $prefix . 'demo'
-   $group_field_id = $cmb->add_field( array(
+   $group_field_id = $cmb->add_field( array (
                                          'id'          => $prefix . 'demo',
                                          'type'        => 'group',
                                          'description' => esc_html__( 'Generates reusable form entries', 'cfp' ),
-                                         'options'     => array(
+                                         'options'     => array (
                                             'group_title'   => esc_html__( 'Entry {#}', 'cfp' ), // {#} gets replaced by row number
                                             'add_button'    => esc_html__( 'Add Another Entry', 'cfp' ),
                                             'remove_button' => esc_html__( 'Remove Entry', 'cfp' ),
@@ -359,14 +346,14 @@ function cfp_register_repeatable_group_field_metabox() {
     *
     * The parent field's id needs to be passed as the first argument.
     */
-   $cmb->add_group_field( $group_field_id, array(
-      'name'       => esc_html__( 'Entry Title', 'cfp' ),
-      'id'         => 'title',
-      'type'       => 'text',
+   $cmb->add_group_field( $group_field_id, array (
+      'name' => esc_html__( 'Entry Title', 'cfp' ),
+      'id'   => 'title',
+      'type' => 'text',
       // 'repeatable' => true, // Repeatable fields are supported w/in repeatable groups (for most types)
    ) );
 
-   $cmb->add_group_field( $group_field_id, array(
+   $cmb->add_group_field( $group_field_id, array (
       'name'        => esc_html__( 'Description', 'cfp' ),
       'description' => esc_html__( 'Write a short description for this entry', 'cfp' ),
       'id'          => 'description',
@@ -375,12 +362,7 @@ function cfp_register_repeatable_group_field_metabox() {
 
 }
 
-
 // Get it started
 cfp_admin();
 
-// Grab the metadata from the database
-//$text = get_post_meta( 'cfp_options', 'icon_left', false );
-//$buff = cfp_get_option( 'icon_left' );
-//ddd( $buff  );
 

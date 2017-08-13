@@ -22,30 +22,32 @@ namespace CampFirePixels\Module\Custom;
  * @return array|false
  */
 function register_shortcode( $pathto_configuration_file ) {
+   //d( $pathto_configuration_file );
 
-   if ( ! is_readable( $pathto_configuration_file ) ) {
+   if ( !is_readable( $pathto_configuration_file ) ) {
       return false;
    }
 
-   $config = (array) include( $pathto_configuration_file );
+   $config = (array)include( $pathto_configuration_file );
    $config = array_merge(
-      array(
+      array (
          'shortcode_name'              => '',
          'do_shortcode_within_content' => true,
          'processing_function'         => null,
          'view'                        => '',
-         'defaults'                    => array(),
+         'defaults'                    => array (),
+         'is_calling_source'           => ''
       ),
       $config
    );
 
-   if ( ! $config['shortcode_name'] || ! $config['view'] ) {
+   if ( !$config[ 'shortcode_name' ] || !$config[ 'view' ] ) {
       return false;
    }
+   add_shortcode( $config[ 'shortcode_name' ], __NAMESPACE__ . '\process_the_shortcode_callback' );
+   $config = store_shortcode_configuration( $config[ 'shortcode_name' ], $config );
 
-   add_shortcode( $config['shortcode_name'], __NAMESPACE__ . '\process_the_shortcode_callback' );
-
-   return store_shortcode_configuration( $config['shortcode_name'], $config );
+   return ( $config );
 }
 
 /**
@@ -54,33 +56,32 @@ function register_shortcode( $pathto_configuration_file ) {
  * @since 1.0.0
  *
  * @param array|string $user_defined_attributes User defined attributes for this shortcode instance
- * @param string|null $content Content between the opening and closing shortcode elements
- * @param string $shortcode_name Name of the shortcode
+ * @param string|null  $content                 Content between the opening and closing shortcode elements
+ * @param string       $shortcode_name          Name of the shortcode
  *
  * @return string
  */
 function process_the_shortcode_callback( $user_defined_attributes, $content, $shortcode_name ) {
-   $config = get_shortcode_configuration( $shortcode_name );
-
+   $config     = get_shortcode_configuration( $shortcode_name );
    $attributes = shortcode_atts(
-      $config['defaults'],
+      $config[ 'defaults' ],
       $user_defined_attributes,
       $shortcode_name
    );
 
-   if ( $content && $config['do_shortcode_within_content'] ) {
+   if ( $content && $config[ 'do_shortcode_within_content' ] ) {
       $content = do_shortcode( $content );
    }
 
-   if ( $config['processing_function'] ) {
-      $function_name = $config['processing_function'];
+   if ( $config[ 'processing_function' ] ) {
+      $function_name = $config[ 'processing_function' ];
 
       return $function_name( $config, $attributes, $content, $shortcode_name );
    }
 
    // Call the view file, capture it into the output buffer, and then return it.
    ob_start();
-   include( $config['view'] );
+   include( $config[ 'view' ] );
 
    return ob_get_clean();
 }
@@ -105,7 +106,7 @@ function get_shortcode_configuration( $shortcode_name ) {
  * @since 1.0.0
  *
  * @param string $shortcode_name Name of the shortcode
- * @param array $config Array of runtime configuration parameters to store.
+ * @param array  $config         Array of runtime configuration parameters to store.
  *
  * @return array|false
  */
@@ -122,15 +123,14 @@ function store_shortcode_configuration( $shortcode_name, $config ) {
  * @since 1.0.0
  *
  * @param string $shortcode_name Name of the shortcode to be used as a key.
- * @param array $config Array of runtime configuration parameters to store.
- *                      (optional)
+ * @param array  $config         Array of runtime configuration parameters to store.
+ *                               (optional)
  *
  * @return array|false
  */
 function _shortcode_configuration_store( $shortcode_name, $config = false ) {
-   static $configurations = array();
-
-   if ( ! isset( $configurations[ $shortcode_name ] ) ) {
+   static $configurations = array ();
+   if ( !isset( $configurations[ $shortcode_name ] ) ) {
       $configurations[ $shortcode_name ] = $config;
    }
 

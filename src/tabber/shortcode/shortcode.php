@@ -11,25 +11,21 @@
 
 namespace CampFirePixels\Module\Tabber\Shortcode;
 
-add_shortcode( 'tabber', __NAMESPACE__ . '\process_the_shortcode' );
 /**
  * Process the Tabbers Shortcode to build a list of Tabbers.
  *
  * @since 0.1.3
  *
- * @param array|string $user_defined_attributes User defined attributes for this shortcode instance
- * @param string|null  $content                 Content between the opening and closing shortcode elements
- * @param string       $shortcode_name          Name of the shortcode
+ * @param array        $config         Array of runtime configuration parameters.
+ * @param array|string $attributes     Attributes for this shortcode instance
+ * @param string|null  $content        Content between the opening and closing shortcode elements
+ * @param string       $shortcode_name Name of the shortcode
  *
  * @return string
+ *
+ *    [tabber topic="Rocky"][/tabber]
  */
-function process_the_shortcode( $user_defined_attributes, $content, $shortcode_name ) {
-   $config = get_shortcode_configuration();
-
-   $attributes = shortcode_atts(
-      $config[ 'defaults' ],
-      $user_defined_attributes
-   );
+function process_the_tabber_shortcode( array $config, array $attributes, $content, $shortcode_name ) {
 
    if ( !$attributes[ 'topic' ] ) {
       return '';
@@ -81,11 +77,13 @@ function render_topic_tabbers( array $attributes, array $config ) {
 
    $use_term_container = true;
    $is_calling_source  = 'shortcode-by-topic';
-   $term_slug          = $attributes['topic'];
+   $term_slug          = $attributes[ 'topic' ];
 
    loop_and_render_tabbers_by_topic( $query, $attributes, $config );
 
    wp_reset_postdata();
+
+   return;
 }
 
 /**
@@ -102,12 +100,9 @@ function loop_and_render_tabbers_by_topic( \WP_Query $query, array $attributes, 
    while ( $query->have_posts() ) {
       $query->the_post();
 
-
       $post_title   = get_the_title();
-      //$post_content = do_shortcode( get_the_content() );
       $post_content = do_shortcode( apply_filters( 'the_content', get_the_content() ) );
-      //include( $config[ 'views' ][ 'tabbers' ] );
-      include( $config[ 'views' ][ 'container_topic' ] );
+      include( $config[ 'view' ][ 'container_topic' ] );
    }
 }
 
@@ -128,30 +123,4 @@ function render_none_found_message( array $attributes ) {
 
    $message = $attributes[ 'none_found_by_topic' ];
    echo "<p>{$message}</p>";
-}
-
-/**
- * Get the runtime configuration parameters for the specified shortcode.
- *
- * @since 0.1.3
- *
- * @param string $shortcode_name Name of the shortcode
- *
- * @return array
- */
-function get_shortcode_configuration() {
-   return array (
-      'views'    => array (
-         'container_topic' => TABBER_MODULE_DIR . '/views/container-topic.php',
-         'tabbers'         => TABBER_MODULE_DIR . '/views/tabber.php',
-      ),
-      'defaults' => array (
-         'show_icon'               => 'dashicons dashicons-arrow-down-alt2',
-         'post_id'                 => 0,
-         'topic'                   => '',
-         'number_of_tabbers'       => -1,
-         'show_none_found_message' => 1,
-         'none_found_by_topic'     => __( 'Sorry, no Tabbers were found for that topic.', TABBER_MODULE_TEXT_DOMAIN ),
-      ),
-   );
 }

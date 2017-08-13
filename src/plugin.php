@@ -27,7 +27,7 @@ add_action( 'wp_enqueue_scripts', __NAMESPACE__ . '\enqueue_assets' );
  */
 function enqueue_assets() {
 
-   //wp_enqueue_style('dashicons');
+   wp_enqueue_style( 'dashicons' );
 
    wp_enqueue_style(
       'font-awesome',
@@ -51,11 +51,12 @@ function enqueue_assets() {
 
 // Update CSS within in Admin
 function admin_styles() {
-   wp_enqueue_style('admin-styles',
-                    TABBER_URL . 'assets/sass/admin.css');
+   wp_enqueue_style( 'admin-styles',
+                     TABBER_URL . 'assets/sass/admin.css' );
 
 }
-add_action('admin_enqueue_scripts', __NAMESPACE__ . '\admin_styles');
+
+add_action( 'admin_enqueue_scripts', __NAMESPACE__ . '\admin_styles' );
 
 // Add landing page body class to the head.
 add_filter( 'body_class', __NAMESPACE__ . '\genesis_sample_add_body_class' );
@@ -76,12 +77,30 @@ function genesis_sample_add_body_class( $classes ) {
 function autoload() {
    $files = array (
       'custom/module.php',
-      //'shortcode/shortcodes.php',
       'tabber/module.php',
    );
 
    foreach ( $files as $file ) {
       include( __DIR__ . '/' . $file );
+   }
+}
+
+add_action( 'plugins_loaded', __NAMESPACE__ . '\setup_plugin' );
+/**
+ * Setup the plugin.
+ *
+ * @since 1.3.0
+ *
+ * @return void
+ */
+function setup_plugin() {
+   foreach ( array ( 'tab' ) as $shortcode ) {
+      $pathto_configuration_file = sprintf( '%s/config/shortcode/%s.php',
+                                            TABBER_DIR,
+                                            $shortcode
+      );
+
+      CustomModule\register_shortcode( $pathto_configuration_file );
    }
 }
 

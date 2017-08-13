@@ -2,14 +2,14 @@
 /**
  * Description
  *
- * @package CampFirePixels\${MY_NAMESPACE}
+ * @package CampFirePixels\Tabber
  * @since   1.0.0
  * @author  Danny G Smith
  * @link    https://CampFirePixels.com
  * @license GNU General Public License 2.0+
  */
 
-//namespace CampFirePixels\${MY_NAMESPACE};
+namespace CampFirePixels\Tabber;
 
 
 /**
@@ -39,9 +39,9 @@ function get_theme_versions() {
  */
 function site_is_in_debug_mode() {
    // check for live site
-   if ( ! defined( 'SCRIPT_DEBUG') ) {
-       return false;
+   if ( !defined( 'SCRIPT_DEBUG' ) ) {
+      return false;
    }
 
-   return( (bool) 'SCRIPT_DEBUG' === true );
+   return ( (bool)'SCRIPT_DEBUG' === true );
 }

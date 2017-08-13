@@ -130,8 +130,8 @@ module.exports=function (moduleRoot) {
       },
       cssfinalize: {
          // Fix for Issue #1 - v1.0.3 11.July.2017
-         run: moduleSettings.isTheme ? true : false,
-         src: [ distDirs.css + "style.css", distDirs.css + "style.min.css" ],
+         run:  moduleSettings.isTheme ? true : false,
+         src:  [distDirs.css + "style.css", distDirs.css + "style.min.css"],
          dest: distDirs.finalCSS,
       }
    };

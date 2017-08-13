@@ -10,10 +10,8 @@
  */
 
 namespace CampFirePixels\Module\Custom;
-//ddd( __namespace__ );
 
-define( 'CUSTOM_MODULE_DIR', __DIR__  );
-//ddd( CUSTOM_MODULE_DIR );
+define( 'CUSTOM_MODULE_DIR', __DIR__ );
 
 /**
  * Autoload plugin files.
@@ -45,9 +43,9 @@ autoload();
  * @param $plugin_file
  */
 function register_plugin( $plugin_file ) {
-   register_activation_hook(   $plugin_file, __NAMESPACE__ . '\delete_rewrite_rules_on_plugin_status_change' );
+   register_activation_hook( $plugin_file, __NAMESPACE__ . '\delete_rewrite_rules_on_plugin_status_change' );
    register_deactivation_hook( $plugin_file, __NAMESPACE__ . '\delete_rewrite_rules_on_plugin_status_change' );
-   register_uninstall_hook(    $plugin_file, __NAMESPACE__ . '\delete_rewrite_rules_on_plugin_status_change' );
+   register_uninstall_hook( $plugin_file, __NAMESPACE__ . '\delete_rewrite_rules_on_plugin_status_change' );
 }
 
 /**
@@ -59,6 +57,5 @@ function register_plugin( $plugin_file ) {
  * @return void
  */
 function delete_rewrite_rules_on_plugin_status_change() {
-   //ddd( 'inside delete ' );
    delete_option( 'rewrite_rules' );
 }

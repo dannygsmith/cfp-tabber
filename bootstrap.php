@@ -35,11 +35,9 @@
 	Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 
  * [tabber tab="First Tab"]The performance of this processor ...[/tabber]
-
 */
 
 namespace CampFirePixels\Tabber;
-//ddd( CampFirePixels );
 
 use CampFirePixels\Module\Custom as CustomModule;
 
@@ -48,19 +46,15 @@ if ( !defined( 'ABSPATH' ) ) {
 }
 
 define( 'TABBER_PLUGIN', __FILE__ );
-define( 'TABBER_DIR', trailingslashit( __DIR__ ) );
+define( 'TABBER_DIR',    trailingslashit( __DIR__ ) );
 $plugin_url = plugin_dir_url( __FILE__ );
-
-//d( TABBER_PLUGIN );
-//ddd( TABBER_DIR );
 
 if ( is_ssl() ) {
    $plugin_url = str_replace( 'http://', 'https://', $plugin_url );
 }
+
 define( 'TABBER_URL', $plugin_url );
 define( 'TABBER_TEXT_DOMAIN', 'tabber' );
-
-include( __DIR__ . '/src/plugin.php' );
 
 /**
  * Get the bootstrap!
@@ -71,4 +65,5 @@ if ( file_exists( __DIR__ . '/CMB2/init.php' ) ) {
    require_once __DIR__ . '/CMB2/init.php';
 }
 
+include( __DIR__ . '/src/plugin.php' );
 CustomModule\register_plugin( __FILE__ );

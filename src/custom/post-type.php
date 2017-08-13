@@ -24,7 +24,7 @@ add_action( 'init', __NAMESPACE__ . '\register_the_custom_post_types' );
  */
 function register_the_custom_post_types() {
 
-   $configs = array();
+   $configs = array ();
 
    /**
     * Add custom post type runtime configurations for generating and
@@ -36,9 +36,7 @@ function register_the_custom_post_types() {
     *
     * @return array
     */
-   $configs = (array) apply_filters( 'add_custom_post_type_runtime_config', $configs );
-
-   //ddd( $configs );
+   $configs = (array)apply_filters( 'add_custom_post_type_runtime_config', $configs );
 
    foreach ( $configs as $post_type => $config ) {
       register_the_custom_post_type( $post_type, $config );
@@ -51,19 +49,19 @@ function register_the_custom_post_types() {
  * @since 0.1.5
  *
  * @param string $post_type Post type name to be registered with WordPress
- * @param array $config An array of post type runtime configuration parameters.
+ * @param array  $config    An array of post type runtime configuration parameters.
  *
  * @return void
  */
 function register_the_custom_post_type( $post_type, array $config ) {
-   $args = $config['args'];
+   $args = $config[ 'args' ];
 
-   if ( ! $args['supports'] ) {
-      $args['supports'] = generate_supported_post_type_features( $config['features'] );
+   if ( !$args[ 'supports' ] ) {
+      $args[ 'supports' ] = generate_supported_post_type_features( $config[ 'features' ] );
    }
 
-   if ( ! $args['labels'] ) {
-      $args['labels'] = generate_the_custom_labels( $config['labels'] );
+   if ( !$args[ 'labels' ] ) {
+      $args[ 'labels' ] = generate_the_custom_labels( $config[ 'labels' ] );
    }
 
    register_post_type( $post_type, $args );
@@ -79,9 +77,10 @@ function register_the_custom_post_type( $post_type, array $config ) {
  * @return array
  */
 function generate_supported_post_type_features( array $config ) {
-   $base_post_type_features = get_all_post_type_supports( $config['base_post_type'] );
-   $supported_features = exclude_post_type_features( $base_post_type_features, $config['exclude'] );
-   $supported_features = merge_post_type_features( $supported_features, $config['additional'] );
+   $base_post_type_features = get_all_post_type_supports( $config[ 'base_post_type' ] );
+   $supported_features      = exclude_post_type_features( $base_post_type_features, $config[ 'exclude' ] );
+   $supported_features      = merge_post_type_features( $supported_features, $config[ 'additional' ] );
+
    return $supported_features;
 }
 
@@ -90,17 +89,17 @@ function generate_supported_post_type_features( array $config ) {
  *
  * @since 0.1.5
  *
- * @param array $supported_features Array of supported post type features
- * @param array|string $exclude_features (optional) Array of features to exclude
+ * @param array        $supported_features Array of supported post type features
+ * @param array|string $exclude_features   (optional) Array of features to exclude
  *
  * @return array
  */
 function exclude_post_type_features( array $supported_features, $exclude_features ) {
-   if ( ! $exclude_features ) {
+   if ( !$exclude_features ) {
       return array_keys( $supported_features );
    }
 
-   $features = array();
+   $features = array ();
 
    foreach ( $supported_features as $feature => $value ) {
       if ( in_array( $feature, $exclude_features ) ) {
@@ -117,7 +116,7 @@ function exclude_post_type_features( array $supported_features, $exclude_feature
  *
  * @since 0.1.5
  *
- * @param array $supported_features Array of supported post type features.
+ * @param array $supported_features  Array of supported post type features.
  * @param array $additional_features The additional features to merge
  *                                   with our supported features.
  *
@@ -125,7 +124,7 @@ function exclude_post_type_features( array $supported_features, $exclude_feature
  */
 function merge_post_type_features( array $supported_features, $additional_features ) {
 
-   if ( ! $additional_features ) {
+   if ( !$additional_features ) {
       return $supported_features;
    }
 

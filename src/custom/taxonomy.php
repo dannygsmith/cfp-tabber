@@ -24,7 +24,7 @@ add_action( 'init', __NAMESPACE__ . '\register_the_custom_taxonomies' );
  */
 function register_the_custom_taxonomies() {
 
-   $configs = array();
+   $configs = array ();
 
    /**
     * Add taxonomy runtime configurations for generating and
@@ -36,7 +36,7 @@ function register_the_custom_taxonomies() {
     *
     * @return array
     */
-   $configs = (array) apply_filters( 'add_custom_taxonomy_runtime_config', $configs );
+   $configs = (array)apply_filters( 'add_custom_taxonomy_runtime_config', $configs );
 
    foreach ( $configs as $taxonomy => $config ) {
       register_the_custom_taxonomy( $taxonomy, $config );
@@ -49,16 +49,16 @@ function register_the_custom_taxonomies() {
  * @since 1.0.0
  *
  * @param string $taxonomy Taxonomy name to be registered with WordPress
- * @param array $config An array of taxonomy runtime configuration parameters.
+ * @param array  $config   An array of taxonomy runtime configuration parameters.
  *
  * @return void
  */
 function register_the_custom_taxonomy( $taxonomy, array $config ) {
-   $args = $config['args'];
+   $args = $config[ 'args' ];
 
-   if ( ! $args['labels'] ) {
-      $args['labels'] = generate_the_custom_labels($config['labels'], 'taxonomy'  );
+   if ( !$args[ 'labels' ] ) {
+      $args[ 'labels' ] = generate_the_custom_labels( $config[ 'labels' ], 'taxonomy' );
    }
 
-   register_taxonomy( $taxonomy, $config['post_types'], $args );
+   register_taxonomy( $taxonomy, $config[ 'post_types' ], $args );
 }

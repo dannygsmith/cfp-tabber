@@ -8,6 +8,7 @@
  * @link    https://CampFirePixels.com
  * @license GNU General Public License 2.0+
  */
+
 namespace CampFirePixels\Module\Tabber\Template;
 
 remove_action( 'genesis_loop', 'genesis_do_loop' );
@@ -25,17 +26,18 @@ add_action( 'genesis_loop', __NAMESPACE__ . '\do_tabber_archive_loop' );
 function do_tabber_archive_loop() {
 
    $records = get_posts_grouped_by_term( 'tabber', 'topic' );
-	if ( ! $records ) {
-		echo '<p>Sorry, there are no Tabbers.</p>';
-		return;
-	}
+   if ( !$records ) {
+      echo '<p>Sorry, there are no Tabbers.</p>';
+
+      return;
+   }
 
    $use_term_container = true;
-	$show_term_name     = true;
-	$is_calling_source  = 'template';
+   $show_term_name     = true;
+   $is_calling_source  = 'template';
 
    foreach ( $records as $record ) {
-		$term_slug = $record['term_slug'];
+      $term_slug = $record[ 'term_slug' ];
 
       include( TABBER_MODULE_DIR . '/views/container.php' );
    }
@@ -52,18 +54,18 @@ function do_tabber_archive_loop() {
  */
 function loop_and_render_tabbers( array $tabbers ) {
 
-	$attributes = array(
+   $attributes = array (
       'show_icon' => 'fa fa-caret-left',
 
-	);
+   );
 
-	foreach ( $tabbers as $tabber ) {
+   foreach ( $tabbers as $tabber ) {
 
-      $post_content = do_shortcode( apply_filters( 'the_content', $tabber['post_content'] ) );
-      $post_title   = $tabber['post_title'];
+      $post_content = do_shortcode( apply_filters( 'the_content', $tabber[ 'post_content' ] ) );
+      $post_title   = $tabber[ 'post_title' ];
 
       include( TABBER_MODULE_DIR . '/views/tabber.php' );
-	}
+   }
 }
 
 genesis();

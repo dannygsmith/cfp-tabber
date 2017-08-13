@@ -35,13 +35,14 @@ return array (
    'features'  => array (
       'base_post_type' => 'post',
 
-      'exclude'    => array (
+      'exclude' => array (
          'excerpt',
          'comments',
          'trackbacks',
          'custom-fields',
          'thumbnail',
       ),
+
       'additional' => array (
          'page-attributes',
       ),
@@ -60,5 +61,3 @@ return array (
       'has_archive' => true,
    ),
 );
-
-//ddd( $buff );

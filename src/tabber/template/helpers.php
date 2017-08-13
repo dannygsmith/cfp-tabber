@@ -8,6 +8,7 @@
  * @link    https://CampFirePixels.com
  * @license GNU General Public License 2.0+
  */
+
 namespace CampFirePixels\Module\Tabber\Template;
 
 add_filter( 'archive_template', __NAMESPACE__ . '\load_the_tabber_archive_template' );
@@ -22,23 +23,21 @@ add_filter( 'archive_template', __NAMESPACE__ . '\load_the_tabber_archive_templa
  */
 function load_the_tabber_archive_template( $theme_archive_template ) {
 
-   //ddd( 'in load_the_tabber_archive_template' );
+   if ( !is_post_type_archive( 'tabber' ) ) {
+      return $theme_archive_template;
+   }
 
-   if ( ! is_post_type_archive( 'tabber' ) ) {
-		return $theme_archive_template;
-	}
+   $plugin_archive_template = __DIR__ . '/archive-tabber.php';
 
-	$plugin_archive_template = __DIR__ . '/archive-tabber.php';
-
-	if ( ! $theme_archive_template ) {
+   if ( !$theme_archive_template ) {
       return $plugin_archive_template;
-	}
+   }
 
-	if ( strpos( $theme_archive_template, '/archive-tabber.php' ) === false ) {
+   if ( strpos( $theme_archive_template, '/archive-tabber.php' ) === false ) {
       return $plugin_archive_template;
-	}
+   }
 
-	return $theme_archive_template;
+   return $theme_archive_template;
 }
 
 /**
@@ -50,36 +49,36 @@ function load_the_tabber_archive_template( $theme_archive_template ) {
  * @since 0.1.3
  *
  * @param string $post_type_name Post type to limit query to
- * @param string $taxonomy_name Taxonomy to limit query to
+ * @param string $taxonomy_name  Taxonomy to limit query to
  *
  * @return array|false
  */
 function get_posts_grouped_by_term( $post_type_name, $taxonomy_name ) {
-	$records = get_posts_grouped_by_term_from_db( $post_type_name, $taxonomy_name );
+   $records = get_posts_grouped_by_term_from_db( $post_type_name, $taxonomy_name );
 
-	$groupings = array();
-	foreach ( $records as $record ) {
-		$term_id = (int) $record->term_id;
-		$post_id = (int) $record->post_id;
+   $groupings = array ();
+   foreach ( $records as $record ) {
+      $term_id = (int)$record->term_id;
+      $post_id = (int)$record->post_id;
 
-		if ( ! array_key_exists( $term_id, $groupings ) ) {
-			$groupings[ $term_id ] = array(
-				'term_id'   => $term_id,
-				'term_name' => $record->term_name,
-				'term_slug' => $record->term_slug,
-				'posts'     => array(),
-			);
-		}
+      if ( !array_key_exists( $term_id, $groupings ) ) {
+         $groupings[ $term_id ] = array (
+            'term_id'   => $term_id,
+            'term_name' => $record->term_name,
+            'term_slug' => $record->term_slug,
+            'posts'     => array (),
+         );
+      }
 
-		$groupings[ $term_id ]['posts'][ $post_id ] = array(
-			'post_id'      => $post_id,
-			'post_title'   => $record->post_title,
-			'post_content' => $record->post_content,
-			'menu_order'   => $record->menu_order,
-		);
-	}
+      $groupings[ $term_id ][ 'posts' ][ $post_id ] = array (
+         'post_id'      => $post_id,
+         'post_title'   => $record->post_title,
+         'post_content' => $record->post_content,
+         'menu_order'   => $record->menu_order,
+      );
+   }
 
-	return $groupings;
+   return $groupings;
 }
 
 /**
@@ -91,15 +90,15 @@ function get_posts_grouped_by_term( $post_type_name, $taxonomy_name ) {
  * @since 0.1.3
  *
  * @param string $post_type_name Post type to limit query to
- * @param string $taxonomy_name Taxonomy to limit query to
+ * @param string $taxonomy_name  Taxonomy to limit query to
  *
  * @return array|false
  */
 function get_posts_grouped_by_term_from_db( $post_type_name, $taxonomy_name ) {
-	global $wpdb;
+   global $wpdb;
 
-	$sql_query =
-		"SELECT t.term_id, t.name AS term_name, t.slug AS term_slug, p.ID AS post_id, p.post_title, p.post_content, p.menu_order
+   $sql_query =
+      "SELECT t.term_id, t.name AS term_name, t.slug AS term_slug, p.ID AS post_id, p.post_title, p.post_content, p.menu_order
 FROM {$wpdb->term_taxonomy} AS tt
 INNER JOIN {$wpdb->terms} AS t ON (tt.term_id = t.term_id)
 INNER JOIN {$wpdb->term_relationships} AS tr ON (tt.term_taxonomy_id = tr.term_taxonomy_id)
@@ -108,12 +107,12 @@ WHERE p.post_status = 'publish' AND p.post_type = %s AND tt.taxonomy = %s
 GROUP BY t.term_id, p.ID
 ORDER BY t.term_id, p.menu_order ASC;";
 
-	$sql_query = $wpdb->prepare( $sql_query, $post_type_name, $taxonomy_name );
+   $sql_query = $wpdb->prepare( $sql_query, $post_type_name, $taxonomy_name );
 
-	$results = $wpdb->get_results( $sql_query );
-	if ( ! $results || ! is_array( $results ) ) {
-		return false;
-	}
+   $results = $wpdb->get_results( $sql_query );
+   if ( !$results || !is_array( $results ) ) {
+      return false;
+   }
 
-	return $results;
+   return $results;
 }
