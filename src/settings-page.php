@@ -175,6 +175,8 @@ class CFP_Admin {
 [tab title="Second Tab"]Of mice and men ...[/tab]
 [tab title="Third Tab" show_icon="fa fa-caret-left"]You can\'t handle the truth![/tab]
 [tab title="Fourth Tab"]Frankly Scarlet, I just don\'t give a damn![/tab]</pre>
+<br>
+<pre>[tabber topic="Rocky"][/tabber]</pre>
    <h4>This plugin includes the following features:</h4>
    <ul>
       <li>NOTICE: you do not have to put a div around the shortcode, the plugin takes care of that for you.</li>
@@ -195,41 +197,41 @@ class CFP_Admin {
                        ) );
 
       // $group_field_id is the field id string, so in this case: $prefix . 'demo'
-      $group_field_id = $cmb->add_field( array (
-                                            'id'          => $prefix . 'demo',
-                                            'type'        => 'group',
-                                            'description' => esc_html__( 'Generates reusable form entries', 'cfp' ),
-                                            'options'     => array (
-                                               'group_title'   => esc_html__( 'Entry {#}', 'cfp' ), // {#} gets replaced by row number
-                                               'add_button'    => esc_html__( 'Add Another Entry', 'cfp' ),
-                                               'remove_button' => esc_html__( 'Remove Entry', 'cfp' ),
-                                               'sortable'      => true, // beta
-                                               // 'closed'     => true, // true to have the groups closed by default
-                                            ),
-                                         ) );
-
-      /**
-       * Group fields works the same, except ids only need
-       * to be unique to the group. Prefix is not needed.
-       *
-       * The parent field's id needs to be passed as the first argument.
-       */
-      $cmb->add_group_field( $group_field_id, array (
-         'name' => esc_html__( 'Tab Title', 'cfp' ),
-         'id'   => 'title',
-         'type' => 'text',
-         //'repeatable' => true, // Repeatable fields are supported w/in repeatable groups (for most types)
-      ) );
-
-      $cmb->add_group_field( $group_field_id, array (
-         'name'    => esc_html__( 'Tab Content', 'cfp' ),
-         'id'      => 'tab_content',
-         'type'    => 'wysiwyg',
-         'options' => array (
-            'textarea_rows' => 10,
-         ),
-         //'repeatable' => true, // Repeatable fields are supported w/in repeatable groups (for most types)
-      ) );
+      //$group_field_id = $cmb->add_field( array (
+      //                                      'id'          => $prefix . 'demo',
+      //                                      'type'        => 'group',
+      //                                      'description' => esc_html__( 'Generates reusable form entries', 'cfp' ),
+      //                                      'options'     => array (
+      //                                         'group_title'   => esc_html__( 'Entry {#}', 'cfp' ), // {#} gets replaced by row number
+      //                                         'add_button'    => esc_html__( 'Add Another Entry', 'cfp' ),
+      //                                         'remove_button' => esc_html__( 'Remove Entry', 'cfp' ),
+      //                                         'sortable'      => true, // beta
+      //                                         // 'closed'     => true, // true to have the groups closed by default
+      //                                      ),
+      //                                   ) );
+//
+      ///**
+      // * Group fields works the same, except ids only need
+      // * to be unique to the group. Prefix is not needed.
+      // *
+      // * The parent field's id needs to be passed as the first argument.
+      // */
+      //$cmb->add_group_field( $group_field_id, array (
+      //   'name' => esc_html__( 'Tab Title', 'cfp' ),
+      //   'id'   => 'title',
+      //   'type' => 'text',
+      //   //'repeatable' => true, // Repeatable fields are supported w/in repeatable groups (for most types)
+      //) );
+//
+      //$cmb->add_group_field( $group_field_id, array (
+      //   'name'    => esc_html__( 'Tab Content', 'cfp' ),
+      //   'id'      => 'tab_content',
+      //   'type'    => 'wysiwyg',
+      //   'options' => array (
+      //      'textarea_rows' => 10,
+      //   ),
+      //   //'repeatable' => true, // Repeatable fields are supported w/in repeatable groups (for most types)
+      //) );
 
       //\Kint::$maxLevels = 0; // 0 equals no limit
       //ddd( $cmb );

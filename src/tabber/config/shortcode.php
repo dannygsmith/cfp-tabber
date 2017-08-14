@@ -45,7 +45,7 @@ return array (
     * overridable by the author.
     *==================================================*/
    'defaults'                    => array (
-      'show_icon'               => 'dashicons dashicons-arrow-down-alt2',
+      'show_icon'               => 'fa fa-caret-left',
       'post_id'                 => 0,
       'topic'                   => '',
       'number_of_tabbers'       => -1,

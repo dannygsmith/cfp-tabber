@@ -36,7 +36,6 @@ function register_shortcode( $pathto_configuration_file ) {
          'processing_function'         => null,
          'view'                        => '',
          'defaults'                    => array (),
-         'is_calling_source'           => ''
       ),
       $config
    );
@@ -129,6 +128,7 @@ function store_shortcode_configuration( $shortcode_name, $config ) {
  * @return array|false
  */
 function _shortcode_configuration_store( $shortcode_name, $config = false ) {
+
    static $configurations = array ();
    if ( !isset( $configurations[ $shortcode_name ] ) ) {
       $configurations[ $shortcode_name ] = $config;

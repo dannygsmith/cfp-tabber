@@ -28,7 +28,7 @@ return array (
     * overridable by the author.
     *==================================================*/
    'defaults'       => array (
-      'show_icon' => 'dashicons dashicons-arrow-down-alt2',
+      'show_icon' => 'fa fa-caret-left',
       'title'     => '',
    ),
 );
